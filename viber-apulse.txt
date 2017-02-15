@@ -5,21 +5,25 @@ Viber for Linux seems to work fine with apulse,
     $ apulse /opt/viber/Viber
 
 
-except for taking the liberty of changing my system's volume to 100% shortly after starting.
+except for taking the liberty of changing my system's volume to 100% shortly
+after starting.
 
-After no luck with trying to figure out if it was leveraging apulse itself to do this,
+After no luck with trying to figure out if it was leveraging apulse itself to
+do this,
 
     $ apulse ltrace -f -e '@libpulse*' /opt/viber/Viber
 
 
-I started believing it was calling alsa despite being a pulseaudio application:
+I started believing it was calling alsa despite being a pulseaudio
+application:
 
     $ apulse ltrace -f -e '@libasound*' /opt/viber/Viber
 
 
 Unfortunately, this produces too much noise.
 
-Looking at `/usr/include/alsa/mixer.h` it's easy to locate possibly used functions:
+Looking at `/usr/include/alsa/mixer.h` it's easy to locate possibly used
+functions:
 
     int snd_mixer_selem_set_playback_volume(...);
     int snd_mixer_selem_set_capture_volume(...);
