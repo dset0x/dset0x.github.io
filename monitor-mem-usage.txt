@@ -6,7 +6,7 @@ Of course it makes no sense to use `awk` for this, but what the heck. This
 script unloads all weechat scripts, then loads them one at a time whenever
 passed a line.
 
-#!/usr/bin/env awk -f
+    #!/usr/bin/env awk -f
 
     function load(scr) {
         print strftime("%s"), scr
@@ -58,7 +58,7 @@ memory usage too. Let's have another loop do that for us.
 
 Now to graph everything into a readable image we can use `gnuplot`:
 
-#!/bin/bash
+    #!/bin/bash
     {
         cat <<EOF
         set term png small size 1900,600
