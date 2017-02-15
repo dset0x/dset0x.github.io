@@ -62,7 +62,6 @@ Let's go ahead and take that function away from it via `LD_PRELOAD`:
     return 0;
     }
 
-
     $ gcc -shared -fPIC viber_unvol.c -o viber_unvol.so
 
 
