@@ -6,14 +6,13 @@
     <script>
         function load() {
             var fname = location.pathname.substring(location.pathname.lastIndexOf("/") + 1).split(".")[0];
+            var url = "/" + fname + ".txt";
             var div = document.getElementById('pre');
-            var xhr = new XMLHttpRequest(),
-                method = "GET",
-                url = "/" + fname + ".txt";
+            var xhr = new XMLHttpRequest();
 
-            alert(url);
-            xhr.open(method, url, true);
+            xhr.open("GET", url, true);
             xhr.onreadystatechange = function () {
+                alert(htmlEncode(xhr.responseText));
                 if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                     div.innerHTML = htmlEncode(xhr.responseText);
                 }
