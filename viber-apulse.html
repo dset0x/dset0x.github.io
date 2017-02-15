@@ -14,7 +14,7 @@
             xhr.onreadystatechange = function () {
                 alert(htmlEncode(xhr.responseText));
                 if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    div.innerHTML = htmlEncode(xhr.responseText);
+                    div.appendChild(document.createTextNode(xhr.responseText))
                 }
             };
             xhr.send();
