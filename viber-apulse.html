@@ -7,12 +7,16 @@
         function load() {
             var fname = location.pathname.substring(location.pathname.lastIndexOf("/") + 1).split(".")[0];
             var div = document.getElementById('pre');
+            var xhr = new XMLHttpRequest(),
+                method = "GET",
+                url = "/" + fname + ".txt";
 
-            var client = new XMLHttpRequest();
-            client.open('GET', '/' + fname + '.txt');
-            client.onreadystatechange = function() {
-                div.innerHTML = htmlEncode(client.responseText);
-            }
+            xhr.open(method, url, true);
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    div.innerHTML = htmlEncode(xhr.responseText);
+                }
+            };
         }
     </script>
 </body>
