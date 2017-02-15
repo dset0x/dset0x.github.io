@@ -11,6 +11,7 @@
                 method = "GET",
                 url = "/" + fname + ".txt";
 
+            alert(url);
             xhr.open(method, url, true);
             xhr.onreadystatechange = function () {
                 if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
