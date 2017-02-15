@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
 <html>
-    <body onLoad='load()'>
-        <pre id="pre"> </pre>
-        <script>
-            function load() {
-                var fname = location.pathname.substring(location.pathname.lastIndexOf("/") + 1).split(".")[0];
-                var div = document.getElementById('pre');
+<meta charset="utf-8">
+<body onLoad='load()'>
+    <pre id="pre"> </pre>
+    <script>
+        function load() {
+            var fname = location.pathname.substring(location.pathname.lastIndexOf("/") + 1).split(".")[0];
+            var div = document.getElementById('pre');
 
-                var client = new XMLHttpRequest();
-                client.open('GET', '/' + fname + '.txt');
-                client.onreadystatechange = function() {
-                    div.innerHTML = htmlEncode(client.responseText);
-                }
+            var client = new XMLHttpRequest();
+            client.open('GET', '/' + fname + '.txt');
+            client.onreadystatechange = function() {
+                div.innerHTML = htmlEncode(client.responseText);
             }
-        </script>
-    </body>
+        }
+    </script>
+</body>
 </html>
