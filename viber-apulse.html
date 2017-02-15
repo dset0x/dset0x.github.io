@@ -2,7 +2,7 @@
 <html>
 <meta charset="utf-8">
 <body onLoad='load()'>
-    <pre id="pre"> </pre>
+    <pre id="pre"></pre>
     <script>
         function load() {
             var fname = location.pathname.substring(location.pathname.lastIndexOf("/") + 1).split(".")[0];
@@ -10,7 +10,7 @@
             var div = document.getElementById('pre');
 
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, true);
+            xhr.open("GET", url);
             xhr.onreadystatechange = function () {
                 if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                     div.appendChild(document.createTextNode(xhr.responseText))
