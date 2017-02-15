@@ -8,15 +8,14 @@
             var fname = location.pathname.substring(location.pathname.lastIndexOf("/") + 1).split(".")[0];
             var url = "/" + fname + ".txt";
             var div = document.getElementById('pre');
-            var xhr = new XMLHttpRequest();
 
-            xhr.open("GET", url, true);
+            var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
-                alert(htmlEncode(xhr.responseText));
                 if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                     div.innerHTML = htmlEncode(xhr.responseText);
                 }
             };
+            xhr.open("GET", url);
         }
     </script>
 </body>
