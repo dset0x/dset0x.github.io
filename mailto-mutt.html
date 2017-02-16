@@ -41,8 +41,8 @@
 
         mutt_expand_path() {
             eval $(mutt -Q folder)
-            val="${1/<strong>=/$folder\/}"
-            val="${val/</strong>\~/$HOME}"
+            val="${1/#=/$folder\/}"
+            val="${val/#\~/$HOME}"
             echo "$val"
         }
 
@@ -53,17 +53,17 @@
         postponed=$(mutt_expand_path $postponed)
         signature=$(mutt_expand_path $signature)
 
-        <strong> Arguments from URI
+        # Arguments from URI
         IFS="?" read to args &lt;&lt;&lt;"$1"
-        to="$(uri_unescape "${to</strong>mailto:}")"
+        to="$(uri_unescape "${to#mailto:}")"
 
         for key in subject cc bcc body;
             do declare "$key"=;
         done
 
         for arg in ${args//&amp;/ }; do
-          key="${arg%%=<em>}"; key="${key,,}"
-          value="$(uri_unescape "${arg#</em>=}")"
+          key="${arg%%=*}"; key="${key,,}"
+          value="$(uri_unescape "${arg#*=}")"
           [[ "$key" =~ subject|cc|bcc|body ]] &amp;&amp; declare "$key"="$value"
         done
 

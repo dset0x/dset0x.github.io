@@ -62,7 +62,7 @@
 
     Armed with possible function names, voila:
 
-        $ apulse ltrace -f -e '<em>set</em>volume<em>@libasound</em>' /opt/viber/Viber
+        $ apulse ltrace -f -e '*set*volume*@libasound*' /opt/viber/Viber
         [...]
         [pid 17824] libasound.so.2-&gt;snd_mixer_selem_set_playback_volume(0x7f1f7d0efbf0, 0, 110, 0) = 0
         [pid 17824] libasound.so.2-&gt;snd_mixer_selem_set_playback_volume(0x7f1f7d0efbf0, 1, 110, 1) = 0
