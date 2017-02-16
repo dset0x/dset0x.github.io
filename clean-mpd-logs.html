@@ -16,21 +16,20 @@
 
 <h1><a name="section_1">Removing binary data from (mpd) logfiles</a></h1>
 
-<p>I like to keep `mpd` logs around for statistics purposes.
-</p>
-<p>Unfortunately I have had mpd write binary to the logfile for one reason or<br/>
-another. Fear not, easy to fix.
-</p>
 <pre>
+I like to keep `mpd` logs around for statistics purposes.
+
+Unfortunately I have had mpd write binary to the logfile for one reason or
+another. Fear not, easy to fix.
+
     $ rc-service mpd stop
     $ strings -e S /var/lib/mpd/log &gt; /var/lib/mpd/log2
     $ mv /var/lib/mpd/log{2,}
     $ rc-service mpd start
-</pre>
-<p>We can also remove all the client calls while we're at it to bring the<br/>
+
+We can also remove all the client calls while we're at it to bring the
 filesize down from 1GiB.
-</p>
-<pre>
+
     $ grep -v ': client: \[' /var/lib/mpd/log &gt; /var/lib/mpd/log2
     $ mv /var/lib/mpd/log{2,}
 </pre>

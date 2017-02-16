@@ -16,22 +16,21 @@
 
 <h1><a name="section_1">Using mailto URIs with mutt postponed email</a></h1>
 
-<p>mailto:// URLs are sometimes convenient to use, but they don't fit in too well<br/>
-with using a single mutt instance and having an aversion to windows popping<br/>
-up.
-</p>
-<p>One way to use them with mutt is to take advantage of the postponed feature.<br/>
-If your `postponed` variable points to a directory you may have multiple<br/>
-postponed messages.
-</p>
 <pre>
+mailto:// URLs are sometimes convenient to use, but they don't fit in too well
+with using a single mutt instance and having an aversion to windows popping
+up.
+
+One way to use them with mutt is to take advantage of the postponed feature.
+If your `postponed` variable points to a directory you may have multiple
+postponed messages.
+
     $ mkdir ~/.mail/postponed
     $ echo 'set postponed = "~/.mail/postponed"' &gt;&gt; ~/.mutt/muttrc
-</pre>
-<p>We can therefore generate a postponed message every time a mailto URI is<br/>
+
+We can therefore generate a postponed message every time a mailto URI is
 clicked. Create this script and have your applications call it for mailto://.
-</p>
-<pre>
+
     #!/bin/bash
 
     set -eu
@@ -85,9 +84,9 @@ clicked. Create this script and have your applications call it for mailto://.
     --
     $(cat $signature)
     EOF
-</pre>
-<p>You're going to have to make sure that `folder`, `realname`, `postponed` and<br/>
-`sigature` expand appropariately when called via `mutt -Q`.</p>
 
+You're going to have to make sure that `folder`, `realname`, `postponed` and
+`sigature` expand appropariately when called via `mutt -Q`.
+</pre>
 </body>
 </html>

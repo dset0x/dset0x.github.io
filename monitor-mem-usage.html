@@ -16,15 +16,15 @@
 
 <h1><a name="section_1">Monitoring memory usage for weechat script leaks</a></h1>
 
-<p>I was recently dealing with a memory leak within a script in `weechat`. I<br/>
-needed a quick and dirty way of figuring out which script was causing the<br/>
-trouble.
-</p>
-<p>Of course it makes no sense to use `awk` for this, but what the heck. This<br/>
-script unloads all weechat scripts, then loads them one at a time whenever<br/>
-passed a line.
-</p>
 <pre>
+I was recently dealing with a memory leak within a script in `weechat`. I
+needed a quick and dirty way of figuring out which script was causing the
+trouble.
+
+Of course it makes no sense to use `awk` for this, but what the heck. This
+script unloads all weechat scripts, then loads them one at a time whenever
+passed a line.
+
     #!/usr/bin/env awk -f
 
     function load(scr) {
@@ -62,21 +62,18 @@ passed a line.
             load(script_names[idx])
         }
     }
-</pre>
-<p>We can go ahead and load one script every one hour:
-</p>
-<pre>
+
+We can go ahead and load one script every one hour:
+
     $ while :; do echo 1; sleep 1h; done | ./above_script.awk &gt; /tmp/events
-</pre>
-<p>Now we have a bunch of timestamped events, but we'd like to frequently check<br/>
+
+Now we have a bunch of timestamped events, but we'd like to frequently check
 memory usage too. Let's have another loop do that for us.
-</p>
-<pre>
+
     $ while :; do echo $(date +%s) $(ps -q $(pgrep --exact weechat) -o rss,vsz | tail -n 1) &gt;&gt; /tmp/mem; sleep 5s; done
-</pre>
-<p>Now to graph everything into a readable image we can use `gnuplot`:
-</p>
-<pre>
+
+Now to graph everything into a readable image we can use `gnuplot`:
+
     #!/bin/bash
     {
         cat &lt;&lt;EOF
@@ -109,15 +106,14 @@ memory usage too. Let's have another loop do that for us.
              "&lt; uniq -f 0 /tmp/mem" using 1:(\$2/1000) with lines axes x1y2 title "RSS"
     EOF
     } | gnuplot
-</pre>
-<p>What's handy about this setup is that we can kill any script for any reason<br/>
-without losing data. In fact we can stop the first one and load whichever<br/>
+
+What's handy about this setup is that we can kill any script for any reason
+without losing data. In fact we can stop the first one and load whichever
 scripts we want, as long as we maintain `/tmp/events`.
-</p>
-<p>Of course you can run the `gnuplot` script on a remote box as long as you have<br/>
+
+Of course you can run the `gnuplot` script on a remote box as long as you have
 access to the two logfiles.
-</p>
-<pre>
+
     $ rifle /tmp/mem-graph.png
 </pre>
 </body>
