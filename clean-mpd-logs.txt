@@ -1,19 +1,19 @@
-    Removing binary data from (mpd) logfiles
-    ----------------------------------------
+Removing binary data from (mpd) logfiles
+----------------------------------------
 
-    I like to keep `mpd` logs around for statistics purposes.
+I like to keep `mpd` logs around for statistics purposes.
 
-    Unfortunately I have had mpd write binary to the logfile for one reason or
-    another. Fear not, easy to fix.
+Unfortunately I have had mpd write binary to the logfile for one reason or
+another. Fear not, easy to fix.
 
-        $ rc-service mpd stop
-        $ strings -e S /var/lib/mpd/log > /var/lib/mpd/log2
-        $ mv /var/lib/mpd/log{2,}
-        $ rc-service mpd start
+    $ rc-service mpd stop
+    $ strings -e S /var/lib/mpd/log > /var/lib/mpd/log2
+    $ mv /var/lib/mpd/log{2,}
+    $ rc-service mpd start
 
 
-    We can also remove all the client calls while we're at it to bring the
-    filesize down from 1GiB.
+We can also remove all the client calls while we're at it to bring the
+filesize down from 1GiB.
 
-        $ grep -v ': client: \[' /var/lib/mpd/log > /var/lib/mpd/log2
-        $ mv /var/lib/mpd/log{2,}
+    $ grep -v ': client: \[' /var/lib/mpd/log > /var/lib/mpd/log2
+    $ mv /var/lib/mpd/log{2,}
