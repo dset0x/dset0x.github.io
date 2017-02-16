@@ -1,3 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Using mailto URIs with mutt postponed email</title>
+<meta charset="utf-8">
+<title>When software gets in the way</title>
+<meta name="description" content="and things took more fixing than expected">
+<meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>body {font-family: monospace;}</style>
+<meta name="generator" content="HTML::TextToHTML v2.5201"/>
+</head>
+<body>
+<a href="/">Home</a>
+
+<pre>
     Using mailto URIs with mutt postponed email
 
     mailto:// URLs are sometimes convenient to use, but they don't fit in too well
@@ -9,7 +26,7 @@
     postponed messages.
 
         $ mkdir ~/.mail/postponed
-        $ echo 'set postponed = "~/.mail/postponed"' >> ~/.mutt/muttrc
+        $ echo 'set postponed = "~/.mail/postponed"' &gt;&gt; ~/.mutt/muttrc
 
     We can therefore generate a postponed message every time a mailto URI is
     clicked. Create this script and have your applications call it for mailto://.
@@ -24,8 +41,8 @@
 
         mutt_expand_path() {
             eval $(mutt -Q folder)
-            val="${1/#=/$folder\/}"
-            val="${val/#\~/$HOME}"
+            val="${1/<strong>=/$folder\/}"
+            val="${val/</strong>\~/$HOME}"
             echo "$val"
         }
 
@@ -36,18 +53,18 @@
         postponed=$(mutt_expand_path $postponed)
         signature=$(mutt_expand_path $signature)
 
-        # Arguments from URI
-        IFS="?" read to args <<<"$1"
-        to="$(uri_unescape "${to#mailto:}")"
+        <strong> Arguments from URI
+        IFS="?" read to args &lt;&lt;&lt;"$1"
+        to="$(uri_unescape "${to</strong>mailto:}")"
 
         for key in subject cc bcc body;
             do declare "$key"=;
         done
 
-        for arg in ${args//&/ }; do
-          key="${arg%%=*}"; key="${key,,}"
-          value="$(uri_unescape "${arg#*=}")"
-          [[ "$key" =~ subject|cc|bcc|body ]] && declare "$key"="$value"
+        for arg in ${args//&amp;/ }; do
+          key="${arg%%=<em>}"; key="${key,,}"
+          value="$(uri_unescape "${arg#</em>=}")"
+          [[ "$key" =~ subject|cc|bcc|body ]] &amp;&amp; declare "$key"="$value"
         done
 
         # Create postponed email
@@ -55,8 +72,8 @@
         file="$postponed"/new/"$(date +%s).\
             R$(grep -ao '[0-9]' /dev/urandom | head -20 | tr -d '\n').$(hostname)"
 
-        cat <<EOF > "$file"
-        From: $realname <$from>
+        cat &lt;&lt;EOF &gt; "$file"
+        From: $realname &lt;$from&gt;
         To: $to
         Cc: $cc
         Bcc: $bcc
@@ -68,6 +85,8 @@
         $(cat $signature)
         EOF
 
-
     You're going to have to make sure that `folder`, `realname`, `postponed` and
     `sigature` expand appropariately when called via `mutt -Q`.
+</pre>
+</body>
+</html>

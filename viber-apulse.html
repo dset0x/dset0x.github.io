@@ -1,30 +1,87 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <title>Getting Viber for Linux to play nice with apulse</title>
-    <meta name="keywords" content="linux,viber,apulse,audio,ld_preload">
-    <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting Viber for Linux to play nice with apulse</title>
+<meta charset="utf-8">
+<title>When software gets in the way</title>
+<meta name="description" content="and things took more fixing than expected">
+<meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>body {font-family: monospace;}</style>
+<meta name="generator" content="HTML::TextToHTML v2.5201"/>
 </head>
-<body onLoad='load()'>
-    <a href="/"><pre>Home Page</pre></a>
-    <pre id="pre"></pre>
-    <script>
-        function load() {
-            var fname = location.pathname.substring(location.pathname.lastIndexOf("/") + 1).split(".")[0];
-            var url = "/" + fname + ".txt";
-            var div = document.getElementById('pre');
+<body>
+<a href="/">Home</a>
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", url);
-            xhr.onreadystatechange = function () {
-                if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    div.appendChild(document.createTextNode(xhr.responseText))
-                }
-            };
-            xhr.send();
+<pre>
+    Getting Viber for Linux to play nice with apulse
+
+    Viber for Linux seems to work fine with apulse,
+
+        $ apulse /opt/viber/Viber
+
+    except for taking the liberty of changing my system's volume to 100% shortly
+    after starting.
+
+    After no luck with trying to figure out if it was leveraging apulse itself to
+    do this,
+
+        $ apulse ltrace -f -e '@libpulse*' /opt/viber/Viber
+
+    I started believing it was calling alsa despite being a pulseaudio
+    application:
+
+        $ apulse ltrace -f -e '@libasound*' /opt/viber/Viber
+
+    Unfortunately, this produces too much noise.
+
+    Looking at `/usr/include/alsa/mixer.h` it's easy to locate possibly used
+    functions:
+
+        int snd_mixer_selem_set_playback_volume(...);
+        int snd_mixer_selem_set_capture_volume(...);
+        int snd_mixer_selem_set_playback_volume_all(...);
+        int snd_mixer_selem_set_capture_volume_all(...);
+        int snd_mixer_selem_set_playback_volume_range(...);
+
+    In fact `strings` hints that this may be the case:
+
+        $ strings /opt/viber/Viber| grep 'volume'
+        pa_cvolume_set
+        pa_context_set_sink_input_volume
+        pa_context_set_source_volume_by_index
+        snd_mixer_selem_set_playback_volume_all
+        snd_mixer_selem_get_playback_volume
+        snd_mixer_selem_has_playback_volume
+        snd_mixer_selem_get_playback_volume_range
+        snd_mixer_selem_has_capture_volume
+        snd_mixer_selem_set_capture_volume_all
+        snd_mixer_selem_get_capture_volume
+        snd_mixer_selem_get_capture_volume_range
+
+    Armed with possible function names, voila:
+
+        $ apulse ltrace -f -e '<em>set</em>volume<em>@libasound</em>' /opt/viber/Viber
+        [...]
+        [pid 17824] libasound.so.2-&gt;snd_mixer_selem_set_playback_volume(0x7f1f7d0efbf0, 0, 110, 0) = 0
+        [pid 17824] libasound.so.2-&gt;snd_mixer_selem_set_playback_volume(0x7f1f7d0efbf0, 1, 110, 1) = 0
+        [...]
+
+    Looks like it sets it to 110% for good measure (and alsa happily obliges)!
+
+    Let's go ahead and take that function away from it via `LD_PRELOAD`:
+
+        #include
+        int snd_mixer_selem_set_playback_volume(snd_mixer_elem_t *elem, snd_mixer_selem_channel_id_t channel, long value) {
+        return 0;
         }
-    </script>
+
+        $ gcc -shared -fPIC viber_unvol.c -o viber_unvol.so
+
+    And there you go, no more automatic volume changing:
+
+        $ LD_PRELOAD=$LD_PRELOAD:$PWD/viber_unvol.so apulse /opt/viber/Viber
+</pre>
 </body>
 </html>

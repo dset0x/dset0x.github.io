@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Removing binary data from (mpd) logfiles</title>
+<meta charset="utf-8">
+<title>When software gets in the way</title>
+<meta name="description" content="and things took more fixing than expected">
+<meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>body {font-family: monospace;}</style>
+<meta name="generator" content="HTML::TextToHTML v2.5201"/>
+</head>
+<body>
+<a href="/">Home</a>
+
+<pre>
+    Removing binary data from (mpd) logfiles
+
+    I like to keep `mpd` logs around for statistics purposes.
+
+    Unfortunately I have had mpd write binary to the logfile for one reason or
+    another. Fear not, easy to fix.
+
+        $ rc-service mpd stop
+        $ strings -e S /var/lib/mpd/log &gt; /var/lib/mpd/log2
+        $ mv /var/lib/mpd/log{2,}
+        $ rc-service mpd start
+
+    We can also remove all the client calls while we're at it to bring the
+    filesize down from 1GiB.
+
+        $ grep -v ': client: \[' /var/lib/mpd/log &gt; /var/lib/mpd/log2
+        $ mv /var/lib/mpd/log{2,}
+</pre>
+</body>
+</html>

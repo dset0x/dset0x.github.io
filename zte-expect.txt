@@ -1,27 +1,27 @@
-Logging into a ZTE H158N with the help of expect
+    Logging into a ZTE H158N with the help of expect
 
-Jalal Sela already took the time to break into a sibling of this router on his
-blog[1]. Having shell access to my router turned out to be more handy than I
-had anticipated.
+    Jalal Sela already took the time to break into a sibling of this router on his
+    blog[1]. Having shell access to my router turned out to be more handy than I
+    had anticipated.
 
-Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it
-(although I suppose it gets overwritten on reboot anyway).
+    Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it
+    (although I suppose it gets overwritten on reboot anyway).
 
-    #!/usr/bin/expect -f
+        #!/usr/bin/expect -f
 
-    spawn telnet 192.168.2.254 23
+        spawn telnet 192.168.2.254 23
 
-    expect Username: { send "root\r" }
-    expect Password: { send "public\r" }
+        expect Username: { send "root\r" }
+        expect Password: { send "public\r" }
 
-    expect >         { send "enable\r" }
-    expect Password: { send "zte\r" }
+        expect >         { send "enable\r" }
+        expect Password: { send "zte\r" }
 
-    expect "#"       { send "shell\r" }
-    expect Login:    { send "root\r" }
-    expect Password: { send "root\r" }
+        expect "#"       { send "shell\r" }
+        expect Login:    { send "root\r" }
+        expect Password: { send "root\r" }
 
-    interact
+        interact
 
 
-[1] https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/
+    [1] https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/
