@@ -15,14 +15,14 @@
 
 <h1><a name="section_1">Logging into a ZTE H158N with the help of expect</a></h1>
 
-<pre>
-Jalal Sela already took the time to break into a sibling of this router on his
-blog[1]. Having shell access to my router turned out to be more handy than I
+<p>Jalal Sela already took the time to break into a sibling of this router on his<br/>
+blog[1]. Having shell access to my router turned out to be more handy than I<br/>
 had anticipated.
-
-Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it
+</p>
+<p>Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it<br/>
 (although I suppose it gets overwritten on reboot anyway).
-
+</p>
+<pre>
     #!/usr/bin/expect -f
 
     spawn telnet <a href="telnet://192.168.2.254:23">192.168.2.254 23</a>
@@ -38,8 +38,8 @@ Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it
     expect Password: { send "root\r" }
 
     interact
-
-[1] <a href="https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/">https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/</a>
 </pre>
+<p>[1] <a href="https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/">https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/</a></p>
+
 </body>
 </html>
