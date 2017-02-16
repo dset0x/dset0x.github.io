@@ -1,13 +1,15 @@
 #!/bin/sh
 
-echo > index.tmp
+echo '<pre style="margin-top:8px;">' > index.tmp
 for j in *.txt; do
+    [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
     txt2html -ah header.html -pp top.html --outfile $i.html --prebegin 0 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 $i.txt
 
-    echo "<p><a href=\"/$i.html\">$(head -1 "$i.txt")</a></p>" >> index.tmp
+    echo -e "<a href=\"/$i.html\">$(head -1 "$i.txt")</a>\n" >> index.tmp
 done
+echo '</pre>' >> index.tmp
 
-txt2html -ah header.html -pp top.html --outfile index.html --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --append_file index.tmp index.txt
+txt2html -ah header.html -pp top.html --outfile index.html --prebegin 1 --prewhite 4 --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --append_file index.tmp index.txt
 
 rm index.tmp
