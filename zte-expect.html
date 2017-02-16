@@ -8,39 +8,39 @@
 <meta name="description" content="and things took more fixing than expected">
 <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>body {font-family: monospace;} h1 {font-size: medium; padding: 0 0 0 2.25em;}</style>
+<style>body {font-family: monospace;} h1 {font-size: medium}</style>
 <meta name="generator" content="HTML::TextToHTML v2.5201"/>
 </head>
 <body>
 <a href="/">Home</a>
 
+<h1><a name="section_1">Logging into a ZTE H158N with the help of expect</a></h1>
+
+<p>Jalal Sela already took the time to break into a sibling of this router on his<br/>
+blog[1]. Having shell access to my router turned out to be more handy than I<br/>
+had anticipated.
+</p>
+<p>Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it<br/>
+(although I suppose it gets overwritten on reboot anyway).
+</p>
 <pre>
-    Logging into a ZTE H158N with the help of expect
+    #!/usr/bin/expect -f
 
-    Jalal Sela already took the time to break into a sibling of this router on his
-    blog[1]. Having shell access to my router turned out to be more handy than I
-    had anticipated.
+    spawn telnet <a href="telnet://192.168.2.254:23">192.168.2.254 23</a>
 
-    Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it
-    (although I suppose it gets overwritten on reboot anyway).
+    expect Username: { send "root\r" }
+    expect Password: { send "public\r" }
 
-        #!/usr/bin/expect -f
+    expect &gt;         { send "enable\r" }
+    expect Password: { send "zte\r" }
 
-        spawn telnet <a href="telnet://192.168.2.254:23">192.168.2.254 23</a>
+    expect "#"       { send "shell\r" }
+    expect Login:    { send "root\r" }
+    expect Password: { send "root\r" }
 
-        expect Username: { send "root\r" }
-        expect Password: { send "public\r" }
-
-        expect &gt;         { send "enable\r" }
-        expect Password: { send "zte\r" }
-
-        expect "#"       { send "shell\r" }
-        expect Login:    { send "root\r" }
-        expect Password: { send "root\r" }
-
-        interact
-
-    [1] <a href="https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/">https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/</a>
+    interact
 </pre>
+<p>[1] <a href="https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/">https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/</a></p>
+
 </body>
 </html>
