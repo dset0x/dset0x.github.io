@@ -10,6 +10,6 @@ for j in *.txt; do
 done
 echo '</pre>' >> index.tmp
 
-txt2html -ah header.html -pp top.html --outfile index.html --prebegin 1 --prewhite 4 --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --append_file index.tmp index.txt
+txt2html -ah header.html -pp top.html --outfile index.html --prebegin 1 --prewhite 4 --title 'When software gets in the way' --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --append_file index.tmp index.txt
 
 rm index.tmp
