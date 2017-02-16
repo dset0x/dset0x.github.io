@@ -29,20 +29,20 @@
 
         function load(scr) {
             print strftime("%s"), scr
-            system("echo -e \*/script load "scr" &gt; ~/.weechat/weechat\<u>fifo</u>$(pgrep --exact weechat)")
+            system("echo -e \*/script load "scr" &gt; ~/.weechat/weechat\_fifo_$(pgrep --exact weechat)")
         }
 
         function unload(scr) {
-            system("echo -e \*/script unload "scr" &gt; ~/.weechat/weechat\<u>fifo</u>$(pgrep --exact weechat)")
+            system("echo -e \*/script unload "scr" &gt; ~/.weechat/weechat\_fifo_$(pgrep --exact weechat)")
         }
 
         BEGIN {
             "echo ~/.weechat/**/autoload/*" | getline script_paths_str
             split(script_paths_str, script_paths, " ")
             for(idx in script_paths) {
-                len = split(script_paths[idx], <u>, "/")
-                script</u>names[idx] = <u>[len]
-                unload(script</u>names[idx])
+                len = split(script_paths[idx], _, "/")
+                script_names[idx] = _[len]
+                unload(script_names[idx])
             }
         }
 
