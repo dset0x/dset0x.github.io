@@ -1,4 +1,5 @@
     Removing binary data from (mpd) logfiles
+    ----------------------------------------
 
     I like to keep `mpd` logs around for statistics purposes.
 
