@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo '<div style="margin-top:8px;">' > index.tmp
+echo '<div>' > index.tmp
 for j in *.txt; do
     [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
