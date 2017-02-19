@@ -20,12 +20,12 @@
 
 <h1><a name="section_1">Monitoring memory usage for weechat script leaks</a></h1>
 
-<p>I was recently dealing with a memory leak within a script in `weechat`. I<br/>
-needed a quick and dirty way of figuring out which script was causing the<br/>
+<p>I was recently dealing with a memory leak within a script in `weechat`. I
+needed a quick and dirty way of figuring out which script was causing the
 trouble.
 </p>
-<p>Of course it makes no sense to use `awk` for this, but what the heck. This<br/>
-script unloads all weechat scripts, then loads them one at a time whenever<br/>
+<p>Of course it makes no sense to use `awk` for this, but what the heck. This
+script unloads all weechat scripts, then loads them one at a time whenever
 passed a line.
 </p>
 <pre>
@@ -72,7 +72,7 @@ passed a line.
 <pre>
     $ while :; do echo 1; sleep 1h; done | ./above_script.awk &gt; /tmp/events
 </pre>
-<p>Now we have a bunch of timestamped events, but we'd like to frequently check<br/>
+<p>Now we have a bunch of timestamped events, but we'd like to frequently check
 memory usage too. Let's have another loop do that for us.
 </p>
 <pre>
@@ -114,11 +114,11 @@ memory usage too. Let's have another loop do that for us.
     EOF
     } | gnuplot
 </pre>
-<p>What's handy about this setup is that we can kill any script for any reason<br/>
-without losing data. In fact we can stop the first one and load whichever<br/>
+<p>What's handy about this setup is that we can kill any script for any reason
+without losing data. In fact we can stop the first one and load whichever
 scripts we want, as long as we maintain `/tmp/events`.
 </p>
-<p>Of course you can run the `gnuplot` script on a remote box as long as you have<br/>
+<p>Of course you can run the `gnuplot` script on a remote box as long as you have
 access to the two logfiles.
 </p>
 <pre>

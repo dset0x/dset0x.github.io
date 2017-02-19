@@ -25,16 +25,16 @@
 <pre>
     $ apulse /opt/viber/Viber
 </pre>
-<p>except for taking the liberty of changing my system's volume to 100% shortly<br/>
+<p>except for taking the liberty of changing my system's volume to 100% shortly
 after starting.
 </p>
-<p>After no luck with trying to figure out if it was leveraging apulse itself to<br/>
+<p>After no luck with trying to figure out if it was leveraging apulse itself to
 do this,
 </p>
 <pre>
     $ apulse ltrace -f -e '@libpulse*' /opt/viber/Viber
 </pre>
-<p>I started believing it was calling alsa despite being a pulseaudio<br/>
+<p>I started believing it was calling alsa despite being a pulseaudio
 application:
 </p>
 <pre>
@@ -42,7 +42,7 @@ application:
 </pre>
 <p>Unfortunately, this produces too much noise.
 </p>
-<p>Looking at `/usr/include/alsa/mixer.h` it's easy to locate possibly used<br/>
+<p>Looking at `/usr/include/alsa/mixer.h` it's easy to locate possibly used
 functions:
 </p>
 <pre>
