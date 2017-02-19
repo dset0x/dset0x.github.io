@@ -1,6 +1,5 @@
 #!/bin/sh
 
-echo '<div>' > index.tmp
 for j in *.txt; do
     [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
