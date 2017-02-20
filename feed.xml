@@ -13,7 +13,6 @@ xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01
   <link>https://dset0x.github.io</link>
   <description>A collection of workarounds and patches that I've written to deal with all sorts of software and life problems.</description>
 
-	<title>The WordPress.com Blog</title>
 	<atom:link href="https://dset0x.github.io/feed.xml" rel="self" type="application/rss+xml" />
 	<lastBuildDate>Thu, 09 Feb 2017 15:49:48 +0000</lastBuildDate>
 	<language>en</language>
