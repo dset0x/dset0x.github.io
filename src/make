@@ -63,6 +63,7 @@ EOF
     <title>$(head -1 "$i.txt")</title>
     <link>https://dset0x.github.io/$i.html</link>
     <description>$preview</description>
+    <pubDate>$(date -R --string=$(stat -c %y "$i.txt"))</pubDate>
   </item>
 EOF
 

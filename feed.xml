@@ -23,31 +23,37 @@ xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01
     <title>Getting lynx to print URLs of HTML messages on the side</title>
     <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
     <description>Reading HTML e-mail in the terminal can be a bit of a pain</description>
+    <pubDate></pubDate>
   </item>
   <item>
     <title>Monitoring memory usage for weechat script leaks</title>
     <link>https://dset0x.github.io/monitor-mem-usage.html</link>
     <description>I was recently dealing with a memory leak within a script in `weechat`</description>
+    <pubDate></pubDate>
   </item>
   <item>
     <title>Logging into a ZTE H158N with the help of expect</title>
     <link>https://dset0x.github.io/zte-expect.html</link>
     <description>Jalal Sela already took the time to break into a sibling of this router on his blog</description>
+    <pubDate></pubDate>
   </item>
   <item>
     <title>Removing binary data from (mpd) logfiles</title>
     <link>https://dset0x.github.io/clean-mpd-logs.html</link>
     <description>I like to keep `mpd` logs around for statistics purposes</description>
+    <pubDate></pubDate>
   </item>
   <item>
     <title>Getting Viber for Linux to play nice with apulse</title>
     <link>https://dset0x.github.io/viber-apulse.html</link>
     <description>Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system's volume to 100% shortly after starting</description>
+    <pubDate></pubDate>
   </item>
   <item>
     <title>Using mailto URIs with mutt postponed email</title>
     <link>https://dset0x.github.io/mailto-mutt.html</link>
     <description>mailto:// URLs are sometimes convenient to use, but they don't fit in too well with using a single mutt instance and having an aversion to windows popping up</description>
+    <pubDate></pubDate>
   </item>
 </channel>
 
