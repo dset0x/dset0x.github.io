@@ -16,6 +16,31 @@ cat <<EOF > ../sitemap.xml
     </url>
 EOF
 
+cat <<EOF > ../feed.xml
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+xmlns:content="http://purl.org/rss/1.0/modules/content/"
+xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:atom="http://www.w3.org/2005/Atom"
+xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+>
+
+<channel>
+  <title>When software got in the way</title>
+  <link>https://dset0x.github.io</link>
+  <description>A collection of workarounds and patches that I've written to deal with all sorts of software and life problems.</description>
+
+	<title>The WordPress.com Blog</title>
+	<atom:link href="https://dset0x.github.io/feed.xml" rel="self" type="application/rss+xml" />
+	<lastBuildDate>Thu, 09 Feb 2017 15:49:48 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>daily</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+
+EOF
+
 for j in $( ls -t *.txt ); do
     [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
@@ -33,9 +58,24 @@ for j in $( ls -t *.txt ); do
         <priority>0.5</priority>
     </url>
 EOF
+
+    cat <<EOF >> ../feed.xml
+  <item>
+    <title>$(head -1 "$i.txt")</title>
+    <link>https://dset0x.github.io/$i.html</link>
+    <description>$preview</description>
+  </item>
+EOF
+
 done
 
 echo '</urlset>' >> ../sitemap.xml
+
+cat <<EOF >> ../feed.xml
+</channel>
+
+</rss>
+EOF
 
 txt2html -ah header.html -pp top.html --outfile ../index.html --prebegin 1 --prewhite 4 --title 'When software gets in the way' --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --append_file index.tmp index.txt
 
