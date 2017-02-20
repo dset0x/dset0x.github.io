@@ -1,5 +1,10 @@
 #!/bin/sh
 
+uri_unescape() {
+    perl -e 'use URI::Escape; print uri_unescape($ARGV[0])' "$1"
+}
+
+
 cat <<EOF > ../sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -16,7 +21,9 @@ for j in $( ls -t *.txt ); do
     i="${j%.*}"
     txt2html -ah header.html -pp top.html --outfile ../$i.html --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict $i.txt
 
-    echo -e "<h2><a href=\"/$i.html\">$(head -1 "$i.txt")</a></h2>" >> index.tmp
+    preview=$(tail -n +3 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d'.' -f1)
+    echo -e "<div><h2 style=\"display: inline;\"><a href=\"/$i.html\">$(head -1 "$i.txt")</a></h2> <div class=\"preview\">$preview...</div></div><br>" >> index.tmp
+
     dt=$(stat -c %y "$i.txt" | cut -d' ' -f1)
     cat <<EOF >> ../sitemap.xml
     <url>
