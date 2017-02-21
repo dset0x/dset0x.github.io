@@ -45,8 +45,8 @@ for j in $( ls -t *.txt ); do
     [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
 
-    title=$(head -n1 "$i".txt)
-    keys=$(cat "$i".txt | head -n3 | tail -n1)
+    title=$(cat "$i".txt | head -n2 | tail -n1)
+    keys=$(cat "$i".txt | head -n1)
     preview=$(tail -n +4 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)
 
     # HTML
