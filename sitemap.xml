@@ -7,6 +7,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://dset0x.github.io/clean-mpd-logs.html</loc>
+        <lastmod>2017-02-21</lastmod>
+        <changefreq>10</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>https://dset0x.github.io/zte-expect.html</loc>
         <lastmod>2017-02-21</lastmod>
         <changefreq>10</changefreq>
@@ -32,12 +38,6 @@
     </url>
     <url>
         <loc>https://dset0x.github.io/mailto-mutt.html</loc>
-        <lastmod>2017-02-21</lastmod>
-        <changefreq>10</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://dset0x.github.io/clean-mpd-logs.html</loc>
         <lastmod>2017-02-21</lastmod>
         <changefreq>10</changefreq>
         <priority>0.5</priority>
