@@ -22,7 +22,11 @@ cat <<EOF
     h2 {font-weight: initial;}
     p {width: 79ch;}
     .preview {padding-left: 4ch; opacity: 0.7; width: 79ch;}
-    body {background-color: #F3F3F3;}
+    body {background-color: #F3F3F3;
+          background-image: url('/carrot.png');
+          background-position: right bottom;
+          background-repeat: no-repeat;
+          background-attachment: fixed;}
 </style>
 </head>
 <body>
