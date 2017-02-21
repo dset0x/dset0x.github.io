@@ -21,7 +21,7 @@ cat <<EOF
     h1, h2 {font-size:medium; margin: 0.67em 0 0.67em 0;}
     h2 {font-weight: initial;}
     p {width: 79ch;}
-    .preview {padding-left: 4ch; opacity: 0.6;}
+    .preview {padding-left: 4ch; opacity: 0.6; width: 79ch;}
 </style>
 </head>
 <body>
