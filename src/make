@@ -11,7 +11,7 @@ cat <<EOF > ../sitemap.xml
     <url>
         <loc>https://dset0x.github.io/</loc>
         <lastmod>$(date +%F)</lastmod>
-        <changefreq>10</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
 EOF
