@@ -29,8 +29,8 @@ cat <<EOF
           background-attachment: fixed;
 
           display: flex;
-          min-height: 100vh;
-          max-height: 100vh;
+          min-height: 101vh;
+          max-height: 101vh;
           flex-direction: column;
       }
 </style>
