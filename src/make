@@ -63,7 +63,7 @@ for j in $( ls -t *.txt ); do
     <url>
         <loc>https://dset0x.github.io/$i.html</loc>
         <lastmod>$(stat -c %y "$i.txt" | cut -d' ' -f1)</lastmod>
-        <changefreq>10</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
 EOF
