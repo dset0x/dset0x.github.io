@@ -45,7 +45,7 @@ for j in $( ls -t *.txt ); do
     [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
 
-    title=$(cat "$i".txt | head -n3 | tail -n1)
+    title=$(cat "$i".txt | head -n2 | tail -n1)
     keys=$(cat "$i".txt | head -n1)
     preview=$(tail -n +4 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)
 
@@ -56,7 +56,7 @@ for j in $( ls -t *.txt ); do
 
 
     # INDEX
-    echo -e "<div><h2 style=\"display: inline;\"><a href=\"/$i.html\">$(head -1 "$i.txt")</a></h2> <div class=\"preview\">$preview...</div></div><br>" >> index.tmp
+    echo -e "<div><h2 style=\"display: inline;\"><a href=\"/$i.html\">$title</a></h2> <div class=\"preview\">$preview...</div></div><br>" >> index.tmp
 
     # SITEMAP
     cat <<EOF >> ../sitemap.xml

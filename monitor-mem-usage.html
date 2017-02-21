@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>======================================== - When software gets in the way</title>
+<title>Monitoring memory usage for weechat script leaks - When software gets in the way</title>
 <meta charset="utf-8">
 <meta name="description" content="I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every">
 <meta name="keywords" content="weechat,linux,memory_leak,script">
