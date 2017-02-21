@@ -7,38 +7,38 @@
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://dset0x.github.io/zte-expect.html</loc>
-        <lastmod>2017-02-21</lastmod>
-        <changefreq>10</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://dset0x.github.io/viber-apulse.html</loc>
-        <lastmod>2017-02-21</lastmod>
-        <changefreq>10</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
         <loc>https://dset0x.github.io/mutt-lynx-urls-on-side.html</loc>
-        <lastmod>2017-02-21</lastmod>
+        <lastmod>2017-02-20</lastmod>
         <changefreq>10</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://dset0x.github.io/monitor-mem-usage.html</loc>
-        <lastmod>2017-02-21</lastmod>
-        <changefreq>10</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://dset0x.github.io/mailto-mutt.html</loc>
-        <lastmod>2017-02-21</lastmod>
+        <loc>https://dset0x.github.io/zte-expect.html</loc>
+        <lastmod>2017-02-16</lastmod>
         <changefreq>10</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://dset0x.github.io/clean-mpd-logs.html</loc>
-        <lastmod>2017-02-21</lastmod>
+        <lastmod>2017-02-14</lastmod>
+        <changefreq>10</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dset0x.github.io/mailto-mutt.html</loc>
+        <lastmod>2017-02-14</lastmod>
+        <changefreq>10</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dset0x.github.io/viber-apulse.html</loc>
+        <lastmod>2017-02-07</lastmod>
+        <changefreq>10</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dset0x.github.io/monitor-mem-usage.html</loc>
+        <lastmod>2017-01-31</lastmod>
         <changefreq>10</changefreq>
         <priority>0.5</priority>
     </url>
