@@ -4,7 +4,7 @@
 <head>
 <title>Getting Viber for Linux to play nice with apulse - When software gets in the way</title>
 <meta charset="utf-8">
-<meta name="description" content="Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system's volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it's easy to locate possibly used functions: In">
+<meta name="description" content="Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system&#39;s volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it&#39;s easy to locate possibly used functions: In">
 <meta name="keywords" content="linux,viber,apulse,pulseaudio,ld_preload,volume">
 <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
