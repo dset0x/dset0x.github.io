@@ -36,7 +36,8 @@ they are placed at the very end of the message.
 <p>Luckily, there's nothing a little bit of perl can't fix.
 </p>
 <p>`~/.mutt/link-columns.pl`:
-</p><pre>
+</p>
+<pre>
     #!/usr/bin/env perl
 
     use strict;
@@ -49,7 +50,7 @@ they are placed at the very end of the message.
     while (&lt;STDIN&gt;) {
         chomp($_);
         push @lines, $_;
-        if ($_ =~ /^ (?: |([0-9])){3}\. (.*)/) {
+        if ($_ =~ /^ *([0-9]+)\. (.*)/) {
             $links[$1] = $2;
         }
     }

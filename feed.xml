@@ -20,7 +20,7 @@ xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01
     <title>Getting lynx to print URLs of HTML messages on the side</title>
     <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
     <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!</description>
-    <pubDate>Tue, 21 Feb 2017 11:24:10 +0200</pubDate>
+    <pubDate>Tue, 21 Feb 2017 23:11:32 +0200</pubDate>
   </item>
   <item>
     <title>Logging into a ZTE H158N with the help of expect</title>
