@@ -20,39 +20,39 @@ xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01
 	<sy:updateFrequency>1</sy:updateFrequency>
 
   <item>
-    <title>Getting</title>
+    <title>Getting%20lynx%20to%20print%20URLs%20of%20HTML%20messages%20on%20the%20side</title>
     <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
-    <description>Reading</description>
+    <description>Reading%20HTML%20e-mail%20in%20the%20terminal%20can%20be%20a%20bit%20of%20a%20pain.%20%60lynx%60%20does%20a%20fine%20job%20at%20dumping%20them%2C%20but%20actually%20opening%20the%20URLs%20from%20it%20is%20cumbersome%20as%20they%20are%20placed%20at%20the%20very%20end%20of%20the%20message.%20Luckily%2C%20there%27s%20nothing%20a%20little%20bit%20of%20perl%20can%27t%20fix.%20%60~%2F.mutt%2Flink-columns.pl%60%3A%20Then%20put%20the%20following%20entry%20in%20your%20%60~%2F.mailcap%60%3A%20Now%20your%20spammy%20e-mail%20can%20look%20like%20this%20too%21</description>
     <pubDate>Tue, 21 Feb 2017 11:24:10 +0200</pubDate>
   </item>
   <item>
-    <title>Logging</title>
+    <title>Logging%20into%20a%20ZTE%20H158N%20with%20the%20help%20of%20expect</title>
     <link>https://dset0x.github.io/zte-expect.html</link>
-    <description>Jalal</description>
+    <description>Jalal%20Sela%20already%20took%20the%20time%20to%20break%20into%20a%20sibling%20of%20this%20router%20on%20his%20blog.%20Having%20shell%20access%20to%20my%20router%20turned%20out%20to%20be%20more%20handy%20than%20I%20had%20anticipated.%20Of%20course%20you%20can%20have%20dropbear%20on%20it%2C%20but%20I%27ve%20yet%20to%20dare%20edit%20%60rcS%60%20on%20it%20%28although%20I%20suppose%20it%20gets%20overwritten%20on%20reboot%20anyway%29.</description>
     <pubDate>Thu, 16 Feb 2017 11:23:11 +0200</pubDate>
   </item>
   <item>
-    <title>Removing</title>
+    <title>Removing%20binary%20data%20from%20%28mpd%29%20logfiles</title>
     <link>https://dset0x.github.io/clean-mpd-logs.html</link>
-    <description>I</description>
+    <description>I%20like%20to%20keep%20%60mpd%60%20logs%20around%20for%20statistics%20purposes.%20Unfortunately%20I%20have%20had%20mpd%20write%20binary%20to%20the%20logfile%20for%20one%20reason%20or%20another.%20Fear%20not%2C%20easy%20to%20fix.%20We%20can%20also%20remove%20all%20the%20client%20calls%20while%20we%27re%20at%20it%20to%20bring%20the%20filesize%20down%20from%201GiB.</description>
     <pubDate>Tue, 14 Feb 2017 11:23:11 +0200</pubDate>
   </item>
   <item>
-    <title>Using</title>
+    <title>Using%20mailto%20URIs%20with%20mutt%20postponed%20email</title>
     <link>https://dset0x.github.io/mailto-mutt.html</link>
-    <description>mailto%3A%2F%2F</description>
+    <description>mailto%3A%2F%2F%20URLs%20are%20sometimes%20convenient%20to%20use%2C%20but%20they%20don%27t%20fit%20in%20too%20well%20with%20using%20a%20single%20mutt%20instance%20and%20having%20an%20aversion%20to%20windows%20popping%20up.%20One%20way%20to%20use%20them%20with%20mutt%20is%20to%20take%20advantage%20of%20the%20postponed%20feature.%20If%20your%20%60postponed%60%20variable%20points%20to%20a%20directory%20you%20may%20have%20multiple%20postponed%20messages.%20We%20can%20therefore%20generate%20a%20postponed%20message%20every%20time%20a%20mailto%20URI%20is</description>
     <pubDate>Tue, 14 Feb 2017 11:23:11 +0200</pubDate>
   </item>
   <item>
-    <title>Getting</title>
+    <title>Getting%20Viber%20for%20Linux%20to%20play%20nice%20with%20apulse</title>
     <link>https://dset0x.github.io/viber-apulse.html</link>
-    <description>Viber</description>
+    <description>Viber%20for%20Linux%20seems%20to%20work%20fine%20with%20apulse%2C%20except%20for%20taking%20the%20liberty%20of%20changing%20my%20system%27s%20volume%20to%20100%25%20shortly%20after%20starting.%20After%20no%20luck%20with%20trying%20to%20figure%20out%20if%20it%20was%20leveraging%20apulse%20itself%20to%20do%20this%2C%20I%20started%20believing%20it%20was%20calling%20alsa%20despite%20being%20a%20pulseaudio%20application%3A%20Unfortunately%2C%20this%20produces%20too%20much%20noise.%20Looking%20at%20%60%2Fusr%2Finclude%2Falsa%2Fmixer.h%60%20it%27s%20easy%20to%20locate%20possibly%20used%20functions%3A%20In</description>
     <pubDate>Tue, 07 Feb 2017 11:23:11 +0200</pubDate>
   </item>
   <item>
-    <title>Monitoring</title>
+    <title>Monitoring%20memory%20usage%20for%20weechat%20script%20leaks</title>
     <link>https://dset0x.github.io/monitor-mem-usage.html</link>
-    <description>I</description>
+    <description>I%20was%20recently%20dealing%20with%20a%20memory%20leak%20within%20a%20script%20in%20%60weechat%60.%20I%20needed%20a%20quick%20and%20dirty%20way%20of%20figuring%20out%20which%20script%20was%20causing%20the%20trouble.%20Of%20course%20it%20makes%20no%20sense%20to%20use%20%60awk%60%20for%20this%2C%20but%20what%20the%20heck.%20This%20script%20unloads%20all%20weechat%20scripts%2C%20then%20loads%20them%20one%20at%20a%20time%20whenever%20passed%20a%20line.%20We%20can%20go%20ahead%20and%20load%20one%20script%20every</description>
     <pubDate>Tue, 31 Jan 2017 11:23:11 +0200</pubDate>
   </item>
 </channel>
