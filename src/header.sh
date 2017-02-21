@@ -26,10 +26,15 @@ cat <<EOF
           background-image: url('/carrot.png');
           background-position: right bottom;
           background-repeat: no-repeat;
-          background-attachment: fixed;}
+          background-attachment: fixed;
+
+          display: flex;
+          min-height: 98vh;
+          flex-direction: column;
+      }
 </style>
 </head>
-<body style="padding-bottom: 130px">
+<body>
 <div id="nav">
 <a href="/">Home</a> |
 GitHub {
@@ -38,4 +43,5 @@ GitHub {
 }
 <hr>
 </div>
+<div id="content">
 EOF

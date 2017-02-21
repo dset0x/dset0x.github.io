@@ -20,10 +20,15 @@
           background-image: url('/carrot.png');
           background-position: right bottom;
           background-repeat: no-repeat;
-          background-attachment: fixed;}
+          background-attachment: fixed;
+
+          display: flex;
+          min-height: 98vh;
+          flex-direction: column;
+      }
 </style>
 </head>
-<body style="padding-bottom: 130px">
+<body>
 <div id="nav">
 <a href="/">Home</a> |
 GitHub {
@@ -32,6 +37,7 @@ GitHub {
 }
 <hr>
 </div>
+<div id="content">
 <h1><a name="section_1">Monitoring memory usage for weechat script leaks</a></h1>
 
 <p>I was recently dealing with a memory leak within a script in `weechat`. I
@@ -137,5 +143,7 @@ access to the two logfiles.
 </p>
 <pre>
     $ rifle <a href="/opt/mCeOgNe.png">/tmp/mem-graph.png</a>
-</pre></body>
+</pre></div>
+<div style="flex: 1;"><img src="carrot.png" style="bottom: 0; position: absolute; right: 0;"/></div>
+</body>
 </html>
