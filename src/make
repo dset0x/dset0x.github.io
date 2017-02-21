@@ -11,7 +11,7 @@ cat <<EOF > ../sitemap.xml
     <url>
         <loc>https://dset0x.github.io/</loc>
         <lastmod>$(date +%F)</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>daily</changefreq>
         <priority>0.5</priority>
     </url>
 EOF
@@ -63,7 +63,7 @@ for j in $( ls -t *.txt ); do
     <url>
         <loc>https://dset0x.github.io/$i.html</loc>
         <lastmod>$(stat -c %y "$i.txt" | cut -d' ' -f1)</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 EOF
