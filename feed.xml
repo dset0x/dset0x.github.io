@@ -7,18 +7,15 @@ xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
 >
-
 <channel>
   <title>When software gets in the way</title>
   <link>https://dset0x.github.io</link>
   <description>A collection of workarounds and patches that I've written to deal with all sorts of software and life problems.</description>
-
 	<atom:link href="https://dset0x.github.io/feed.xml" rel="self" type="application/rss+xml" />
 	<lastBuildDate>Thu, 09 Feb 2017 15:49:48 +0000</lastBuildDate>
 	<language>en</language>
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
-
   <item>
     <title>Getting lynx to print URLs of HTML messages on the side</title>
     <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
@@ -55,6 +52,5 @@ xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01
     <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every</description>
     <pubDate>Tue, 31 Jan 2017 11:23:11 +0200</pubDate>
   </item>
-</channel>
-
+    </channel>
 </rss>
