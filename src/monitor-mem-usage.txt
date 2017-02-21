@@ -1,4 +1,5 @@
 Monitoring memory usage for weechat script leaks
+========================================
 weechat,linux,memory_leak,script
 
 I was recently dealing with a memory leak within a script in `weechat`. I

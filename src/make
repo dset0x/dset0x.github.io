@@ -46,12 +46,12 @@ for j in $( ls -t *.txt ); do
     i="${j%.*}"
 
     title=$(head -n1 "$i".txt)
-    keys=$(cat "$i".txt | head -n2 | tail -n1)
-    preview=$(tail -n +3 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)
+    keys=$(cat "$i".txt | head -n3 | tail -n1)
+    preview=$(tail -n +4 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)
 
     # HTML
     ./header.sh "$title - When software gets in the way" "$preview" "$keys" > ../"$i".html
-    txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict =(tail -n +3 "$i".txt) >> ../"$i".html
+    txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict =(tail -n +4 "$i".txt) >> ../"$i".html
     cat footer.html >> ../"$i".html
 
 
