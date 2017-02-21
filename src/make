@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-uri_unescape() {
-    perl -e 'use URI::Escape; print uri_unescape($ARGV[0])' "$1"
+uri_escape() {
+    perl -e 'use URI::Escape; print uri_escape($ARGV[0])' "$1"
 }
 
 # SITEMAP
@@ -45,9 +45,9 @@ for j in $( ls -t *.txt ); do
     [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
 
-    title=$(cat "$i".txt | head -n2 | tail -n1)
-    keys=$(cat "$i".txt | head -n1)
-    preview=$(tail -n +4 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)
+    title=$(uri_escape $(cat "$i".txt | head -n2 | tail -n1))
+    keys=$(uri_escape $(cat "$i".txt | head -n1))
+    preview=$(uri_escape $(tail -n +4 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70))
 
     # HTML
     ./header.sh "$title - When software gets in the way" "$preview" "$keys" > ../"$i".html

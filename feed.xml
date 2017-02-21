@@ -20,39 +20,39 @@ xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01
 	<sy:updateFrequency>1</sy:updateFrequency>
 
   <item>
-    <title>Getting lynx to print URLs of HTML messages on the side</title>
+    <title>Getting</title>
     <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
-    <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there's nothing a little bit of perl can't fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!</description>
+    <description>Reading</description>
     <pubDate>Tue, 21 Feb 2017 11:24:10 +0200</pubDate>
   </item>
   <item>
-    <title>Logging into a ZTE H158N with the help of expect</title>
+    <title>Logging</title>
     <link>https://dset0x.github.io/zte-expect.html</link>
-    <description>Jalal Sela already took the time to break into a sibling of this router on his blog. Having shell access to my router turned out to be more handy than I had anticipated. Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it (although I suppose it gets overwritten on reboot anyway).</description>
+    <description>Jalal</description>
     <pubDate>Thu, 16 Feb 2017 11:23:11 +0200</pubDate>
   </item>
   <item>
-    <title>Removing binary data from (mpd) logfiles</title>
+    <title>Removing</title>
     <link>https://dset0x.github.io/clean-mpd-logs.html</link>
-    <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we're at it to bring the filesize down from 1GiB.</description>
+    <description>I</description>
     <pubDate>Tue, 14 Feb 2017 11:23:11 +0200</pubDate>
   </item>
   <item>
-    <title>Using mailto URIs with mutt postponed email</title>
+    <title>Using</title>
     <link>https://dset0x.github.io/mailto-mutt.html</link>
-    <description>mailto:// URLs are sometimes convenient to use, but they don't fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is</description>
+    <description>mailto%3A%2F%2F</description>
     <pubDate>Tue, 14 Feb 2017 11:23:11 +0200</pubDate>
   </item>
   <item>
-    <title>Getting Viber for Linux to play nice with apulse</title>
+    <title>Getting</title>
     <link>https://dset0x.github.io/viber-apulse.html</link>
-    <description>Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system's volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it's easy to locate possibly used functions: In</description>
+    <description>Viber</description>
     <pubDate>Tue, 07 Feb 2017 11:23:11 +0200</pubDate>
   </item>
   <item>
-    <title>Monitoring memory usage for weechat script leaks</title>
+    <title>Monitoring</title>
     <link>https://dset0x.github.io/monitor-mem-usage.html</link>
-    <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every</description>
+    <description>I</description>
     <pubDate>Tue, 31 Jan 2017 11:23:11 +0200</pubDate>
   </item>
 </channel>
