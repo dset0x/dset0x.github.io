@@ -22,7 +22,7 @@ cat <<EOF
     h2 {font-weight: initial;}
     p {width: 79ch;}
     .preview {padding-left: 4ch; opacity: 0.7; width: 79ch;}
-    body {background-color: #F9F9F9;}
+    body {background-color: #F3F3F3;}
 </style>
 </head>
 <body>
