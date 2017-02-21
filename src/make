@@ -4,7 +4,7 @@ uri_unescape() {
     perl -e 'use URI::Escape; print uri_unescape($ARGV[0])' "$1"
 }
 
-
+# SITEMAP
 cat <<EOF > ../sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -16,6 +16,7 @@ cat <<EOF > ../sitemap.xml
     </url>
 EOF
 
+# FEED
 cat <<EOF > ../feed.xml
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
 xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -28,7 +29,7 @@ xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01
 >
 
 <channel>
-  <title>When software got in the way</title>
+  <title>When software gets in the way</title>
   <link>https://dset0x.github.io</link>
   <description>A collection of workarounds and patches that I've written to deal with all sorts of software and life problems.</description>
 
@@ -43,21 +44,31 @@ EOF
 for j in $( ls -t *.txt ); do
     [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
-    txt2html -ah header.html -pp top.html --outfile ../$i.html --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict $i.txt
 
-    preview=$(tail -n +3 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d'.' -f1)
+    title=$(head -n1 "$i".txt)
+    keys=$(cat "$i".txt | head -n2 | tail -n1)
+    preview=$(tail -n +3 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)
+
+    # HTML
+    ./header.sh "$title - When software gets in the way" "$preview" "$keys" > ../"$i".html
+    txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict "$i".txt >> ../"$i".html
+    cat footer.html >> ../"$i".html
+
+
+    # INDEX
     echo -e "<div><h2 style=\"display: inline;\"><a href=\"/$i.html\">$(head -1 "$i.txt")</a></h2> <div class=\"preview\">$preview...</div></div><br>" >> index.tmp
 
-    dt=$(stat -c %y "$i.txt" | cut -d' ' -f1)
+    # SITEMAP
     cat <<EOF >> ../sitemap.xml
     <url>
         <loc>https://dset0x.github.io/$i.html</loc>
-        <lastmod>$dt</lastmod>
+        <lastmod>$(stat -c %y "$i.txt" | cut -d' ' -f1)</lastmod>
         <changefreq>10</changefreq>
         <priority>0.5</priority>
     </url>
 EOF
 
+    # FEED
     cat <<EOF >> ../feed.xml
   <item>
     <title>$(head -1 "$i.txt")</title>
@@ -77,6 +88,10 @@ cat <<EOF >> ../feed.xml
 </rss>
 EOF
 
-txt2html -ah header.html -pp top.html --outfile ../index.html --prebegin 1 --prewhite 4 --title 'When software gets in the way' --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --append_file index.tmp index.txt
+# INDEX
+./header.sh "When software gets in the way" "A collection of workarounds and patches that I've written to deal with all sorts of software and life problems." "hacks,patches,perl,python,linux,terminal,blog" > ../index.html
+txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --links_dictionaries dict.dict --append_file index.tmp index.txt >> ../index.html
+cat footer.html >> ../index.html
+
 
 rm index.tmp

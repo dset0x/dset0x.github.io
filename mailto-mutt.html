@@ -2,14 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Using mailto URIs with mutt postponed email</title>
+<title>Using mailto URIs with mutt postponed email - When software gets in the way</title>
 <meta charset="utf-8">
-<meta name="description" content="A collection of workarounds and patches that I've written to deal with all sorts of software and life problems.">
-<meta name="keywords" content="hacks,patches,perl,python,linux,mail,console,unix,blog">
+<meta name="description" content="mailto:// URLs are sometimes convenient to use, but they don't fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is">
+<meta name="keywords" content="mutt,neomutt,mailto,handler">
 <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
-<link rel="alternate" type="application/rss+xml" title="When software got in the way" href="/feed.xml" />
+<link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
 <style>
     body {font-family: monospace;}
     h1, h2 {font-size:medium; margin: 0.67em 0 0.67em 0;}
@@ -17,10 +17,9 @@
     p {width: 79ch;}
     .preview {padding-left: 4ch; opacity: 0.6;}
 </style>
-<meta name="generator" content="HTML::TextToHTML v2.5201"/>
 </head>
 <body>
-<div id="#navigation">
+<div id="nav">
 <a href="/">Home</a> |
 GitHub {
     <a href="https://github.com/search?o=desc&q=author:dset0x+&s=committer-date&type=Commits&utf8=✓">Commits</a>,
@@ -28,8 +27,9 @@ GitHub {
 }
 <hr>
 </div>
-<h1><a name="section_1">Using mailto URIs with mutt postponed email</a></h1>
-
+<p>Using mailto URIs with mutt postponed email
+mutt,neomutt,mailto,handler
+</p>
 <p>mailto:// URLs are sometimes convenient to use, but they don't fit in too well
 with using a single mutt instance and having an aversion to windows popping
 up.
@@ -102,6 +102,5 @@ clicked. Create this script and have your applications call it for mailto://.
 </pre>
 <p>You're going to have to make sure that `folder`, `realname`, `postponed` and
 `sigature` expand appropariately when called via `mutt -Q`.</p>
-
 </body>
 </html>
