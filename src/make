@@ -51,7 +51,7 @@ for j in $( ls -t *.txt ); do
 
     # HTML
     ./header.sh "$title - When software gets in the way" "$preview" "$keys" > ../"$i".html
-    txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict =(tail -n +4 "$i".txt) >> ../"$i".html
+    txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict =(tail -n +3 "$i".txt) >> ../"$i".html
     cat footer.html >> ../"$i".html
 
 
