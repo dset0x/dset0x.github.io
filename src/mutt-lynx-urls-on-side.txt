@@ -6,7 +6,7 @@ Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine
 job at dumping them, but actually opening the URLs from it is cumbersome as
 they are placed at the very end of the message.
 
-Luckily, there's nothing a little bit of perl can't do.
+Luckily, there's nothing a little bit of perl can't fix.
 
 `~/.mutt/link-columns.pl`:
     #!/usr/bin/env perl
