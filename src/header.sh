@@ -29,7 +29,7 @@ cat <<EOF
           background-attachment: fixed;}
 </style>
 </head>
-<body>
+<body style="padding-bottom: 130px">
 <div id="nav">
 <a href="/">Home</a> |
 GitHub {
