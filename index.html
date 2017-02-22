@@ -34,21 +34,22 @@
 </style>
 </head>
 <body>
-<div id="nav">
+<nav>
 <a href="/">Home</a> |
 <a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a>
+</nav>
 <hr>
-</div>
 
-<div id="content">
+<main>
  
-<div><h2><a href="/mutt-lynx-urls-on-side.html">Getting lynx to print URLs of HTML messages on the side</a></h2> <div class="preview">Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!...</div></div><br>
-<div><h2><a href="/zte-expect.html">Logging into a ZTE H158N with the help of expect</a></h2> <div class="preview">Jalal Sela already took the time to break into a sibling of this router on his blog. Having shell access to my router turned out to be more handy than I had anticipated. Of course you can have dropbear on it, but I&#39;ve yet to dare edit `rcS` on it (although I suppose it gets overwritten on reboot anyway)....</div></div><br>
-<div><h2><a href="/clean-mpd-logs.html">Removing binary data from (mpd) logfiles</a></h2> <div class="preview">I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we&#39;re at it to bring the filesize down from 1GiB....</div></div><br>
-<div><h2><a href="/mailto-mutt.html">Using mailto URIs with mutt postponed email</a></h2> <div class="preview">mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is...</div></div><br>
-<div><h2><a href="/viber-apulse.html">Getting Viber for Linux to play nice with apulse</a></h2> <div class="preview">Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system&#39;s volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it&#39;s easy to locate possibly used functions: In...</div></div><br>
-<div><h2><a href="/monitor-mem-usage.html">Monitoring memory usage for weechat script leaks</a></h2> <div class="preview">I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every...</div></div><br>
-</div>
+<article><h2><a href="/mutt-lynx-urls-on-side.html">Getting lynx to print URLs of HTML messages on the side</a></h2> <div class="preview">Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!...</div></article><br>
+<article><h2><a href="/zte-expect.html">Logging into a ZTE H158N with the help of expect</a></h2> <div class="preview">Jalal Sela already took the time to break into a sibling of this router on his blog. Having shell access to my router turned out to be more handy than I had anticipated. Of course you can have dropbear on it, but I&#39;ve yet to dare edit `rcS` on it (although I suppose it gets overwritten on reboot anyway)....</div></article><br>
+<article><h2><a href="/clean-mpd-logs.html">Removing binary data from (mpd) logfiles</a></h2> <div class="preview">I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we&#39;re at it to bring the filesize down from 1GiB....</div></article><br>
+<article><h2><a href="/mailto-mutt.html">Using mailto URIs with mutt postponed email</a></h2> <div class="preview">mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is...</div></article><br>
+<article><h2><a href="/viber-apulse.html">Getting Viber for Linux to play nice with apulse</a></h2> <div class="preview">Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system&#39;s volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it&#39;s easy to locate possibly used functions: In...</div></article><br>
+<article><h2><a href="/monitor-mem-usage.html">Monitoring memory usage for weechat script leaks</a></h2> <div class="preview">I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every...</div></article><br>
+</main>
 <!--<div style="flex: 1; min-height: 129px; position: relative;"><img src="carrot.png" style="bottom: -13px; position: absolute; right: 0;"/></div>-->
+<footer></footer>
 </body>
 </html>

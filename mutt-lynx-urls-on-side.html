@@ -34,13 +34,14 @@
 </style>
 </head>
 <body>
-<div id="nav">
+<nav>
 <a href="/">Home</a> |
 <a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a>
+</nav>
 <hr>
-</div>
 
-<div id="content">
+<main>
+<article>
 <h1><a name="section_1">Getting lynx to print URLs of HTML messages on the side</a></h1>
 
 <p>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine
@@ -90,7 +91,9 @@ they are placed at the very end of the message.
     text/html; sh -c "lynx -dump -force_html -assume_charset=utf-8 -display_charset=utf-8 '%s' | uniq | ~/.mutt/link-columns.pl"; copiousoutput; description=HTML Text; nametemplate=%s.html
 </pre>
 <p>Now your spammy e-mail can look like <a href="/opt/mutt-lynx-urls-on-side.png">this</a> too!</p>
-</div>
+</article>
+</main>
 <!--<div style="flex: 1; min-height: 129px; position: relative;"><img src="carrot.png" style="bottom: -13px; position: absolute; right: 0;"/></div>-->
+<footer></footer>
 </body>
 </html>

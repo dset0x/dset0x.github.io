@@ -40,11 +40,11 @@ cat <<EOF
 </style>
 </head>
 <body>
-<div id="nav">
+<nav>
 <a href="/">Home</a> |
 <a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a>
+</nav>
 <hr>
-</div>
 
-<div id="content">
+<main>
 EOF
