@@ -42,10 +42,7 @@ cat <<EOF
 <body>
 <div id="nav">
 <a href="/">Home</a> |
-GitHub {
-    <a href="https://github.com/search?o=desc&q=author:dset0x+&s=committer-date&type=Commits&utf8=✓">Commits</a>,
-    <a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">Issues</a>
-}
+<a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a>
 <hr>
 </div>
 <div id="content">
