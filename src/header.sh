@@ -45,5 +45,6 @@ cat <<EOF
 <a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a>
 <hr>
 </div>
+
 <div id="content">
 EOF
