@@ -34,23 +34,18 @@ cat <<EOF
     ul#menu li  {display: inline;}
 
     /* Decorations */
-    ul#menu li:before {content: '［';}
-    ul#menu li::after  {content: '］　';}
-    ul#menu li:last-child:after  {content: '］';}
+    ul#menu li:before           {content: '［';}
+    ul#menu li::after           {content: '］　';}
+    ul#menu li:last-child:after {content: '］';}
 
     /* Accessibility */
-
-    #skip {
-        position: absolute;
-        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-        clip: rect(1px, 1px, 1px, 1px);
-    }
+    .hidden {position:absolute; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;}
 </style>
 </head>
 <body>
 
 <nav>
-    <div id="skip"><a href="#content">Skip to content</a></div>
+    <div class="hidden"><a href="#content">Skip to content</a></div>
     <ul id="menu">
       <li><a href="/">Home</a></li>
       <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
