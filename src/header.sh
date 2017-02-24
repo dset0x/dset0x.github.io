@@ -48,7 +48,7 @@ cat <<EOF
     <ul id="menu">
 EOF
     case "$ttl" in
-        When software gets in the way)
+        'When software gets in the way')
             echo '<li>Home</li>'
             ;;
         *)
