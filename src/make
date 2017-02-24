@@ -4,12 +4,17 @@ esc() {
     perl -e 'use HTML::Entities; print encode_entities($ARGV[0]);' "$1"
 }
 
+domain='https://dset0x.github.io'
+
+# INDEX
+echo > index.tmp
+
 # SITEMAP
 cat <<EOF > ../sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://dset0x.github.io/</loc>
+        <loc>$domain</loc>
         <lastmod>$(date +%F)</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
@@ -25,14 +30,13 @@ xmlns:dc="http://purl.org/dc/elements/1.1/"
 xmlns:atom="http://www.w3.org/2005/Atom"
 xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
-xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
 >
 <channel>
   <title>When software gets in the way</title>
-  <link>https://dset0x.github.io</link>
+  <link>$domain</link>
   <description>A collection of workarounds and patches that I've written to deal with all sorts of software and life problems.</description>
-	<atom:link href="https://dset0x.github.io/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Thu, 09 Feb 2017 15:49:48 +0000</lastBuildDate>
+	<atom:link href="$domain/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>$(date -R)</lastBuildDate>
 	<language>en</language>
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
@@ -42,11 +46,11 @@ for j in $( ls -t *.txt ); do
     [[ "$j" == index.txt ]] && continue
     i="${j%.*}"
 
-    title=$(esc "$(cat "$i".txt | head -n2 | tail -n1)")
-    keys=$(esc "$(cat "$i".txt | head -n1)")
+    title=$(esc "$(head -n2 "$i".txt | tail -n1)")
+    keys=$(esc "$(head -n1 "$i".txt)")
     preview=$(esc "$(tail -n +4 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)")
 
-    # HTML
+    # ARTICLE
     ./header.sh "article" "$title - When software gets in the way" "$preview" "$keys" > ../"$i".html
     echo '<article>' >> ../"$i".html
     txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict =(tail -n +2 "$i".txt) >> ../"$i".html
@@ -60,7 +64,7 @@ for j in $( ls -t *.txt ); do
     # SITEMAP
     cat <<EOF >> ../sitemap.xml
     <url>
-        <loc>https://dset0x.github.io/$i.html</loc>
+        <loc>$domain/$i.html</loc>
         <lastmod>$(stat -c %y "$i.txt" | cut -d' ' -f1)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -71,7 +75,7 @@ EOF
     cat <<EOF >> ../feed.xml
   <item>
     <title>$title</title>
-    <link>https://dset0x.github.io/$i.html</link>
+    <link>$domain/$i.html</link>
     <description>$preview</description>
     <pubDate>$(date -R --date="$(stat -c %y "$i.txt")")</pubDate>
   </item>
@@ -79,17 +83,14 @@ EOF
 
 done
 
-echo '</urlset>' >> ../sitemap.xml
-
-cat <<EOF >> ../feed.xml
-    </channel>
-</rss>
-EOF
-
 # INDEX
 ./header.sh "home" "When software gets in the way" "A collection of workarounds and patches that I've written to deal with all sorts of software and life problems." "hacks,patches,perl,python,linux,terminal,blog" > ../index.html
 txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --links_dictionaries dict.dict --append_file index.tmp index.txt >> ../index.html
 cat footer.html >> ../index.html
-
-
 rm index.tmp
+
+# SITEMAP
+echo '</urlset>' >> ../sitemap.xml
+
+# FEED
+echo '</channel></rss>' >> ../feed.xml
