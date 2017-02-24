@@ -41,7 +41,9 @@ cat <<EOF
 
         /* Menus */
         ul          {padding-left: 0;}
-        ul#menu li  {display: inline;}
+        @media (min-width: 60ch) {
+            ul#menu li  {display: inline;}
+        }
 
         /* Decorations */
         ul#menu li:before          {content: '［';}
