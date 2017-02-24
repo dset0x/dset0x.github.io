@@ -46,7 +46,7 @@ cat <<EOF
     /* Decorations */
     ul#menu li:before          {content: '［';}
     ul#menu li:after           {content: '］';}
-    ul#menu li:not(last-child) {padding-right: 2ch;}
+    ul#menu li:not(last-child) {padding-right: 1ch;}
 
     /* Accessibility */
     .hidden {position:absolute; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;}
