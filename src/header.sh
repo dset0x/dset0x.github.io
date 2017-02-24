@@ -44,9 +44,9 @@ cat <<EOF
     ul#menu li  {display: inline;}
 
     /* Decorations */
-    ul#menu li:before           {content: '［';}
-    ul#menu li:after           {content: '］　';}
-    ul#menu li:last-child:after {content: '］';}
+    ul#menu li:before          {content: '［';}
+    ul#menu li:after           {content: '］';}
+    ul#menu li:not(last-child) {padding-right: 1em;}
 
     /* Accessibility */
     .hidden {position:absolute; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;}
