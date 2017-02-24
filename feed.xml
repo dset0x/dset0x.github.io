@@ -11,7 +11,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <link>https://dset0x.github.io</link>
   <description>A collection of workarounds and patches that I've written to deal with all sorts of software and life problems.</description>
 	<atom:link href="https://dset0x.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 25 Feb 2017 00:09:39 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2017 00:12:13 +0200</lastBuildDate>
 	<language>en</language>
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
