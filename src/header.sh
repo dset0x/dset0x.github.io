@@ -19,7 +19,7 @@ cat <<EOF
 <style>
     /* General */
     body        {font-family: sans-serif;}
-    a           {/*text-decoration:none;*/}
+    a           {text-decoration:none;}
 
     /* Headings */
     h1, h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
@@ -35,7 +35,7 @@ cat <<EOF
 
     /* Decorations */
     ul#menu li:before           {content: '［';}
-    ul#menu li::after           {content: '］　';}
+    ul#menu li:after           {content: '］　';}
     ul#menu li:last-child:after {content: '］';}
 
     /* Accessibility */
