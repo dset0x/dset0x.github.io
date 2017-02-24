@@ -46,7 +46,16 @@ cat <<EOF
 <nav>
     <div class="hidden"><a href="#content">Skip to content</a></div>
     <ul id="menu">
-      <li><a href="/">Home</a></li>
+EOF
+    case "$ttl" in
+        Home)
+            echo '<li>Home</li>'
+            ;;
+        *)
+            echo '<li><a href="/">Home</a></li>'
+            ;;
+    esac
+cat <<EOF
       <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
     </ul> 
 </nav>
