@@ -29,7 +29,7 @@ cat <<EOF
     <style>
         /* General */
         body        {font-family: sans-serif;}
-        a           {text-decoration:none;}
+        a           {text-decoration: none;}
 
         /* Headings */
         h1, h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
@@ -42,15 +42,20 @@ cat <<EOF
         /* Menus */
         ul          {padding-left: 0;}
         ul#menu li  {display: inline;}
-        @media (max-width: 60ch) {
-            ul#menu li  {display: block;}
-            .preview    {overflow: hidden; height:3.2em;}
-        }
 
         /* Decorations */
         ul#menu li:before          {content: '［';}
         ul#menu li:after           {content: '］';}
         ul#menu li:not(last-child) {padding-right: 1ch;}
+
+        /* Mobile */
+        @media (max-width: 60ch) {
+            ul#menu li  {display: block;}
+            ul#menu li:not(last-child) {padding-bottom: 0.5em;}
+            ul#menu {margin: 0;}
+
+            .preview    {overflow: hidden; max-height:3.2em;}
+        }
 
         /* Accessibility */
         .hidden {position:absolute; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;}
