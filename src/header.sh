@@ -50,6 +50,7 @@ cat <<EOF
 
         /* Mobile */
         @media (max-width: 60ch) {
+            h1, h2 {text-align:center;}
             ul#menu li  {display: block;}
             ul#menu li:not(last-child) {padding: 0.2em 0 0.2em 0;}
             ul#menu {margin: 0;}
