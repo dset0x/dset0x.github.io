@@ -55,7 +55,7 @@ for j in $( ls -t *.txt ); do
 
 
     # INDEX
-    echo -e "<article><h2><a href=\"/$i.html\">$title</a></h2> <div class=\"preview\">$preview...</div></article><br>" >> index.tmp
+    echo -e "<article><h2><a href=\"/$i.html\">$title</a></h2> <div class=\"preview\">$preview...</div></article>" >> index.tmp
 
     # SITEMAP
     cat <<EOF >> ../sitemap.xml
