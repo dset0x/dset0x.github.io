@@ -24,8 +24,10 @@
 
         /* Menus */
         ul          {padding-left: 0;}
-        @media (min-width: 60ch) {
-            ul#menu li  {display: inline;}
+        ul#menu li  {display: inline;}
+        @media (max-width: 60ch) {
+            ul#menu li  {display: block;}
+            .preview    {overflow: hidden; height:3.2em;}
         }
 
         /* Decorations */
