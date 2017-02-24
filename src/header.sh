@@ -37,13 +37,20 @@ cat <<EOF
     ul#menu li:before {content: '［';}
     ul#menu li::after  {content: '］　';}
     ul#menu li:last-child:after  {content: '］';}
+
+    /* Accessibility */
+
+    #skip {
+        position: absolute !important;
+        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+    }
 </style>
 </head>
 <body>
 
- <a href="#content">Skip to content</a> 
-
 <nav>
+    <div id="skip"><a href="#content">Skip to content</a></div>
     <ul id="menu">
       <li><a href="/">Home</a></li>
       <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
