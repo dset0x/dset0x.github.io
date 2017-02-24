@@ -54,7 +54,12 @@ cat <<EOF
             ul#menu li:not(last-child) {padding: 0.2em 0 0.2em 0;}
             ul#menu {margin: 0;}
 
-            .preview    {overflow: hidden; max-height:3.2em;}
+            .preview    {
+                overflow: hidden; 
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
         }
 
         /* Accessibility */
