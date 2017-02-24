@@ -41,6 +41,8 @@ cat <<EOF
 </head>
 <body>
 
+ <a href="#content">Skip to content</a> 
+
 <nav>
     <ul id="menu">
       <li><a href="/">Home</a></li>
@@ -50,5 +52,5 @@ cat <<EOF
 
 <hr>
 
-<main>
+<main id="content">
 EOF
