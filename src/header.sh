@@ -17,11 +17,11 @@ cat <<EOF
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
 <style>
-    body {font-family:sans-serif;}
-    h1, h2 {font-size:medium; margin: 0.67em 0 0.67em 0;}
-    h2 {font-weight: initial;}
+    body        {font-family: sans-serif;}
+    h1, h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
+    h2          {font-weight: initial;}
     p, .preview {max-width: 79ch; text-align: justify;}
-    .preview {padding-left: 4ch; opacity: 0.7;}
+    .preview    {padding-left: 4ch; opacity: 0.7;}
 </style>
 </head>
 <body>
