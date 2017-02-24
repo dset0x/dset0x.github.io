@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
 
-ttl="$1"
-dsc="$2"
-key="$3"
+typ="$1"
+ttl="$2"
+dsc="$3"
+key="$4"
+
+case "$typ" in
+    'home')
+        home='Home'
+        ;;
+    *)
+        home='<a href="/">Home</a>'
+        ;;
+esac
+
 cat <<EOF
 <!DOCTYPE html>
 <html lang="en" xml:lang="en">
@@ -46,16 +57,7 @@ cat <<EOF
 <nav>
     <div class="hidden"><a href="#content">Skip to content</a></div>
     <ul id="menu">
-EOF
-    case "$ttl" in
-        'When software gets in the way')
-            echo '<li>Home</li>'
-            ;;
-        *)
-            echo '<li><a href="/">Home</a></li>'
-            ;;
-    esac
-cat <<EOF
+      <li>$home</li>
       <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
     </ul> 
 </nav>

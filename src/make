@@ -47,7 +47,7 @@ for j in $( ls -t *.txt ); do
     preview=$(esc "$(tail -n +4 $i.txt | grep '^\S' | paste -sd " " - | sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)")
 
     # HTML
-    ./header.sh "$title - When software gets in the way" "$preview" "$keys" > ../"$i".html
+    ./header.sh "article" "$title - When software gets in the way" "$preview" "$keys" > ../"$i".html
     echo '<article>' >> ../"$i".html
     txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --links_dictionaries dict.dict =(tail -n +2 "$i".txt) >> ../"$i".html
     echo '</article>' >> ../"$i".html
@@ -87,7 +87,7 @@ cat <<EOF >> ../feed.xml
 EOF
 
 # INDEX
-./header.sh "When software gets in the way" "A collection of workarounds and patches that I've written to deal with all sorts of software and life problems." "hacks,patches,perl,python,linux,terminal,blog" > ../index.html
+./header.sh "home" "When software gets in the way" "A collection of workarounds and patches that I've written to deal with all sorts of software and life problems." "hacks,patches,perl,python,linux,terminal,blog" > ../index.html
 txt2html --extract --prebegin 1 --prewhite 4 --titlefirst --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' --short_line_length 80 --links_dictionaries dict.dict --append_file index.tmp index.txt >> ../index.html
 cat footer.html >> ../index.html
 
