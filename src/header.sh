@@ -51,7 +51,7 @@ cat <<EOF
         /* Mobile */
         @media (max-width: 60ch) {
             ul#menu li  {display: block;}
-            ul#menu li:not(last-child) {padding-bottom: 0.5em;}
+            ul#menu li:not(last-child) {padding-top: 0.5em;}
             ul#menu {margin: 0;}
 
             .preview    {overflow: hidden; max-height:3.2em;}
