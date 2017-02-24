@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xml:lang="en">
 <head>
-<title>Using mailto URIs with mutt postponed email - When software gets in the way</title>
-<meta charset="utf-8">
-<meta name="description" content="mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is">
-<meta name="keywords" content="mutt,neomutt,mailto,handler">
-<meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
-<link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
-<style>
-    /* General */
-    body        {font-family: sans-serif;}
-    a           {text-decoration:none;}
+    <title>Using mailto URIs with mutt postponed email - When software gets in the way</title>
+    <meta charset="utf-8">
+    <meta name="description" content="mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is">
+    <meta name="keywords" content="mutt,neomutt,mailto,handler">
+    <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
+    <style>
+        /* General */
+        body        {font-family: sans-serif;}
+        a           {text-decoration:none;}
 
-    /* Headings */
-    h1, h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
-    h2          {font-weight: initial;}
+        /* Headings */
+        h1, h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
+        h2          {font-weight: initial;}
 
-    /* Paragraphs */
-    p, .preview {max-width: 79ch; text-align: justify;}
-    .preview    {padding-left: 4ch; opacity: 0.7;}
+        /* Paragraphs */
+        p, .preview {max-width: 79ch; text-align: justify;}
+        .preview    {padding-left: 4ch; opacity: 0.7;}
 
-    /* Menus */
-    ul          {padding-left: 0;}
-    ul#menu li  {display: inline;}
+        /* Menus */
+        ul          {padding-left: 0;}
+        ul#menu li  {display: inline;}
 
-    /* Decorations */
-    ul#menu li:before          {content: '［';}
-    ul#menu li:after           {content: '］';}
-    ul#menu li:not(last-child) {padding-right: 1ch;}
+        /* Decorations */
+        ul#menu li:before          {content: '［';}
+        ul#menu li:after           {content: '］';}
+        ul#menu li:not(last-child) {padding-right: 1ch;}
 
-    /* Accessibility */
-    .hidden {position:absolute; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;}
-</style>
+        /* Accessibility */
+        .hidden {position:absolute; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;}
+    </style>
 </head>
 <body>
 
 <nav>
     <div class="hidden"><a href="#content">Skip to content</a></div>
     <ul id="menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
     </ul> 
+    <hr>
 </nav>
-
-<hr>
 
 <main id="content">
 <article>
