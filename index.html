@@ -33,12 +33,16 @@
 
         /* Mobile */
         @media (max-width: 60ch) {
-            ul#menu {text-align: center;}
+            /* Center the menu */
+            ul#menu {text-align: center; margin: 0;}
             ul#menu li {display: block;}
             ul#menu li:not(last-child) {padding: 0.2em 0 0.2em 0;}
-            ul#menu {margin: 0;}
-            .preview {overflow: scroll; max-height: 20vw;}
-            pre {overflow: scroll;}
+
+            /* Previews relative to width */
+            .preview {max-height: 20vw;}
+
+            /* Scrollable */
+            .preview, pre {overflow: scroll;}
         }
 
         /* Accessibility */
