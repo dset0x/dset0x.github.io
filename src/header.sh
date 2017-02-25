@@ -44,26 +44,28 @@ cat <<EOF
         article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch;}
 
         /* Preview cont */
-        article .preview {position: relative; text-align: justify;}
-        article .preview .cont {
-            vertical-align: bottom;
-            position: absolute; bottom: 0.2em; right: 0;
+        article .preview { text-align: justify;}
+        article {position: relative;}
+        article .cont {
+            position:absolute;
+            bottom: -0.4em; right: 0;
             background: #fffdff;
             font-size: small;
-            z-index:1;
+            z-index: 1;
         }
+        article hr {margin-left: 4ch;}
 
         /* Menu */
         ul                  {padding-left: 0;}
         ul#menu li:before   {content: '［';}
         ul#menu li:after    {content: '］';}
 
-            /* Centered */
-                ul#menu                         {text-align: center; margin: 0;}
+            /* Vertical */
+                ul#menu                         {text-align: left; margin: 0;}
                 ul#menu li                      {display: block;}
                 ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
 
-            /* Not centered */
+            /* Horizontal*/
                 /* ul#menu li                   {display: inline;} */
                 /* ul#menu li:not(last-child)   {padding-right: 1ch;} */
 
