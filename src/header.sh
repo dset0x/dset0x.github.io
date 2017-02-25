@@ -50,7 +50,7 @@ cat <<EOF
         ul#menu li:not(last-child) {padding-right: 1ch;}
 
         /* Mobile */
-        @media (max-width: 60ch) {
+        @media (max-width: 65ch) {
             /* Center the menu */
             ul#menu {text-align: center; margin: 0;}
             ul#menu li {display: block;}
