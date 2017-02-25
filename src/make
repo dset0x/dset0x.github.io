@@ -46,12 +46,14 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<sy:updateFrequency>1</sy:updateFrequency>
 EOF
 
+
 max_date=0
 for i in $(ls -t *.txt); do
     [[ "$i" == index.txt ]] && continue
     i="${i%.*}"
     txt="$i.txt"
     html="$i.html"
+    fpath="/$html"
 
     title=$(esc "$(head -n2 "$txt" | tail -n1)")
     keys=$(esc "$(head -n1 "$txt")")
@@ -72,15 +74,15 @@ for i in $(ls -t *.txt); do
     # INDEX
     cat <<EOF >> index.tmp
     <article>
-        <h2><a href="/$html">$title</a></h2>
-        <div class="preview">$preview...</div>
+        <h2><a href="$fpath">$title</a></h2>
+        <div class="preview">$preview&nbsp;<a title="Continue reading" href="$fpath">(cont)</a></div>
     </article>
 EOF
 
     # SITEMAP
     cat <<EOF >> ../sitemap.xml
     <url>
-        <loc>$domain/$html</loc>
+        <loc>$domain$fpath</loc>
         <lastmod>$(date --date="@$date" +%F)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -91,13 +93,14 @@ EOF
     cat <<EOF >> ../feed.xml
   <item>
     <title>$title</title>
-    <link>$domain/$html</link>
+    <link>$domain$fpath</link>
     <description>$preview</description>
     <pubDate>$(date -R --date="@$date")</pubDate>
   </item>
 EOF
 
 done
+
 
 # INDEX
 ./header.sh "home" "$site_title" \
