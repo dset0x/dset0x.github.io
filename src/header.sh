@@ -29,7 +29,7 @@ cat <<EOF
     <style>
         /* General */
         body    {font-family: sans-serif; max-width: 79ch;}
-        a       {/*text-decoration: none;*/ color: #4078c0;}
+        a       {text-decoration: none; color: #4078c0;}
 
         /* Headings */
         h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
