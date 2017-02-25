@@ -59,13 +59,13 @@ cat <<EOF
         @media (max-width: 65ch) { pre {overflow: scroll;} }
 
         /* Accessibility */
-        .hidden a {position: absolute; opacity:0;}
-        .hidden a:active, .hidden a:focus {opacity:1;}
+        .hidden {position: absolute; opacity:0;}
+        .hidden:active, .hidden:focus {opacity:1;}
     </style>
 </head>
 <body>
 
-<div class="hidden" tabindex="1"><a href="#content">Skip to content</a></div>
+<a href="#content" class="hidden" tabindex="1">Skip to content</a></div>
 <nav>
     <ul id="menu">
         <li>$home</li>
