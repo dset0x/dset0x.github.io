@@ -74,7 +74,7 @@ for i in $(ls -t *.txt); do
     <article>
         <h2><a href="/$html">$title</a></h2>
         <div class="preview">$preview...</div>
-        <hr>
+        <!--<hr>-->
     </article>
 EOF
 
