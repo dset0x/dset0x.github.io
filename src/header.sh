@@ -44,7 +44,12 @@ cat <<EOF
 
         /* Preview cont */
         article .preview {position: relative; text-align: justify; display: table}
-        article .preview .cont {position: absolute; bottom: 0; right: 0; font-size: small; box-shadow: 0px 0px 0.5ch 0.5ch white; display: table-cell; vertical-align: bottom;}
+        article .preview .cont {
+            display: table-cell; vertical-align: bottom;
+            position: absolute; bottom: 0; right: 0;
+            background: #fffdff; box-shadow: 0px 0px 0.5ch 0.5ch #fffdff;
+            font-size: small;
+        }
 
         /* Menu */
         ul                  {padding-left: 0;}
