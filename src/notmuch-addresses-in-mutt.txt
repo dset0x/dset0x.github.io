@@ -23,3 +23,6 @@ that mutt skips the first line of the addresses.
         printf("\n")
     }
     ' | sort | uniq
+
+This method is unfortunately quite slow, whether you use `parallel` or not.
+You are hitting the same database after all.
