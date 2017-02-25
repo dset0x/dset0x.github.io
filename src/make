@@ -75,7 +75,10 @@ for i in $(ls -t *.txt); do
     cat <<EOF >> index.tmp
     <article>
         <h2><a href="$fpath">$title</a></h2>
-        <div class="preview">$preview&nbsp;<a title="Continue reading" href="$fpath">(cont)</a></div>
+        <div class="preview">
+            $preview&nbsp;
+            <div class="cont"><a title="Continue reading" href="$fpath">Continue reading</a></div>
+        </div>
     </article>
 EOF
 

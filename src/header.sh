@@ -42,6 +42,10 @@ cat <<EOF
         /* Previews */
         article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch;}
 
+        /* Preview cont */
+        article .preview {position: relative; text-align: justify;}
+        article .preview .cont {position: absolute; bottom: 0; right: 0; background: #fffdff; font-size: small; box-shadow: 0px 0px 0.5ch 0.5ch white;}
+
         /* Menu */
         ul                  {padding-left: 0;}
         ul#menu li:before   {content: '［';}
