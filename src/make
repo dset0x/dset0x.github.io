@@ -60,7 +60,7 @@ for i in $(ls -t *.txt); do
     keys=$(esc "$(head -n1 "$txt")")
     preview=$(esc "$(tail -n +4 "$txt" | grep '^\S' | paste -sd " " - | \
         sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-$preview_words)")
-    date=$(date -d "$(stat -c %y "$txt")" +%s)
+    date=$(date -d "$(stat -c %Z "$txt")" +%s)
     [[ $date -gt $max_date ]] && max_date=$date
 
     # ARTICLE
