@@ -29,7 +29,7 @@ cat <<EOF
     <style>
         /* General */
         body    {font-family: sans-serif; max-width: 79ch;}
-        a       {text-decoration: none;}
+        /* a       {text-decoration: none;} */
 
         /* Headings */
         h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
@@ -59,13 +59,13 @@ cat <<EOF
         @media (max-width: 65ch) { pre {overflow: scroll;} }
 
         /* Accessibility */
-        .hidden {position:absolute; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;}
+        .hidden {position: absolute; width: 1px; height: 1px; margin: 0; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);}
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="hidden"><a href="#content">Skip to content</a></div>
+    <div class="hidden" tabindex="1"><a href="#content">Skip to content</a></div>
     <ul id="menu">
         <li>$home</li>
         <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
