@@ -62,7 +62,7 @@ for i in $(ls -t *.txt); do
 
     # ARTICLE
     {
-        ./header.sh "article" "$title - $site_title" "$preview" "$keys"
+        ./header.sh "article" "$title - $site_title" "$title" "$keys"
         echo '<article>'
         txt2html ${=txt2html_args} =(tail -n +2 "$txt")
         echo '</article>'
