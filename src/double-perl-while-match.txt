@@ -13,7 +13,7 @@ infinite loop.
         }
     }
 
-Produces:
+Produces the following::
 
     0 2
     0 3
