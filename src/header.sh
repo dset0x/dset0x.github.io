@@ -65,8 +65,8 @@ cat <<EOF
 </head>
 <body>
 
+<div class="hidden" tabindex="1"><a href="#content">Skip to content</a></div>
 <nav>
-    <div class="hidden" tabindex="1"><a href="#content">Skip to content</a></div>
     <ul id="menu">
         <li>$home</li>
         <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
