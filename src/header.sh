@@ -42,9 +42,12 @@ cat <<EOF
         h2          {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
         h1          {font-size: large; text-align: center;}
 
+        /* Paragraphs */
+        p, article .preview {text-align: justify;}
+
         /* Previews */
         article {position: relative;}
-        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch; text-align: justify;}
+        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch}
         article .cont_box {margin-left: 4ch;}
         article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small; padding-left: 1ch; z-index: 1;}
 
