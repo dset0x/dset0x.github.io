@@ -39,9 +39,9 @@ cat <<EOF
         article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch;}
 
         /* Menu */
-        ul  {padding-left: 0;}
-        ul#menu li:before          {content: '［';}
-        ul#menu li:after           {content: '］';}
+        ul                  {padding-left: 0;}
+        ul#menu li:before   {content: '［';}
+        ul#menu li:after    {content: '］';}
 
             /* Centered */
                 ul#menu                         {text-align: center; margin: 0;}
