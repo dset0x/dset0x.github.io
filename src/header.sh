@@ -36,9 +36,10 @@ cat <<EOF
         h2          {font-weight: initial;}
 
         /* Paragraphs */
-        p, .preview {max-width: 79ch;}
-        .preview    {padding-left: 4ch; opacity: 0.7;}
-        .preview    {max-height: 20vw; overflow:hidden;}
+        p, article          {max-width: 79ch;}
+        article .preview, article hr    {margin-left: 4ch}
+        article .preview    {max-height: 20vw; overflow:hidden; opacity: 0.7;}
+        article hr {opacity: 0.3;}
 
         /* Menus */
         ul          {padding-left: 0;}
