@@ -10,6 +10,7 @@ domain='https://dset0x.github.io'
 txt2html_args="--extract --prebegin 1 --prewhite 4 --titlefirst \
     --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' \
     --links_dictionaries dict.dict"
+preview_words=70
 
 # INDEX
 echo '<h1>Home</h1>' > index.tmp
@@ -58,7 +59,7 @@ for i in $(ls -t *.txt); do
     title=$(esc "$(head -n2 "$txt" | tail -n1)")
     keys=$(esc "$(head -n1 "$txt")")
     preview=$(esc "$(tail -n +4 "$txt" | grep '^\S' | paste -sd " " - | \
-        sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-70)")
+        sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-$preview_words)")
     date=$(date -d "$(stat -c %y "$txt")" +%s)
     [[ $date -gt $max_date ]] && max_date=$date
 
