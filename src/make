@@ -76,7 +76,7 @@ for i in $(ls -t *.txt); do
     <article>
         <h2><a href="$fpath">$title</a></h2>
         <div class="preview">
-            $preview&nbsp;
+            $preview..&nbsp;
             <div class="cont"><a title="Continue reading" href="$fpath">Continue reading</a></div>
         </div>
     </article>
