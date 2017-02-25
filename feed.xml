@@ -9,7 +9,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 <channel>
   <title>When software gets in the way</title>
   <link>https://dset0x.github.io</link>
-  <description>A collection of workarounds and patches to solve all life's problems.</description>
+  <description>A collection of workarounds and patches to solve all lifes problems.</description>
 	<atom:link href="https://dset0x.github.io/feed.xml" rel="self" type="application/rss+xml" />
 	<language>en</language>
 	<sy:updatePeriod>daily</sy:updatePeriod>
