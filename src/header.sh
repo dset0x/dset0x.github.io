@@ -38,6 +38,7 @@ cat <<EOF
         /* Paragraphs */
         p, .preview {max-width: 79ch; text-align: justify;}
         .preview    {padding-left: 4ch; opacity: 0.7;}
+        .preview {max-height: 20vw;}
 
         /* Menus */
         ul          {padding-left: 0;}
@@ -54,9 +55,6 @@ cat <<EOF
             ul#menu {text-align: center; margin: 0;}
             ul#menu li {display: block;}
             ul#menu li:not(last-child) {padding: 0.2em 0 0.2em 0;}
-
-            /* Previews relative to width */
-            .preview {max-height: 20vw;}
 
             /* Scrollable */
             .preview, pre {overflow: scroll;}
