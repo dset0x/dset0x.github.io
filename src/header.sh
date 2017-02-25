@@ -60,7 +60,7 @@ cat <<EOF
 
         /* Accessibility */
         .hidden {position: absolute; opacity:0;}
-        .hidden:active, .hidden:focus {opacity:1;}
+        .hidden:active, .hidden:focus, .hidden:hover {opacity:1;}
     </style>
 </head>
 <body>
