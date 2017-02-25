@@ -53,7 +53,10 @@
                 /* ul#menu li:not(last-child)   {padding-right: 1ch;} */
 
         /* Code on mobile */
-        @media (max-width: 65ch) { pre {overflow: scroll;} }
+        @media (max-width: 65ch) {
+            pre {overflow: scroll;}
+            .cont_box {display: none;}
+        }
 
         /* Skip to content */
         .skip {position: absolute; opacity:0; pointer-events: none;}
@@ -79,64 +82,80 @@
         <div class="preview">
             Retrieving all known addresses from notmuch&#39;s index turned out to be more difficult than I had initially assumed. I needed to search not only recipients, but senders as well, due to mailing lists and such. Don&#39;t forget that mutt skips the first line of the addresses. This method is unfortunately quite slow, whether you use `parallel` or not. You are hitting the same database after all...&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="/notmuch-addresses-in-mutt.html">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="/notmuch-addresses-in-mutt.html">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
     <article>
         <h2><a href="/double-perl-while-match.html">Confusing perl with nested while matches</a></h2>
         <div class="preview">
             Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following:..&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="/double-perl-while-match.html">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="/double-perl-while-match.html">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
     <article>
         <h2><a href="/mutt-lynx-urls-on-side.html">Getting lynx to print URLs of HTML messages on the side</a></h2>
         <div class="preview">
             Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!..&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="/mutt-lynx-urls-on-side.html">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="/mutt-lynx-urls-on-side.html">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
     <article>
         <h2><a href="/zte-expect.html">Logging into a ZTE H158N with the help of expect</a></h2>
         <div class="preview">
             Jalal Sela already took the time to break into a sibling of this router on his blog. Having shell access to my router turned out to be more handy than I had anticipated. Of course you can have dropbear on it, but I&#39;ve yet to dare edit `rcS` on it (although I suppose it gets overwritten on reboot anyway)...&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="/zte-expect.html">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="/zte-expect.html">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
     <article>
         <h2><a href="/clean-mpd-logs.html">Removing binary data from (mpd) logfiles</a></h2>
         <div class="preview">
             I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we&#39;re at it to bring the filesize down from 1GiB...&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="/clean-mpd-logs.html">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="/clean-mpd-logs.html">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
     <article>
         <h2><a href="/mailto-mutt.html">Using mailto URIs with mutt postponed email</a></h2>
         <div class="preview">
             mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is..&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="/mailto-mutt.html">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="/mailto-mutt.html">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
     <article>
         <h2><a href="/viber-apulse.html">Getting Viber for Linux to play nice with apulse</a></h2>
         <div class="preview">
             Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system&#39;s volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it&#39;s easy to locate possibly used functions: In..&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="/viber-apulse.html">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="/viber-apulse.html">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
     <article>
         <h2><a href="/monitor-mem-usage.html">Monitoring memory usage for weechat script leaks</a></h2>
         <div class="preview">
             I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every..&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="/monitor-mem-usage.html">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="/monitor-mem-usage.html">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
 </main>
 <footer>

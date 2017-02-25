@@ -70,7 +70,10 @@ cat <<EOF
                 /* ul#menu li:not(last-child)   {padding-right: 1ch;} */
 
         /* Code on mobile */
-        @media (max-width: 65ch) { pre {overflow: scroll;} }
+        @media (max-width: 65ch) {
+            pre {overflow: scroll;}
+            .cont_box {display: none;}
+        }
 
         /* Skip to content */
         .skip {position: absolute; opacity:0; pointer-events: none;}

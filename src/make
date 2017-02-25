@@ -78,8 +78,10 @@ for i in $(ls -t *.txt); do
         <div class="preview">
             $preview..&nbsp;
         </div>
-        <div class="cont"><a title="Continue reading" href="$fpath">Continue reading</a></div>
-        <hr>
+        <div class="cont_box">
+            <div class="cont"><a title="Continue reading" href="$fpath">Continue reading</a></div>
+            <hr>
+        </div>
     </article>
 EOF
 
