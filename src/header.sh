@@ -30,38 +30,35 @@ cat <<EOF
         /* General */
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85;}
+        hr          {opacity: 0.2;}
+
+        /* Links */
         a           {text-decoration: none;}
         a:link      {color: #3189c5;}
         a:visited   {color: #a131c5;}
         a:hover     {text-decoration: underline;}
-        hr          {opacity: 0.2;}
 
         /* Headings */
-        h2      {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
-        h1      {font-size: large; text-align: center;}
+        h2          {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
+        h1          {font-size: large; text-align: center;}
 
         /* Previews */
-        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch;}
-
-        /* Preview cont */
-        article .preview {text-align: justify;}
         article {position: relative;}
+        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch; text-align: justify;}
+        article .cont_box {margin-left: 4ch;}
         article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small;}
-        article hr {margin-left: 4ch;}
 
         /* Menu */
         ul                  {padding-left: 0;}
         ul#menu li:before   {content: '［';}
         ul#menu li:after    {content: '］';}
-
-            /* Vertical */
-                ul#menu                         {text-align: left; margin: 0;}
-                ul#menu li                      {display: block;}
-                ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
-
-            /* Horizontal*/
-                /* ul#menu li                   {display: inline;} */
-                /* ul#menu li:not(last-child)   {padding-right: 1ch;} */
+        ul#menu                         {text-align: left; margin: 0;}
+        ul#menu li                      {display: block;}
+        ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
+        /*
+        ul#menu li                   {display: inline;}
+        ul#menu li:not(last-child)   {padding-right: 1ch;}
+         */
 
         /* Mobile */
         @media (max-width: 65ch) {
