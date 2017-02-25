@@ -32,14 +32,11 @@ cat <<EOF
         a       {text-decoration: none; color: #4078c0;}
 
         /* Headings */
-        h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
-        h2      {font-weight: initial;}
-        h1      {font-size: large;text-align: center;}
+        h2      {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
+        h1      {font-size: large; text-align: center;}
 
-        /* Paragraphs */
-        article .preview, article hr    {margin-left: 4ch}
-        article .preview                {max-height: 20vw; overflow:hidden; opacity: 0.9;}
-        #content hr                     {opacity: 0.3;}
+        /* Previews */
+        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch;}
 
         /* Menu */
         ul  {padding-left: 0;}
@@ -55,17 +52,17 @@ cat <<EOF
                 /* ul#menu li                   {display: inline;} */
                 /* ul#menu li:not(last-child)   {padding-right: 1ch;} */
 
-        /* Mobile */
+        /* Code on mobile */
         @media (max-width: 65ch) { pre {overflow: scroll;} }
 
-        /* Accessibility */
-        .hidden {position: absolute; opacity:0; pointer-events: none;}
-        .hidden:active, .hidden:focus {opacity:1;}
+        /* Skip to content */
+        .skip {position: absolute; opacity:0; pointer-events: none;}
+        .skip:active, .skip:focus {opacity:1;}
     </style>
 </head>
 <body>
 
-<a href="#content" class="hidden" tabindex="1">Skip to content</a></div>
+<a href="#content" class="skip" tabindex="1">Skip to content</a></div>
 <nav>
     <ul id="menu">
         <li>$home</li>
