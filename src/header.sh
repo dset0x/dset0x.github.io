@@ -6,11 +6,11 @@ dsc="$3"
 key="$4"
 
 case "$typ" in
-    'notes')
-        notes='Notes'
+    'home')
+        home='Home'
         ;;
     *)
-        notes='<a href="/">Notes</a>'
+        home='<a href="/">Home</a>'
         ;;
 esac
 
@@ -67,7 +67,7 @@ cat <<EOF
 <nav>
     <div class="hidden"><a href="#content">Skip to content</a></div>
     <ul id="menu">
-        <li>$notes</li>
+        <li>$home</li>
         <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
     </ul> 
     <hr>

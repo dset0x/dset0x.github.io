@@ -12,7 +12,7 @@ txt2html_args="--extract --prebegin 1 --prewhite 4 --titlefirst \
     --links_dictionaries dict.dict"
 
 # INDEX
-echo '<h1>Notes</h1>' > index.tmp
+echo '<h1>Home</h1>' > index.tmp
 
 # SITEMAP
 cat <<EOF > ../sitemap.xml
