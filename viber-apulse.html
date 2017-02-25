@@ -11,38 +11,35 @@
     <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
     <style>
         /* General */
-        body        {font-family: sans-serif;}
-        a           {text-decoration: none;}
+        body    {font-family: sans-serif; max-width: 79ch;}
+        a       {text-decoration: none;}
 
         /* Headings */
-        h1, h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
-        h2          {font-weight: initial;}
+        h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
+        h2      {font-weight: initial;}
+        h1      {font-size: large;text-align: center;}
 
         /* Paragraphs */
-        p, article          {max-width: 79ch;}
         article .preview, article hr    {margin-left: 4ch}
-        article .preview    {max-height: 20vw; overflow:hidden; opacity: 0.7;}
-        article hr {opacity: 0.3;}
+        article .preview                {max-height: 20vw; overflow:hidden; opacity: 0.7;}
+        #content hr                     {opacity: 0.3;}
 
-        /* Menus */
-        ul          {padding-left: 0;}
-        ul#menu li  {display: inline;}
-
-        /* Decorations */
+        /* Menu */
+        ul  {padding-left: 0;}
         ul#menu li:before          {content: '［';}
         ul#menu li:after           {content: '］';}
-        ul#menu li:not(last-child) {padding-right: 1ch;}
+
+            /* Centered */
+                ul#menu                         {text-align: center; margin: 0;}
+                ul#menu li                      {display: block;}
+                ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
+
+            /* Not centered */
+                /* ul#menu li                   {display: inline;} */
+                /* ul#menu li:not(last-child)   {padding-right: 1ch;} */
 
         /* Mobile */
-        @media (max-width: 65ch) {
-            /* Center the menu */
-            ul#menu {text-align: center; margin: 0;}
-            ul#menu li {display: block;}
-            ul#menu li:not(last-child) {padding: 0.2em 0 0.2em 0;}
-
-            /* Scrollable */
-            pre {overflow: scroll;}
-        }
+        @media (max-width: 65ch) { pre {overflow: scroll;} }
 
         /* Accessibility */
         .hidden {position:absolute; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;}
@@ -53,7 +50,7 @@
 <nav>
     <div class="hidden"><a href="#content">Skip to content</a></div>
     <ul id="menu">
-        <li><a href="/">Home</a></li>
+        <li><a href="/">Notes</a></li>
         <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
     </ul> 
     <hr>

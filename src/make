@@ -12,7 +12,7 @@ txt2html_args="--extract --prebegin 1 --prewhite 4 --titlefirst \
     --links_dictionaries dict.dict"
 
 # INDEX
-echo > index.tmp
+echo '<h1>Notes</h1>' > index.tmp
 
 # SITEMAP
 cat <<EOF > ../sitemap.xml
@@ -101,7 +101,7 @@ EOF
 done
 
 # INDEX
-./header.sh "home" "$site_title" \
+./header.sh "notes" "$site_title" \
     "A collection of workarounds and patches to solve all life's problems." \
     "hacks,patches,perl,python,linux,terminal,blog" > ../index.html
 txt2html ${=txt2html_args} --short_line_length 80  \
