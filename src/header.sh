@@ -29,7 +29,7 @@ cat <<EOF
     <style>
         /* General */
         body    {font-family: sans-serif; max-width: 79ch;}
-        /* a       {text-decoration: none;} */
+        a       {/*text-decoration: none;*/ color: #4078c0;}
 
         /* Headings */
         h2      {font-size: medium; margin: 0.67em 0 0.67em 0;}
@@ -59,7 +59,9 @@ cat <<EOF
         @media (max-width: 65ch) { pre {overflow: scroll;} }
 
         /* Accessibility */
-        .hidden {position: absolute; width: 1px; height: 1px; margin: 0; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);}
+        /*.hidden {position: absolute; width: 1px; height: 1px; margin: 0; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);}*/
+        .hidden a {position: absolute; opacity:0;}
+        .hidden a:active, .hidden a:focus {opacity:1;}
     </style>
 </head>
 <body>
