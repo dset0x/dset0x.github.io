@@ -28,7 +28,7 @@ cat <<EOF
     <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
     <style>
         /* General */
-        body    {font-family: sans-serif; max-width: 79ch;}
+        body    {font-family: sans-serif; max-width: 79ch; opacity: 0.85;}
         a       {text-decoration: none; color: #4078c0;}
 
         /* Headings */
@@ -38,7 +38,7 @@ cat <<EOF
 
         /* Paragraphs */
         article .preview, article hr    {margin-left: 4ch}
-        article .preview                {max-height: 20vw; overflow:hidden; opacity: 0.7;}
+        article .preview                {max-height: 20vw; overflow:hidden; opacity: 0.9;}
         #content hr                     {opacity: 0.3;}
 
         /* Menu */
