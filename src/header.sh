@@ -50,8 +50,7 @@ cat <<EOF
 
         /* Menu */
         ul                  {padding-left: 0;}
-        ul#menu li:before   {content: '[';}
-        ul#menu li:after    {content: ']';}
+        ul#menu li:after    {content: '<-';}
         ul#menu                         {text-align: right; margin-right: 0;}
         ul#menu li                      {display: block;}
         ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
