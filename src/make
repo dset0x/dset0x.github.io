@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 esc() {
     perl -e 'use HTML::Entities; print encode_entities($ARGV[0]);' "$1"
@@ -67,7 +67,7 @@ for i in $(ls -t *.txt); do
     {
         ./header.sh "article" "$title - $site_title" "$title" "$keys"
         echo '<article>'
-        txt2html ${=txt2html_args} =(tail -n +2 "$txt")
+        txt2html ${txt2html_args} < <(tail -n +2 "$txt")
         echo '</article>'
         cat footer.html
     } > ../"$html"
@@ -113,7 +113,7 @@ done
 ./header.sh "home" "$site_title" \
     "A collection of workarounds and patches to solve all life's problems." \
     "hacks,patches,perl,python,linux,terminal,blog" > ../index.html
-txt2html ${=txt2html_args} --short_line_length 80  \
+txt2html ${txt2html_args} --short_line_length 80  \
     --append_file index.tmp index.txt >> ../index.html
 cat footer.html >> ../index.html
 rm index.tmp
