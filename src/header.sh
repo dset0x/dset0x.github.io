@@ -34,7 +34,7 @@ cat <<EOF
         a:link      {color: #3189c5;}
         a:visited   {color: #a131c5;}
         a:hover     {text-decoration: underline;}
-        hr          {opacity: 0.5;}
+        hr          {opacity: 0.2;}
 
         /* Headings */
         h2      {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
@@ -44,15 +44,9 @@ cat <<EOF
         article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch;}
 
         /* Preview cont */
-        article .preview { text-align: justify;}
+        article .preview {text-align: justify;}
         article {position: relative;}
-        article .cont {
-            position:absolute;
-            bottom: -0.4em; right: 0;
-            background: #fffdff;
-            font-size: small;
-            z-index: 1;
-        }
+        article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small;}
         article hr {margin-left: 4ch;}
 
         /* Menu */
@@ -69,7 +63,7 @@ cat <<EOF
                 /* ul#menu li                   {display: inline;} */
                 /* ul#menu li:not(last-child)   {padding-right: 1ch;} */
 
-        /* Code on mobile */
+        /* Mobile */
         @media (max-width: 65ch) {
             pre {overflow: scroll;}
             .cont_box {display: none;}
