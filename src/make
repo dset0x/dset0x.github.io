@@ -79,8 +79,8 @@ for i in $(ls -t *.txt); do
             $preview..&nbsp;
         </div>
         <div class="cont_box">
-            <hr>
             <div class="cont"><a title="Continue reading" href="$fpath">Continue reading</a></div>
+            <hr>
         </div>
     </article>
 EOF
