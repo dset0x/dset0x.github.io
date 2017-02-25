@@ -4,7 +4,8 @@ Extracting all known addresses from notmuch for use with mutt
 
 Retrieving all known addresses from notmuch's index turned out to be more
 difficult than I had initially assumed. I needed to search not only
-recipients, but senders as well, due to mailing lists and such.
+recipients, but senders as well, due to mailing lists and such. Don't forget
+that mutt skips the first line of the addresses.
 
     #!/bin/bash
     (parallel notmuch address {} '\*' ::: \
