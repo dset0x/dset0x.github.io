@@ -34,6 +34,7 @@ cat <<EOF
         a:link      {color: #3189c5;}
         a:visited   {color: #a131c5;}
         a:hover     {text-decoration: underline;}
+        hr          {opacity: 0.5;}
 
         /* Headings */
         h2      {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
@@ -43,12 +44,13 @@ cat <<EOF
         article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch;}
 
         /* Preview cont */
-        article .preview {position: relative; text-align: justify; display: table}
+        article .preview {position: relative; text-align: justify;}
         article .preview .cont {
-            display: table-cell; vertical-align: bottom;
-            position: absolute; bottom: 0; right: 0;
-            background: #fffdff; box-shadow: 0px 0px 0.5ch 0.5ch #fffdff;
+            vertical-align: bottom;
+            position: absolute; bottom: 0.2em; right: 0;
+            background: #fffdff;
             font-size: small;
+            z-index:1;
         }
 
         /* Menu */
