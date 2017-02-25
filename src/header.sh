@@ -63,7 +63,7 @@ cat <<EOF
         /* Mobile */
         @media (max-width: 65ch) {
             pre {overflow: scroll;}
-            .cont_box {display: none; min-height: 1em;}
+            .cont_box {display: none;}
         }
 
         /* Skip to content */
