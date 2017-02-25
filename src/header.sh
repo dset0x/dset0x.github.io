@@ -28,7 +28,7 @@ cat <<EOF
     <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
     <style>
         /* General */
-        html        {background-color: #dbdddc;}
+        html        {background-color: #fff9ff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85;}
         a           {text-decoration: none;}
         a:link      {color: #3189c5;}
