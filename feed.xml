@@ -15,6 +15,12 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
   <item>
+    <title>Confusing perl with nested while matches</title>
+    <link>https://dset0x.github.io/double-perl-while-match.html</link>
+    <description>Nesting while loops that match against the same string will throw perl into an infinite loop. Produces:</description>
+    <pubDate>Sat, 25 Feb 2017 13:59:17 +0200</pubDate>
+  </item>
+  <item>
     <title>Getting lynx to print URLs of HTML messages on the side</title>
     <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
     <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!</description>
@@ -50,6 +56,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every</description>
     <pubDate>Tue, 31 Jan 2017 11:23:11 +0200</pubDate>
   </item>
-    <lastBuildDate>Tue, 21 Feb 2017 23:11:32 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2017 13:59:17 +0200</lastBuildDate>
   </channel>
 </rss>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+    <title>Confusing perl with nested while matches - When software gets in the way</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Confusing perl with nested while matches">
+    <meta name="keywords" content="perl,infinite_loop,regex_match,nested_while">
+    <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
+    <style>
+        /* General */
+        body    {font-family: sans-serif; max-width: 79ch; opacity: 0.85;}
+        a       {text-decoration: none; color: #4078c0;}
+
+        /* Headings */
+        h2      {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
+        h1      {font-size: large; text-align: center;}
+
+        /* Previews */
+        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch;}
+
+        /* Menu */
+        ul                  {padding-left: 0;}
+        ul#menu li:before   {content: '［';}
+        ul#menu li:after    {content: '］';}
+
+            /* Centered */
+                ul#menu                         {text-align: center; margin: 0;}
+                ul#menu li                      {display: block;}
+                ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
+
+            /* Not centered */
+                /* ul#menu li                   {display: inline;} */
+                /* ul#menu li:not(last-child)   {padding-right: 1ch;} */
+
+        /* Code on mobile */
+        @media (max-width: 65ch) { pre {overflow: scroll;} }
+
+        /* Skip to content */
+        .skip {position: absolute; opacity:0; pointer-events: none;}
+        .skip:active, .skip:focus {opacity:1;}
+    </style>
+</head>
+<body>
+
+<a href="#content" class="skip" tabindex="1">Skip to content</a></div>
+<nav>
+    <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
+    </ul> 
+    <hr>
+</nav>
+
+<main id="content">
+<article>
+<h1><a name="section_1">Confusing perl with nested while matches</a></h1>
+
+<p>Nesting while loops that match against the same string will throw perl into an
+infinite loop.
+</p>
+<pre>
+    my $s = "aabb";
+    while ( $s =~ /a/g ) {
+        my $first = $-[0];
+        while ( $s =~ /b/g ) {
+            print "$first $-[0]\n";
+        }
+    }
+</pre>
+<dl>
+  <dt>Produces</dt>
+<dd>
+</dd></dl>
+<pre>
+    0 2
+    0 3
+    0 2
+    0 3
+    0 2
+    0 3
+    0 2
+    0 3
+    0 2
+    0 3
+    [...]
+</pre>
+<p> I have not looked into why this happens, but I assume that these while loops
+ share a pointer onto said string. You can work around this by using a copy of
+ the string.</p>
+</article>
+</main>
+<footer>
+</footer>
+</body>
+</html>
