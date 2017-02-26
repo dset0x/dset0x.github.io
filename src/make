@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-esc() {
-    perl -e 'use HTML::Entities; print encode_entities($ARGV[0]);' "$1"
-}
-
+##############################################################################
 site_title='When software gets in the way'
 site_desc='A collection of workarounds and patches to solve all life''s problems.'
 domain='https://dset0x.github.io'
@@ -12,11 +9,16 @@ txt2html_args="--extract --prebegin 1 --prewhite 4 --titlefirst \
     --links_dictionaries dict.dict"
 preview_words=70
 # In relation to current dir:
-base=".."
+base="../"
 sitemap="$base/sitemap.xml"
 feed="$base/feed.xml"
+extras="extras"
+##############################################################################
 
-wfeed="/$(find "$base" -path $(realpath --relative-to=. $feed) -printf '%P\n')"
+esc() { perl -e 'use HTML::Entities; print encode_entities($ARGV[0]);' "$1"; }
+
+# EXTRAS
+cp -rf $extras/* "$base"
 
 # INDEX
 echo '<h1>Home</h1>' > index.tmp
@@ -34,6 +36,7 @@ cat <<EOF > "$sitemap"
 EOF
 
 # FEED
+wfeed="/$(realpath --relative-to=$base $feed)"
 cat <<EOF > "$feed"
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
 xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -67,13 +70,11 @@ for txt in $(find . -name '*.txt' -printf "%A@\t%p\0" | sort -znr | cut -z -f2- 
     html="$base/$dir/$fname.html"
 
     # WEB
-    touch "$html"
-    echo "$base"
-    echo "$dir/$fname.html"
-    wpath="/$(find $base -path $(realpath --relative-to=. $base/$dir/$fname.html) -printf '%P\n')"
+    wpath="/$(realpath --relative-to=$base $base/$dir/$fname.html)"
 
+    # INFO
     title=$(esc "$(head -n2 "$txt" | tail -n1)")
-    keys=$(esc "$(head -n1 "$txt")")
+    keywords=$(esc "$(head -n1 "$txt")")
     preview=$(esc "$(tail -n +4 "$txt" | grep '^\S' | paste -sd " " - | \
         sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-$preview_words)")..
     date=$(stat -c %Z "$txt")
@@ -81,7 +82,7 @@ for txt in $(find . -name '*.txt' -printf "%A@\t%p\0" | sort -znr | cut -z -f2- 
 
     # ARTICLE
     {
-        ./header.sh "article" "$title - $site_title" "$title" "$keys"
+        ./header.sh "article" "$title - $site_title" "$title" "$keywords"
         echo '<article>'
         txt2html ${txt2html_args} < <(tail -n +2 "$txt")
         echo '</article>'
@@ -96,7 +97,9 @@ for txt in $(find . -name '*.txt' -printf "%A@\t%p\0" | sort -znr | cut -z -f2- 
             $preview
         </div>
         <div class="cont_box">
-            <div class="cont"><a title="Continue reading" href="$wpath">Continue reading</a></div>
+            <div class="cont">
+                <a title="Continue reading" href="$wpath">Continue reading</a>
+            </div>
             <hr>
         </div>
     </article>
