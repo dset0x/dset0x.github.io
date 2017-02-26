@@ -11,12 +11,18 @@ txt2html_args="--extract --prebegin 1 --prewhite 4 --titlefirst \
     --underline_delimiter '' --bold_delimiter '' --italic_delimiter '' \
     --links_dictionaries dict.dict"
 preview_words=70
+# In relation to current dir:
+base=".."
+sitemap="$base/sitemap.xml"
+feed="$base/feed.xml"
+
+wfeed="/$(find "$base" -path $(realpath --relative-to=. $feed) -printf '%P\n')"
 
 # INDEX
 echo '<h1>Home</h1>' > index.tmp
 
 # SITEMAP
-cat <<EOF > ../sitemap.xml
+cat <<EOF > "$sitemap"
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
@@ -28,7 +34,7 @@ cat <<EOF > ../sitemap.xml
 EOF
 
 # FEED
-cat <<EOF > ../feed.xml
+cat <<EOF > "$feed"
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
 xmlns:content="http://purl.org/rss/1.0/modules/content/"
 xmlns:wfw="http://wellformedweb.org/CommentAPI/"
@@ -41,25 +47,35 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <title>$site_title</title>
   <link>$domain</link>
   <description>$site_desc</description>
-	<atom:link href="$domain/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="$domain$wfeed" rel="self" type="application/rss+xml" />
 	<language>en</language>
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 EOF
 
-
 max_date=0
-for i in $(ls -t *.txt); do
-    [[ "$i" == index.txt ]] && continue
-    i="${i%.*}"
-    txt="$i.txt"
-    html="$i.html"
-    fpath="/$html"
+for txt in $(find . -name '*.txt' -printf "%A@\t%p\0" | sort -znr | cut -z -f2- | tr '\0' '\n'); do
+    [[ "$txt" == ./index.txt ]] && continue
+
+    # SOURCE
+    dir="$(dirname $txt)"
+    bname="$(basename $txt)"
+
+    # DEST
+    mkdir -p "$base/$dir"
+    fname="${bname%.*}"
+    html="$base/$dir/$fname.html"
+
+    # WEB
+    touch "$html"
+    echo "$base"
+    echo "$dir/$fname.html"
+    wpath="/$(find $base -path $(realpath --relative-to=. $base/$dir/$fname.html) -printf '%P\n')"
 
     title=$(esc "$(head -n2 "$txt" | tail -n1)")
     keys=$(esc "$(head -n1 "$txt")")
     preview=$(esc "$(tail -n +4 "$txt" | grep '^\S' | paste -sd " " - | \
-        sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-$preview_words)")
+        sed 's/<URL:.*:\(.*\)>/\1/g' | cut -d' ' -f 1-$preview_words)")..
     date=$(stat -c %Z "$txt")
     [[ $date -gt $max_date ]] && max_date=$date
 
@@ -70,26 +86,26 @@ for i in $(ls -t *.txt); do
         txt2html ${txt2html_args} < <(tail -n +2 "$txt")
         echo '</article>'
         cat footer.html
-    } > ../"$html"
+    } > "$html"
 
     # INDEX
     cat <<EOF >> index.tmp
     <article>
-        <h2><a href="$fpath">$title</a></h2>
+        <h2><a href="$wpath">$title</a></h2>
         <div class="preview">
-            $preview..
+            $preview
         </div>
         <div class="cont_box">
-            <div class="cont"><a title="Continue reading" href="$fpath">Continue reading</a></div>
+            <div class="cont"><a title="Continue reading" href="$wpath">Continue reading</a></div>
             <hr>
         </div>
     </article>
 EOF
 
     # SITEMAP
-    cat <<EOF >> ../sitemap.xml
+    cat <<EOF >> "$sitemap"
     <url>
-        <loc>$domain$fpath</loc>
+        <loc>$domain$wpath</loc>
         <lastmod>$(date --date="@$date" +%F)</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -97,10 +113,10 @@ EOF
 EOF
 
     # FEED
-    cat <<EOF >> ../feed.xml
+    cat <<EOF >> "$feed"
   <item>
     <title>$title</title>
-    <link>$domain$fpath</link>
+    <link>$domain$wpath</link>
     <description>$preview</description>
     <pubDate>$(date -R --date="@$date")</pubDate>
   </item>
@@ -112,17 +128,17 @@ done
 # INDEX
 ./header.sh "home" "$site_title" \
     "A collection of workarounds and patches to solve all life's problems." \
-    "hacks,patches,perl,python,linux,terminal,blog" > ../index.html
+    "hacks,patches,perl,python,linux,terminal,blog" > "$base/index.html"
 txt2html ${txt2html_args} --short_line_length 80  \
-    --append_file index.tmp index.txt >> ../index.html
-cat footer.html >> ../index.html
+    --append_file index.tmp index.txt >> "$base/index.html"
+cat footer.html >> "$base/index.html"
 rm index.tmp
 
 # SITEMAP
-echo '</urlset>' >> ../sitemap.xml
+echo '</urlset>' >> "$sitemap"
 
 # FEED
-cat <<EOF >> ../feed.xml
+cat <<EOF >> "$feed"
     <lastBuildDate>$(date -R --date="@$max_date")</lastBuildDate>
   </channel>
 </rss>
