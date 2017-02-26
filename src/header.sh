@@ -76,7 +76,7 @@ cat <<EOF
 </head>
 <body>
 
-<a href="#content" class="skip" tabindex="1">Skip to content</a></div>
+<a href="#content" class="skip" tabindex="1">Skip to content</a>
 <nav>
     <ul id="menu">
         <li>$home</li>
