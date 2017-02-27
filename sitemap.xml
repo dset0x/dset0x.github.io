@@ -7,6 +7,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://dset0x.github.io/zsh-buffer-function.html</loc>
+        <lastmod>2017-02-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://dset0x.github.io/notmuch-addresses-in-mutt.html</loc>
         <lastmod>2017-02-25</lastmod>
         <changefreq>monthly</changefreq>
