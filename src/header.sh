@@ -28,7 +28,7 @@ cat <<EOF
     <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
     <style>
         /* General */
-        html        {background-color: #fffdff;}
+        html        {background-color: #fff9ff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85;}
         hr          {opacity: 0.2;}
 
@@ -83,7 +83,7 @@ cat <<EOF
         <hr>
         <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
         <hr>
-    </ul> 
+    </ul>
 </nav>
 
 <main id="content">
