@@ -2,10 +2,7 @@ urxvt,zsh,launcher
 Using urxvt and zsh as a program launcher
 =========================================
 
-There's a number of window manager independant program launchers out there,
-but if you need to run arbitrary commands or want shell completion you might
-find yourself falling back to spawning a terminal every time. It's easy to
-create a `dmenu` replacement by adding this to your `~/.zshrc`:
+There's a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It's easy to create a `dmenu` replacement by adding this to your `~/.zshrc`:
 
     case "$ACT_AS" in
         floating-terminal)
@@ -29,8 +26,7 @@ create a `dmenu` replacement by adding this to your `~/.zshrc`:
         ;;
     esac
 
-Entering this condition causes the shell (and controlling terminal) to exit
-after the first command, while taking care to store the command in a secondary `HISTFILE`.
+Entering this condition causes the shell (and controlling terminal) to exit after the first command, while taking care to store the command in a secondary `HISTFILE`.
 
 You may then run urxvt like so:
 
@@ -38,9 +34,7 @@ You may then run urxvt like so:
 
 ----------
 
-If you need to tell your window manager to do something special about the
-placement of the window as well, you may set a `name` as well to make it
-identifiable:
+If you need to tell your window manager to do something special about the placement of the window as well, you may set a `name` as well to make it identifiable:
 
     env ACT_AS=floating-terminal urxvtc -name floating_terminal -geometry x1
 
