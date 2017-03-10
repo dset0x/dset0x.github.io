@@ -30,8 +30,7 @@ create a `dmenu` replacement by adding this to your `~/.zshrc`:
     esac
 
 Entering this condition causes the shell (and controlling terminal) to exit
-after the first command, while taking care to store the command in a secondary
-`HISTFILE`.
+after the first command, while taking care to store the command in a secondary `HISTFILE`.
 
 You may then run urxvt like so:
 

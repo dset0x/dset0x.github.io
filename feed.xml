@@ -18,7 +18,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <title>Using urxvt and zsh as a program launcher</title>
     <link>https://dset0x.github.io/urxvt-zsh-launcher.html</link>
     <description>There&#39;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&#39;s easy to create a `dmenu` replacement by adding this to your `~/.zshrc`: Entering this condition causes the shell (and controlling terminal) to exit after the first command, while taking care to store the command..</description>
-    <pubDate>Fri, 10 Mar 2017 13:35:38 +0200</pubDate>
+    <pubDate>Fri, 10 Mar 2017 13:37:20 +0200</pubDate>
   </item>
   <item>
     <title>Converting zsh buffer contents to a function</title>
@@ -74,6 +74,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every..</description>
     <pubDate>Tue, 21 Feb 2017 11:23:11 +0200</pubDate>
   </item>
-    <lastBuildDate>Fri, 10 Mar 2017 13:35:38 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 10 Mar 2017 13:37:20 +0200</lastBuildDate>
   </channel>
 </rss>
