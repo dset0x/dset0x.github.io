@@ -29,7 +29,7 @@ cat <<EOF
     <style>
         /* General */
         html        {background-color: #fffdff;}
-        body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85;}
+        body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85; margin: 0 auto;}
         hr          {opacity: 0.2;}
 
         /* Links */
@@ -58,11 +58,6 @@ cat <<EOF
         ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
         ul#menu hr                      {width: 20ch; margin-right: 0; margin-top: 0; margin-bottom: 0;}
 
-        /*
-        ul#menu li                   {display: inline;}
-        ul#menu li:not(last-child)   {padding-right: 1ch;}
-        */
-
         /* Mobile */
         @media (max-width: 65ch) {
             pre {overflow: scroll;}
@@ -72,6 +67,7 @@ cat <<EOF
         /* Skip to content */
         .skip {position: absolute; opacity:0; pointer-events: none;}
         .skip:active, .skip:focus {opacity:1;}
+
     </style>
 </head>
 <body>
@@ -87,4 +83,40 @@ cat <<EOF
 </nav>
 
 <main id="content">
+EOF
+
+cat <<EOF > /dev/null
+    FOOTER
+
+        html {
+          height: 100%;
+          box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+          box-sizing: inherit;
+        }
+
+        body {
+          position: relative;
+          padding-bottom: 6rem;
+          min-height: 100%;
+        }
+
+        footer {
+          position: absolute;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          padding: 0.5em;
+          background-color: #efefef;
+          text-align: center;
+        }
+
+    INLINE MENU
+
+        ul#menu li                   {display: inline;}
+        ul#menu li:not(last-child)   {padding-right: 1ch;}
 EOF
