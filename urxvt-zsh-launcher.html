@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+    <title>Using urxvt and zsh as a program launcher - When software gets in the way</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Using urxvt and zsh as a program launcher">
+    <meta name="keywords" content="urxvt,zsh,launcher">
+    <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
+    <style>
+        /* General */
+        html        {background-color: #fffdff;}
+        body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85;}
+        hr          {opacity: 0.2;}
+
+        /* Links */
+        a           {text-decoration: none;}
+        a:link      {color: #3189c5;}
+        a:visited   {color: #a131c5;}
+        a:hover     {text-decoration: underline;}
+
+        /* Headings */
+        h2          {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
+        h1          {font-size: large; text-align: center;}
+
+        /* Paragraphs */
+        p, article .preview {text-align: justify;}
+
+        /* Previews */
+        article {position: relative;}
+        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch}
+        article .cont_box {margin-left: 4ch;}
+        article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small; padding-left: 1ch; z-index: 1;}
+
+        /* Menu */
+        ul                              {padding-left: 0;}
+        ul#menu                         {text-align: right; margin-right: 0;}
+        ul#menu li                      {display: block;}
+        ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
+        ul#menu hr                      {width: 20ch; margin-right: 0; margin-top: 0; margin-bottom: 0;}
+
+        /*
+        ul#menu li                   {display: inline;}
+        ul#menu li:not(last-child)   {padding-right: 1ch;}
+        */
+
+        /* Mobile */
+        @media (max-width: 65ch) {
+            pre {overflow: scroll;}
+            .cont {display: none;}
+        }
+
+        /* Skip to content */
+        .skip {position: absolute; opacity:0; pointer-events: none;}
+        .skip:active, .skip:focus {opacity:1;}
+    </style>
+</head>
+<body>
+
+<a href="#content" class="skip" tabindex="1">Skip to content</a>
+<nav>
+    <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <hr>
+        <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
+        <hr>
+    </ul> 
+</nav>
+
+<main id="content">
+<article>
+<h1><a name="section_1">Using urxvt and zsh as a program launcher</a></h1>
+
+<p>There's a number of window manager independant program launchers out there,
+but if you need to run arbitrary commands or want shell completion you might
+find yourself falling back to spawning a terminal every time. It's easy to
+create a `dmenu` replacement by adding this to your `~/.zshrc`:
+</p>
+<pre>
+    case "$ACT_AS" in
+        floating-terminal)
+            PS1=""
+
+            HISTFILE=~/.histfile_float
+            accept-line-custom () {
+                BUFFER_ORIG="$BUFFER"
+                BUFFER="(setsid $BUFFER &amp;); exit"
+                zle .accept-line
+            };
+            zle -N accept-line-custom
+            bindkey '^M' accept-line-custom
+
+            zshaddhistory() {
+                print -sr -- ${BUFFER_ORIG%%$'\n'}
+                fc -p
+            }
+
+            return
+        ;;
+    esac
+</pre>
+<p>Entering this condition causes the shell (and controlling terminal) to exit
+after the first command, while taking care to store the command in a secondary
+<strong>`HISTFILE`.</strong>
+</p>
+<p>You may then run urxvt like so:
+</p>
+<pre>
+    env ACT_AS=floating-terminal urxvtc -geometry x1
+</pre>
+<hr/>
+
+<p>If you need to tell your window manager to do something special about the
+placement of the window as well, you may set a `name` as well to make it
+identifiable:
+</p>
+<pre>
+    env ACT_AS=floating-terminal urxvtc -name floating_terminal -geometry x1
+</pre>
+<p>For `awesome` v3.5.9 you might use this rule to center the window and bring it
+to the front:
+</p>
+<pre>
+    {
+      rule = { instance = "floating_terminal" },
+      properties = { floating = true, above = true, ontop = true },
+      callback = function (c) awful.placement.centered(c, nil) end
+    }
+</pre></article>
+</main>
+<footer>
+</footer>
+</body>
+</html>
