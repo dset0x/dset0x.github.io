@@ -11,7 +11,7 @@ There's a number of window manager independant program launchers out there, but 
             HISTFILE=~/.histfile_float
             accept-line-custom () {
                 BUFFER_ORIG="$BUFFER"
-                BUFFER="(setsid $BUFFER &); exit"
+                BUFFER="(setsid $SHELL -c \"$BUFFER\" &); exit"
                 zle .accept-line
             };
             zle -N accept-line-custom
@@ -29,11 +29,16 @@ There's a number of window manager independant program launchers out there, but 
 Entering this condition has a number of effects:
 
 * The shell (and controlling terminal) to exit after the first command
-* The command is wrapped in `(setsid` ... `&)` so that it doesn't die with the
-  shell.
+* The command is wrapped in `(setsid $SHELL -c "` ... `" &)` so that it
+  doesn't die with the shell and that any shell builtins are allowed.
 * The un-modified command is storred in a secondary `HISTFILE` so that we
   don't interfere with the regular one, while always presenting it cleanly (and
   calling it correctly) when looking it up.
+
+It can do much more than what is available with other launchers:
+
+* `cat foo > /tmp/bar`
+* `arandr; libreoffice /tmp/presentation`
 
 To run this you may call urxvt like so:
 
