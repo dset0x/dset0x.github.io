@@ -18,7 +18,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <title>Why vimperator hint mode doesn&#39;t weed out duplicate links</title>
     <link>https://dset0x.github.io/vimperator-no-auto-dup-hint-select.html</link>
     <description>Vimperator has a commonly used &quot;hint&quot; mode where you may enter either a generated combination of characters or link&#39;s text to interact with that element. As you type characters in, vimperator filters out matching links for you. For example, if there&#39;s two links with the text &quot;About&quot; in them, typing in &#39;a&#39;, &#39;b&#39;, ... slowly narrows the selection down to these items. But what if you&#39;ve typed &quot;Abo&quot; and there&#39;s..</description>
-    <pubDate>Mon, 13 Mar 2017 12:24:59 +0200</pubDate>
+    <pubDate>Mon, 13 Mar 2017 12:27:59 +0200</pubDate>
   </item>
   <item>
     <title>Using urxvt with zsh as a program launcher</title>
@@ -80,6 +80,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every..</description>
     <pubDate>Tue, 21 Feb 2017 11:23:11 +0200</pubDate>
   </item>
-    <lastBuildDate>Mon, 13 Mar 2017 12:24:59 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 13 Mar 2017 12:27:59 +0200</lastBuildDate>
   </channel>
 </rss>

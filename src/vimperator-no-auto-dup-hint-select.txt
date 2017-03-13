@@ -76,3 +76,5 @@ A-ha. `followLink` does a fake click...
 And now why vimperator doesn't _already_ do the filtering I wanted to patch in
 is obvious. Javascript makes it impossible to decide whether two links are the
 same, thus you can't guess which one to click if there is _any_ doubt.
+
+Woops. No patching today.
