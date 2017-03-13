@@ -7,10 +7,10 @@ key="$4"
 
 case "$typ" in
     'home')
-        home='Home'
+        home='Notes'
         ;;
     *)
-        home='<a href="/">Home</a>'
+        home='<a href="/">Notes</a>'
         ;;
 esac
 

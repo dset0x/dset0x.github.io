@@ -21,7 +21,7 @@ esc() { perl -e 'use HTML::Entities; print encode_entities($ARGV[0]);' "$1"; }
 cp -rf $extras/* "$base"
 
 # INDEX
-echo '<h1>Home</h1>' > index.tmp
+echo '<h1>Notes</h1>' > index.tmp
 
 # SITEMAP
 cat <<EOF > "$sitemap"
