@@ -29,7 +29,7 @@ cat <<EOF
     <style>
         /* General */
         html        {background-color: #fffdff;}
-        body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85; margin: 0 auto;}
+        body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
 
         /* Links */
@@ -40,7 +40,7 @@ cat <<EOF
 
         /* Headings */
         h2          {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
-        h1          {font-size: large; text-align: center;}
+        h1          {font-size: large;}
 
         /* Paragraphs */
         p, article .preview {text-align: justify;}
@@ -52,7 +52,6 @@ cat <<EOF
         article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small; padding-left: 1ch; z-index: 1;}
 
         /* Menu */
-        ul                              {padding-left: 0;}
         ul#menu                         {text-align: right; margin-right: 0;}
         ul#menu li                      {display: block;}
         ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
