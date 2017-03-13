@@ -6,7 +6,7 @@ Vimperator has a commonly used "hint" mode where you may enter either a
 generated combination of characters or link's text to interact with that element.
 
 As you type characters in, vimperator filters out matching links for
-you. For example, if there's to links with the text "About" in them, typing in
+you. For example, if there's two links with the text "About" in them, typing in
 'a', 'b', ... slowly narrows the selection down to these items.
 
 But what if you've typed "Abo" and there's two "About" links (and nothing else
