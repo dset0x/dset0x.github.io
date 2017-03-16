@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,82 +69,82 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Getting Viber for Linux to play nice with apulse</a></h1>
+<h1>Getting Viber for Linux to play nice with apulse</h1>
 
-<p>Viber for Linux seems to work fine with apulse,
-</p>
-<pre>
-    $ apulse /opt/viber/Viber
-</pre>
-<p>except for taking the liberty of changing my system's volume to 100% shortly
-after starting.
-</p>
+<p>Viber for Linux seems to work fine with apulse,</p>
+
+<pre><code>$ apulse /opt/viber/Viber
+</code></pre>
+
+<p>except for taking the liberty of changing my system&rsquo;s volume to 100% shortly
+after starting.</p>
+
 <p>After no luck with trying to figure out if it was leveraging apulse itself to
-do this,
-</p>
-<pre>
-    $ apulse ltrace -f -e '@libpulse*' /opt/viber/Viber
-</pre>
-<p>I started believing it was calling alsa despite being a pulseaudio
-application:
-</p>
-<pre>
-    $ apulse ltrace -f -e '@libasound*' /opt/viber/Viber
-</pre>
-<p>Unfortunately, this produces too much noise.
-</p>
-<p>Looking at `/usr/include/alsa/mixer.h` it's easy to locate possibly used
-functions:
-</p>
-<pre>
-    int snd_mixer_selem_set_playback_volume(...);
-    int snd_mixer_selem_set_capture_volume(...);
-    int snd_mixer_selem_set_playback_volume_all(...);
-    int snd_mixer_selem_set_capture_volume_all(...);
-    int snd_mixer_selem_set_playback_volume_range(...);
-</pre>
-<p>In fact `strings` hints that this may be the case:
-</p>
-<pre>
-    $ strings /opt/viber/Viber| grep 'volume'
-    pa_cvolume_set
-    pa_context_set_sink_input_volume
-    pa_context_set_source_volume_by_index
-    snd_mixer_selem_set_playback_volume_all
-    snd_mixer_selem_get_playback_volume
-    snd_mixer_selem_has_playback_volume
-    snd_mixer_selem_get_playback_volume_range
-    snd_mixer_selem_has_capture_volume
-    snd_mixer_selem_set_capture_volume_all
-    snd_mixer_selem_get_capture_volume
-    snd_mixer_selem_get_capture_volume_range
-</pre>
-<p>Armed with possible function names, voila:
-</p>
-<pre>
-    $ apulse ltrace -f -e '*set*volume*@libasound*' /opt/viber/Viber
-    [...]
-    [pid 17824] libasound.so.2-&gt;snd_mixer_selem_set_playback_volume(0x7f1f7d0efbf0, 0, 110, 0) = 0
-    [pid 17824] libasound.so.2-&gt;snd_mixer_selem_set_playback_volume(0x7f1f7d0efbf0, 1, 110, 1) = 0
-    [...]
-</pre>
-<p>Looks like it sets it to 110% for good measure (and alsa happily obliges)!
-</p>
-<p>Let's go ahead and take that function away from it via `LD_PRELOAD`:
-</p>
-<pre>
-    #include
-    int snd_mixer_selem_set_playback_volume(snd_mixer_elem_t *elem, snd_mixer_selem_channel_id_t channel, long value) {
-    return 0;
-    }
+do this,</p>
 
-    $ gcc -shared -fPIC viber_unvol.c -o viber_unvol.so
-</pre>
-<p>And there you go, no more automatic volume changing:
-</p>
-<pre>
-    $ LD_PRELOAD=$LD_PRELOAD:$PWD/viber_unvol.so apulse /opt/viber/Viber
-</pre></article>
+<pre><code>$ apulse ltrace -f -e '@libpulse*' /opt/viber/Viber
+</code></pre>
+
+<p>I started believing it was calling alsa despite being a pulseaudio
+application:</p>
+
+<pre><code>$ apulse ltrace -f -e '@libasound*' /opt/viber/Viber
+</code></pre>
+
+<p>Unfortunately, this produces too much noise.</p>
+
+<p>Looking at <code>/usr/include/alsa/mixer.h</code> it&rsquo;s easy to locate possibly used
+functions:</p>
+
+<pre><code>int snd_mixer_selem_set_playback_volume(...);
+int snd_mixer_selem_set_capture_volume(...);
+int snd_mixer_selem_set_playback_volume_all(...);
+int snd_mixer_selem_set_capture_volume_all(...);
+int snd_mixer_selem_set_playback_volume_range(...);
+</code></pre>
+
+<p>In fact <code>strings</code> hints that this may be the case:</p>
+
+<pre><code>$ strings /opt/viber/Viber| grep 'volume'
+pa_cvolume_set
+pa_context_set_sink_input_volume
+pa_context_set_source_volume_by_index
+snd_mixer_selem_set_playback_volume_all
+snd_mixer_selem_get_playback_volume
+snd_mixer_selem_has_playback_volume
+snd_mixer_selem_get_playback_volume_range
+snd_mixer_selem_has_capture_volume
+snd_mixer_selem_set_capture_volume_all
+snd_mixer_selem_get_capture_volume
+snd_mixer_selem_get_capture_volume_range
+</code></pre>
+
+<p>Armed with possible function names, voila:</p>
+
+<pre><code>$ apulse ltrace -f -e '*set*volume*@libasound*' /opt/viber/Viber
+[...]
+[pid 17824] libasound.so.2-&gt;snd_mixer_selem_set_playback_volume(0x7f1f7d0efbf0, 0, 110, 0) = 0
+[pid 17824] libasound.so.2-&gt;snd_mixer_selem_set_playback_volume(0x7f1f7d0efbf0, 1, 110, 1) = 0
+[...]
+</code></pre>
+
+<p>Looks like it sets it to 110% for good measure (and alsa happily obliges)!</p>
+
+<p>Let&rsquo;s go ahead and take that function away from it via <code>LD_PRELOAD</code>:</p>
+
+<pre><code>#include
+int snd_mixer_selem_set_playback_volume(snd_mixer_elem_t *elem, snd_mixer_selem_channel_id_t channel, long value) {
+return 0;
+}
+
+$ gcc -shared -fPIC viber_unvol.c -o viber_unvol.so
+</code></pre>
+
+<p>And there you go, no more automatic volume changing:</p>
+
+<pre><code>$ LD_PRELOAD=$LD_PRELOAD:$PWD/viber_unvol.so apulse /opt/viber/Viber
+</code></pre>
+</article>
 </main>
 <footer>
 </footer>

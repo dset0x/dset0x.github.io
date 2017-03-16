@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,32 +69,32 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Extracting all known addresses from notmuch for use with mutt</a></h1>
+<h1>Extracting all known addresses from notmuch for use with mutt</h1>
 
-<p>Retrieving all known addresses from notmuch's index turned out to be more
+<p>Retrieving all known addresses from notmuch&rsquo;s index turned out to be more
 difficult than I had initially assumed. I needed to search not only
-recipients, but senders as well, due to mailing lists and such. Don't forget
-that mutt skips the first line of the addresses.
-</p>
-<pre>
-    #!/bin/bash
-    (parallel notmuch address {} '\*' ::: \
-        '--output=sender' '--output=recipients') | \
-        grep -Pi "$1" | \
-        awk '\
-    BEGIN {print}
-    /&gt;$/ {
-        s=$NF;
-        sub(/^&lt;/, "", s);
-        sub(/&gt;$/, "", s);
-        printf("%s\t", s);
-        for (i = 1; i &lt; NF; i++)
-            printf("%s ", $i);
-        printf("\n")
-    }
-    ' | sort | uniq
-</pre>
-<p>This method is unfortunately quite slow, whether you use `parallel` or not.
+recipients, but senders as well, due to mailing lists and such. Don&rsquo;t forget
+that mutt skips the first line of the addresses.</p>
+
+<pre><code>#!/bin/bash
+(parallel notmuch address {} '\*' ::: \
+    '--output=sender' '--output=recipients') | \
+    grep -Pi "$1" | \
+    awk '\
+BEGIN {print}
+/&gt;$/ {
+    s=$NF;
+    sub(/^&lt;/, "", s);
+    sub(/&gt;$/, "", s);
+    printf("%s\t", s);
+    for (i = 1; i &lt; NF; i++)
+        printf("%s ", $i);
+    printf("\n")
+}
+' | sort | uniq
+</code></pre>
+
+<p>This method is unfortunately quite slow, whether you use <code>parallel</code> or not.
 You are hitting the same database after all.</p>
 </article>
 </main>

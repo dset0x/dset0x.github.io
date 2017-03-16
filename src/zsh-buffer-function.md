@@ -1,4 +1,4 @@
-zsh,buffer
+2017-02-27T21:52 zsh,buffer
 Converting zsh buffer contents to a function
 =========================
 

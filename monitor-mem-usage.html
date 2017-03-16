@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,112 +69,112 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Monitoring memory usage for weechat script leaks</a></h1>
+<h1>Monitoring memory usage for weechat script leaks</h1>
 
-<p>I was recently dealing with a memory leak within a script in `weechat`. I
+<p>I was recently dealing with a memory leak within a script in <code>weechat</code>. I
 needed a quick and dirty way of figuring out which script was causing the
-trouble.
-</p>
-<p>Of course it makes no sense to use `awk` for this, but what the heck. This
+trouble.</p>
+
+<p>Of course it makes no sense to use <code>awk</code> for this, but what the heck. This
 script unloads all weechat scripts, then loads them one at a time whenever
-passed a line.
-</p>
-<pre>
-    #!/usr/bin/env awk -f
+passed a line.</p>
 
-    function load(scr) {
-        print strftime("%s"), scr
-        system("echo -e \*/script load "scr" &gt; ~/.weechat/weechat\_fifo_$(pgrep --exact weechat)")
+<pre><code>#!/usr/bin/env awk -f
+
+function load(scr) {
+    print strftime("%s"), scr
+    system("echo -e \*/script load "scr" &gt; ~/.weechat/weechat\_fifo_$(pgrep --exact weechat)")
+}
+
+function unload(scr) {
+    system("echo -e \*/script unload "scr" &gt; ~/.weechat/weechat\_fifo_$(pgrep --exact weechat)")
+}
+
+BEGIN {
+    "echo ~/.weechat/**/autoload/*" | getline script_paths_str
+    split(script_paths_str, script_paths, " ")
+    for(idx in script_paths) {
+        len = split(script_paths[idx], _, "/")
+        script_names[idx] = _[len]
+        unload(script_names[idx])
     }
+}
 
-    function unload(scr) {
-        system("echo -e \*/script unload "scr" &gt; ~/.weechat/weechat\_fifo_$(pgrep --exact weechat)")
-    }
-
-    BEGIN {
-        "echo ~/.weechat/**/autoload/*" | getline script_paths_str
-        split(script_paths_str, script_paths, " ")
-        for(idx in script_paths) {
-            len = split(script_paths[idx], _, "/")
-            script_names[idx] = _[len]
-            unload(script_names[idx])
+// {
+    if(NR&gt;=1) {
+        if(cur_script != "") {
+                unload(cur_script)
         }
+
+        cur_script = script_names[NR+1]
+        load(cur_script)
     }
+}
 
-    // {
-        if(NR&gt;=1) {
-            if(cur_script != "") {
-                    unload(cur_script)
-            }
-
-            cur_script = script_names[NR+1]
-            load(cur_script)
-        }
+END {
+    for(idx in script_names) {
+        load(script_names[idx])
     }
+}
+</code></pre>
 
-    END {
-        for(idx in script_names) {
-            load(script_names[idx])
-        }
-    }
-</pre>
-<p>We can go ahead and load one script every one hour:
-</p>
-<pre>
-    $ while :; do echo 1; sleep 1h; done | ./above_script.awk &gt; /tmp/events
-</pre>
-<p>Now we have a bunch of timestamped events, but we'd like to frequently check
-memory usage too. Let's have another loop do that for us.
-</p>
-<pre>
-    $ while :; do echo $(date +%s) $(ps -q $(pgrep --exact weechat) -o rss,vsz | tail -n 1) &gt;&gt; /tmp/mem; sleep 5s; done
-</pre>
-<p>Now to graph everything into a readable image we can use `gnuplot`:
-</p>
-<pre>
-    #!/bin/bash
-    {
-        cat &lt;&lt;EOF
-        set term png small size 1900,600
-        set output "/tmp/mem-graph.png"
+<p>We can go ahead and load one script every one hour:</p>
 
-        set ylabel "RSS (mb)"
-        set y2label "VSZ (mb)"
+<pre><code>$ while :; do echo 1; sleep 1h; done | ./above_script.awk &gt; /tmp/events
+</code></pre>
 
-        set ytics nomirror
-        set y2tics nomirror in
-        set grid ytics lc rgb "#bbbbbb" lw 1 lt 0
+<p>Now we have a bunch of timestamped events, but we&rsquo;d like to frequently check
+memory usage too. Let&rsquo;s have another loop do that for us.</p>
 
-        set yrange [230.000:*]
-        set y2range [90.000:*]
+<pre><code>$ while :; do echo $(date +%s) $(ps -q $(pgrep --exact weechat) -o rss,vsz | tail -n 1) &gt;&gt; /tmp/mem; sleep 5s; done
+</code></pre>
 
-        set tic scale 0
-        set xtics format " "
-        set xtics rotate by 45 offset -0.8,-9.8
-        set bmargin 11
+<p>Now to graph everything into a readable image we can use <code>gnuplot</code>:</p>
 
-    EOF
-        cat /tmp/events | while read date ev_name; do
-            echo "set arrow from $date, graph 0 to $date, graph 1 nohead"
-            echo "set xtics add (\""$ev_name"\" $date)"
-        done
+<pre><code>#!/bin/bash
+{
+    cat &lt;&lt;EOF
+    set term png small size 1900,600
+    set output "/tmp/mem-graph.png"
 
-        cat &lt;&lt;EOF
-        plot "&lt; uniq -f 0 /tmp/mem" using 1:(\$3/1000) with lines axes x1y1 title "VSZ", \
-             "&lt; uniq -f 0 /tmp/mem" using 1:(\$2/1000) with lines axes x1y2 title "RSS"
-    EOF
-    } | gnuplot
-</pre>
-<p>What's handy about this setup is that we can kill any script for any reason
+    set ylabel "RSS (mb)"
+    set y2label "VSZ (mb)"
+
+    set ytics nomirror
+    set y2tics nomirror in
+    set grid ytics lc rgb "#bbbbbb" lw 1 lt 0
+
+    set yrange [230.000:*]
+    set y2range [90.000:*]
+
+    set tic scale 0
+    set xtics format " "
+    set xtics rotate by 45 offset -0.8,-9.8
+    set bmargin 11
+
+EOF
+    cat /tmp/events | while read date ev_name; do
+        echo "set arrow from $date, graph 0 to $date, graph 1 nohead"
+        echo "set xtics add (\""$ev_name"\" $date)"
+    done
+
+    cat &lt;&lt;EOF
+    plot "&lt; uniq -f 0 /tmp/mem" using 1:(\$3/1000) with lines axes x1y1 title "VSZ", \
+         "&lt; uniq -f 0 /tmp/mem" using 1:(\$2/1000) with lines axes x1y2 title "RSS"
+EOF
+} | gnuplot
+</code></pre>
+
+<p>What&rsquo;s handy about this setup is that we can kill any script for any reason
 without losing data. In fact we can stop the first one and load whichever
-scripts we want, as long as we maintain `/tmp/events`.
-</p>
-<p>Of course you can run the `gnuplot` script on a remote box as long as you have
-access to the two logfiles.
-</p>
-<pre>
-    $ rifle <a href="/opt/mCeOgNe.png">/tmp/mem-graph.png</a>
-</pre></article>
+scripts we want, as long as we maintain <code>/tmp/events</code>.</p>
+
+<p>Of course you can run the <code>gnuplot</code> script on a remote box as long as you have
+access to the two logfiles.</p>
+
+<pre><code>$ rifle &lt;URL:/opt/mCeOgNe.png:/tmp/mem-graph.png&gt;
+</code></pre>
+</article>
 </main>
 <footer>
 </footer>

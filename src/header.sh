@@ -26,6 +26,7 @@ cat <<EOF
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}

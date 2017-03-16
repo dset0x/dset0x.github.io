@@ -1,4 +1,4 @@
-urxvt,zsh,launcher
+2017-03-13T14:58 urxvt,zsh,launcher
 Using urxvt with zsh as a program launcher
 =========================================
 

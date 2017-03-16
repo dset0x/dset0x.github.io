@@ -7,20 +7,8 @@
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://dset0x.github.io/pages/advice.html</loc>
-        <lastmod>2017-03-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://dset0x.github.io/vimperator-no-auto-dup-hint-select.html</loc>
-        <lastmod>2017-03-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://dset0x.github.io/urxvt-zsh-launcher.html</loc>
-        <lastmod>2017-03-13</lastmod>
+        <loc>https://dset0x.github.io/zte-expect.html</loc>
+        <lastmod>2017-02-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -31,13 +19,25 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://dset0x.github.io/notmuch-addresses-in-mutt.html</loc>
-        <lastmod>2017-02-25</lastmod>
+        <loc>https://dset0x.github.io/vimperator-no-auto-dup-hint-select.html</loc>
+        <lastmod>2017-03-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://dset0x.github.io/double-perl-while-match.html</loc>
+        <loc>https://dset0x.github.io/viber-apulse.html</loc>
+        <lastmod>2017-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dset0x.github.io/urxvt-zsh-launcher.html</loc>
+        <lastmod>2017-03-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dset0x.github.io/notmuch-addresses-in-mutt.html</loc>
         <lastmod>2017-02-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -49,8 +49,20 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://dset0x.github.io/zte-expect.html</loc>
-        <lastmod>2017-02-26</lastmod>
+        <loc>https://dset0x.github.io/monitor-mem-usage.html</loc>
+        <lastmod>2017-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dset0x.github.io/mailto-mutt.html</loc>
+        <lastmod>2017-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dset0x.github.io/double-perl-while-match.html</loc>
+        <lastmod>2017-02-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -61,20 +73,8 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://dset0x.github.io/mailto-mutt.html</loc>
-        <lastmod>2017-02-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://dset0x.github.io/viber-apulse.html</loc>
-        <lastmod>2017-02-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://dset0x.github.io/monitor-mem-usage.html</loc>
-        <lastmod>2017-02-21</lastmod>
+        <loc>https://dset0x.github.io/pages/advice.html</loc>
+        <lastmod>2017-03-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

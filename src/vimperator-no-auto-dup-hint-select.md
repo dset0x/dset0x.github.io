@@ -1,4 +1,4 @@
-firefox,vimperator,hint
+2017-03-13T12:27 firefox,vimperator,hint
 Why vimperator hint mode doesn't weed out duplicate links
 ====================================================
 

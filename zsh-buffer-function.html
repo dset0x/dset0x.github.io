@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,33 +69,33 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Converting zsh buffer contents to a function</a></h1>
+<h1>Converting zsh buffer contents to a function</h1>
 
-<p>I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simply function you can decrease the amount of jumping around the command line.
-</p>
-<pre>
-    funcify() {
-        BUFFER="(){$BUFFER} "
-        zle end-of-line
-    }
-    zle -N funcify
-    bindkey '\ez' funcify
-</pre>
-<p>Let's say you're working on the following command:
-</p>
-<pre>
-    $ sed "s/foo/bar/g" foo.txt | grep -P "baz" | sort -zr
-</pre>
-<p>Naturally, you keep getting the regexes wrong. Just ^P and change "foo" to "$1" and "baz" to "$2". Then do &lt;esc-z&gt; to call `funcify`. You will end up with this anonymous function:
-</p>
-<pre>
-    $ (){sed "s/$1/bar/g" foo.txt | grep "$2" | sort -zr}
-</pre>
-<p>Whatever you type next to it becomes its arguments and you can experiment more easily now! In other words you've pushed the arguments you're interested in changing to the end.
-</p>
-<pre>
-    $ (){sed "s/$1/bar/g" foo.txt | grep "$2" | sort -zr} FOO BAZ
-</pre></article>
+<p>I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simply function you can decrease the amount of jumping around the command line.</p>
+
+<pre><code>funcify() {
+    BUFFER="(){$BUFFER} "
+    zle end-of-line
+}
+zle -N funcify
+bindkey '\ez' funcify
+</code></pre>
+
+<p>Let&rsquo;s say you&rsquo;re working on the following command:</p>
+
+<pre><code>$ sed "s/foo/bar/g" foo.txt | grep -P "baz" | sort -zr
+</code></pre>
+
+<p>Naturally, you keep getting the regexes wrong. Just ^P and change &ldquo;foo&rdquo; to &ldquo;$1&rdquo; and &ldquo;baz&rdquo; to &ldquo;$2&rdquo;. Then do &lt;esc-z> to call <code>funcify</code>. You will end up with this anonymous function:</p>
+
+<pre><code>$ (){sed "s/$1/bar/g" foo.txt | grep "$2" | sort -zr}
+</code></pre>
+
+<p>Whatever you type next to it becomes its arguments and you can experiment more easily now! In other words you&rsquo;ve pushed the arguments you&rsquo;re interested in changing to the end.</p>
+
+<pre><code>$ (){sed "s/$1/bar/g" foo.txt | grep "$2" | sort -zr} FOO BAZ
+</code></pre>
+</article>
 </main>
 <footer>
 </footer>

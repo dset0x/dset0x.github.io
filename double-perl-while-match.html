@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,35 +69,35 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Confusing perl with nested while matches</a></h1>
+<h1>Confusing perl with nested while matches</h1>
 
 <p>Nesting while loops that match against the same string will throw perl into an
-infinite loop.
-</p>
-<pre>
-    my $s = "aabb";
-    while ( $s =~ /a/g ) {
-        my $first = $-[0];
-        while ( $s =~ /b/g ) {
-            print "$first $-[0]\n";
-        }
+infinite loop.</p>
+
+<pre><code>my $s = "aabb";
+while ( $s =~ /a/g ) {
+    my $first = $-[0];
+    while ( $s =~ /b/g ) {
+        print "$first $-[0]\n";
     }
-</pre>
-<p>Produces the following:
-</p>
-<pre>
-    0 2
-    0 3
-    0 2
-    0 3
-    0 2
-    0 3
-    0 2
-    0 3
-    0 2
-    0 3
-    [...]
-</pre>
+}
+</code></pre>
+
+<p>Produces the following:</p>
+
+<pre><code>0 2
+0 3
+0 2
+0 3
+0 2
+0 3
+0 2
+0 3
+0 2
+0 3
+[...]
+</code></pre>
+
 <p> I have not looked into why this happens, but I assume that these while loops
  share a pointer onto said string. You can work around this by using a copy of
  the string.</p>

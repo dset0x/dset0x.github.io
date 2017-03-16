@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,80 +69,80 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Using mailto URIs with mutt postponed email</a></h1>
+<h1>Using mailto URIs with mutt postponed email</h1>
 
-<p>mailto:// URLs are sometimes convenient to use, but they don't fit in too well
+<p>mailto:// URLs are sometimes convenient to use, but they don&rsquo;t fit in too well
 with using a single mutt instance and having an aversion to windows popping
-up.
-</p>
+up.</p>
+
 <p>One way to use them with mutt is to take advantage of the postponed feature.
-If your `postponed` variable points to a directory you may have multiple
-postponed messages.
-</p>
-<pre>
-    $ mkdir ~/.mail/postponed
-    $ echo 'set postponed = "~/.mail/postponed"' &gt;&gt; ~/.mutt/muttrc
-</pre>
+If your <code>postponed</code> variable points to a directory you may have multiple
+postponed messages.</p>
+
+<pre><code>$ mkdir ~/.mail/postponed
+$ echo 'set postponed = "~/.mail/postponed"' &gt;&gt; ~/.mutt/muttrc
+</code></pre>
+
 <p>We can therefore generate a postponed message every time a mailto URI is
-clicked. Create this script and have your applications call it for mailto://.
-</p>
-<pre>
-    #!/bin/bash
+clicked. Create this script and have your applications call it for mailto://.</p>
 
-    set -eu
+<pre><code>#!/bin/bash
 
-    uri_unescape() {
-      perl -e 'use URI::Escape; print uri_unescape($ARGV[0])' "$1"
-    }
+set -eu
 
-    mutt_expand_path() {
-        eval $(mutt -Q folder)
-        val="${1/#=/$folder\/}"
-        val="${val/#\~/$HOME}"
-        echo "$val"
-    }
+uri_unescape() {
+  perl -e 'use URI::Escape; print uri_unescape($ARGV[0])' "$1"
+}
 
-    # Variables from mutt
-    for var in from realname postponed signature; do
-        eval $(mutt -Q "$var")
-    done
-    postponed=$(mutt_expand_path $postponed)
-    signature=$(mutt_expand_path $signature)
+mutt_expand_path() {
+    eval $(mutt -Q folder)
+    val="${1/#=/$folder\/}"
+    val="${val/#\~/$HOME}"
+    echo "$val"
+}
 
-    # Arguments from URI
-    IFS="?" read to args &lt;&lt;&lt;"$1"
-    to="$(uri_unescape "${to#mailto:}")"
+# Variables from mutt
+for var in from realname postponed signature; do
+    eval $(mutt -Q "$var")
+done
+postponed=$(mutt_expand_path $postponed)
+signature=$(mutt_expand_path $signature)
 
-    for key in subject cc bcc body;
-        do declare "$key"=;
-    done
+# Arguments from URI
+IFS="?" read to args &lt;&lt;&lt;"$1"
+to="$(uri_unescape "${to#mailto:}")"
 
-    for arg in ${args//&amp;/ }; do
-      key="${arg%%=*}"; key="${key,,}"
-      value="$(uri_unescape "${arg#*=}")"
-      [[ "$key" =~ subject|cc|bcc|body ]] &amp;&amp; declare "$key"="$value"
-    done
+for key in subject cc bcc body;
+    do declare "$key"=;
+done
 
-    # Create postponed email
-    mkdir -p "$postponed"/new
-    file="$postponed"/new/"$(date +%s).\
-        R$(grep -ao '[0-9]' /dev/urandom | head -20 | tr -d '\n').$(hostname)"
+for arg in ${args//&amp;/ }; do
+  key="${arg%%=*}"; key="${key,,}"
+  value="$(uri_unescape "${arg#*=}")"
+  [[ "$key" =~ subject|cc|bcc|body ]] &amp;&amp; declare "$key"="$value"
+done
 
-    cat &lt;&lt;EOF &gt; "$file"
-    From: $realname &lt;$from&gt;
-    To: $to
-    Cc: $cc
-    Bcc: $bcc
-    Subject: $subject
+# Create postponed email
+mkdir -p "$postponed"/new
+file="$postponed"/new/"$(date +%s).\
+    R$(grep -ao '[0-9]' /dev/urandom | head -20 | tr -d '\n').$(hostname)"
 
-    $body
+cat &lt;&lt;EOF &gt; "$file"
+From: $realname &lt;$from&gt;
+To: $to
+Cc: $cc
+Bcc: $bcc
+Subject: $subject
 
-    --
-    $(cat $signature)
-    EOF
-</pre>
-<p>You're going to have to make sure that `folder`, `realname`, `postponed` and
-`sigature` expand appropariately when called via `mutt -Q`.</p>
+$body
+
+--
+$(cat $signature)
+EOF
+</code></pre>
+
+<p>You&rsquo;re going to have to make sure that <code>folder</code>, <code>realname</code>, <code>postponed</code> and
+<code>sigature</code> expand appropariately when called via <code>mutt -Q</code>.</p>
 </article>
 </main>
 <footer>

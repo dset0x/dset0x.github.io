@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,30 +69,31 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Logging into a ZTE H168N with the help of expect</a></h1>
+<h1>Logging into a ZTE H168N with the help of expect</h1>
 
-<p>Jalal Sela already took the time to break into a sibling of this router on his <a href="https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/">blog</a>. Having shell access to my router turned out to be more handy than I had anticipated.
-</p>
-<p>Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it
-(although I suppose it gets overwritten on reboot anyway).
-</p>
-<pre>
-    #!/usr/bin/expect -f
+<p>Jalal Sela already took the time to break into a sibling of this router on his
+<a href="https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/">blog</a>. Having shell access to my router turned out to be more handy than I had anticipated.</p>
 
-    spawn telnet <a href="telnet://192.168.2.254:23">192.168.2.254 23</a>
+<p>Of course you can have dropbear on it, but I&rsquo;ve yet to dare edit <code>rcS</code> on it
+(although I suppose it gets overwritten on reboot anyway).</p>
 
-    expect Username: { send "root\r" }
-    expect Password: { send "public\r" }
+<pre><code>#!/usr/bin/expect -f
 
-    expect &gt;         { send "enable\r" }
-    expect Password: { send "zte\r" }
+spawn telnet 192.168.2.254 23
 
-    expect "#"       { send "shell\r" }
-    expect Login:    { send "root\r" }
-    expect Password: { send "root\r" }
+expect Username: { send "root\r" }
+expect Password: { send "public\r" }
 
-    interact
-</pre></article>
+expect &gt;         { send "enable\r" }
+expect Password: { send "zte\r" }
+
+expect "#"       { send "shell\r" }
+expect Login:    { send "root\r" }
+expect Password: { send "root\r" }
+
+interact
+</code></pre>
+</article>
 </main>
 <footer>
 </footer>

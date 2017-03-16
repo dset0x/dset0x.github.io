@@ -15,77 +15,77 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
   <item>
-    <title>Advice</title>
-    <link>https://dset0x.github.io/pages/advice.html</link>
-    <description>Better desk posture ------ * If you can&#39;t afford a split or ergonomic keyboard, use one keyboard per hand * Imagine a string is pulling you upwards from your head. This should keep your * Your shoulders should be hanging down: not shrugging. To do that raise your * Have your computer halt (eg. screen lock in `cron`) every 1 hour. Get up and do Time and distractions ------ *..</description>
-    <pubDate>Thu, 16 Mar 2017 12:56:55 +0200</pubDate>
-  </item>
-  <item>
-    <title>Why vimperator hint mode doesn&#39;t weed out duplicate links</title>
-    <link>https://dset0x.github.io/vimperator-no-auto-dup-hint-select.html</link>
-    <description>Vimperator has a commonly used &quot;hint&quot; mode where you may enter either a generated combination of characters or link&#39;s text to interact with that element. As you type characters in, vimperator filters out matching links for you. For example, if there&#39;s two links with the text &quot;About&quot; in them, typing in &#39;a&#39;, &#39;b&#39;, ... slowly narrows the selection down to these items. But what if you&#39;ve typed &quot;Abo&quot; and there&#39;s..</description>
-    <pubDate>Mon, 13 Mar 2017 12:27:59 +0200</pubDate>
-  </item>
-  <item>
-    <title>Using urxvt with zsh as a program launcher</title>
-    <link>https://dset0x.github.io/urxvt-zsh-launcher.html</link>
-    <description>There&#39;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&#39;s easy to create a `dmenu` replacement by adding this to your `~/.zshrc`: Entering this condition has a number of effects: * The shell (and controlling terminal) to exit after the first command * The..</description>
-    <pubDate>Mon, 13 Mar 2017 14:58:08 +0200</pubDate>
+    <title>Logging into a ZTE H168N with the help of expect</title>
+    <link>https://dset0x.github.io/zte-expect.html</link>
+    <description>Jalal Sela already took the time to break into a sibling of this router on his 1...</description>
+    <pubDate>Sun, 26 Feb 2017 00:20:00 +0200</pubDate>
   </item>
   <item>
     <title>Converting zsh buffer contents to a function</title>
     <link>https://dset0x.github.io/zsh-buffer-function.html</link>
     <description>I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simply function you can decrease the amount of jumping around the command line. Let&#39;s say you&#39;re working on the following command: Naturally, you keep getting the regexes wrong. Just..</description>
-    <pubDate>Mon, 27 Feb 2017 21:52:11 +0200</pubDate>
+    <pubDate>Mon, 27 Feb 2017 21:52:00 +0200</pubDate>
   </item>
   <item>
-    <title>Extracting all known addresses from notmuch for use with mutt</title>
-    <link>https://dset0x.github.io/notmuch-addresses-in-mutt.html</link>
-    <description>Retrieving all known addresses from notmuch&#39;s index turned out to be more difficult than I had initially assumed. I needed to search not only recipients, but senders as well, due to mailing lists and such. Don&#39;t forget that mutt skips the first line of the addresses. This method is unfortunately quite slow, whether you use `parallel` or not. You are hitting the same database after all...</description>
-    <pubDate>Sat, 25 Feb 2017 16:02:40 +0200</pubDate>
-  </item>
-  <item>
-    <title>Confusing perl with nested while matches</title>
-    <link>https://dset0x.github.io/double-perl-while-match.html</link>
-    <description>Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following:..</description>
-    <pubDate>Sat, 25 Feb 2017 14:02:56 +0200</pubDate>
-  </item>
-  <item>
-    <title>Getting lynx to print URLs of HTML messages on the side</title>
-    <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
-    <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!..</description>
-    <pubDate>Tue, 21 Feb 2017 23:11:32 +0200</pubDate>
-  </item>
-  <item>
-    <title>Logging into a ZTE H168N with the help of expect</title>
-    <link>https://dset0x.github.io/zte-expect.html</link>
-    <description>Jalal Sela already took the time to break into a sibling of this router on his blog. Having shell access to my router turned out to be more handy than I had anticipated. Of course you can have dropbear on it, but I&#39;ve yet to dare edit `rcS` on it (although I suppose it gets overwritten on reboot anyway)...</description>
-    <pubDate>Sun, 26 Feb 2017 00:20:50 +0200</pubDate>
-  </item>
-  <item>
-    <title>Removing binary data from (mpd) logfiles</title>
-    <link>https://dset0x.github.io/clean-mpd-logs.html</link>
-    <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we&#39;re at it to bring the filesize down from 1GiB...</description>
-    <pubDate>Tue, 21 Feb 2017 11:23:11 +0200</pubDate>
-  </item>
-  <item>
-    <title>Using mailto URIs with mutt postponed email</title>
-    <link>https://dset0x.github.io/mailto-mutt.html</link>
-    <description>mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is..</description>
-    <pubDate>Tue, 21 Feb 2017 11:23:11 +0200</pubDate>
+    <title>Why vimperator hint mode doesn&#39;t weed out duplicate links</title>
+    <link>https://dset0x.github.io/vimperator-no-auto-dup-hint-select.html</link>
+    <description>Vimperator has a commonly used &quot;hint&quot; mode where you may enter either a generated combination of characters or link&#39;s text to interact with that element. As you type characters in, vimperator filters out matching links for you. For example, if there&#39;s two links with the text &quot;About&quot; in them, typing in &#39;a&#39;, &#39;b&#39;, ... slowly narrows the selection down to these items. But what if you&#39;ve typed &quot;Abo&quot; and there&#39;s..</description>
+    <pubDate>Mon, 13 Mar 2017 12:27:00 +0200</pubDate>
   </item>
   <item>
     <title>Getting Viber for Linux to play nice with apulse</title>
     <link>https://dset0x.github.io/viber-apulse.html</link>
     <description>Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system&#39;s volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it&#39;s easy to locate possibly used functions: In..</description>
-    <pubDate>Tue, 21 Feb 2017 11:23:11 +0200</pubDate>
+    <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Using urxvt with zsh as a program launcher</title>
+    <link>https://dset0x.github.io/urxvt-zsh-launcher.html</link>
+    <description>There&#39;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&#39;s easy to create a `dmenu` replacement by adding this to your `~/.zshrc`: Entering this condition has a number of effects: * The shell (and controlling terminal) to exit after the first command * The..</description>
+    <pubDate>Mon, 13 Mar 2017 14:58:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Extracting all known addresses from notmuch for use with mutt</title>
+    <link>https://dset0x.github.io/notmuch-addresses-in-mutt.html</link>
+    <description>Retrieving all known addresses from notmuch&#39;s index turned out to be more difficult than I had initially assumed. I needed to search not only recipients, but senders as well, due to mailing lists and such. Don&#39;t forget that mutt skips the first line of the addresses. This method is unfortunately quite slow, whether you use `parallel` or not. You are hitting the same database after all...</description>
+    <pubDate>Sat, 25 Feb 2017 16:02:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Getting lynx to print URLs of HTML messages on the side</title>
+    <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
+    <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like 1 too!..</description>
+    <pubDate>Tue, 21 Feb 2017 23:11:00 +0200</pubDate>
   </item>
   <item>
     <title>Monitoring memory usage for weechat script leaks</title>
     <link>https://dset0x.github.io/monitor-mem-usage.html</link>
     <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every..</description>
-    <pubDate>Tue, 21 Feb 2017 11:23:11 +0200</pubDate>
+    <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
-    <lastBuildDate>Thu, 16 Mar 2017 12:56:55 +0200</lastBuildDate>
+  <item>
+    <title>Using mailto URIs with mutt postponed email</title>
+    <link>https://dset0x.github.io/mailto-mutt.html</link>
+    <description>mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is..</description>
+    <pubDate>Wed, 22 Feb 2017 11:23:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Confusing perl with nested while matches</title>
+    <link>https://dset0x.github.io/double-perl-while-match.html</link>
+    <description>Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following:..</description>
+    <pubDate>Sat, 25 Feb 2017 14:02:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Removing binary data from (mpd) logfiles</title>
+    <link>https://dset0x.github.io/clean-mpd-logs.html</link>
+    <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we&#39;re at it to bring the filesize down from 1GiB...</description>
+    <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Advice</title>
+    <link>https://dset0x.github.io/pages/advice.html</link>
+    <description>Better desk posture ------ * If you can&#39;t afford a split or ergonomic keyboard, use one keyboard per hand * Imagine a string is pulling you upwards from your head. This should keep your * Your shoulders should be hanging down: not shrugging. To do that raise your * Have your computer halt (eg. screen lock in `cron`) every 1 hour. Get up and do Time and distractions ------ *..</description>
+    <pubDate>Thu, 16 Mar 2017 00:00:00 +0200</pubDate>
+  </item>
+    <lastBuildDate>Thu, 16 Mar 2017 00:00:00 +0200</lastBuildDate>
   </channel>
 </rss>

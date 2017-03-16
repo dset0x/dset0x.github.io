@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,54 +69,53 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Getting lynx to print URLs of HTML messages on the side</a></h1>
+<h1>Getting lynx to print URLs of HTML messages on the side</h1>
 
-<p>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine
+<p>Reading HTML e-mail in the terminal can be a bit of a pain. <code>lynx</code> does a fine
 job at dumping them, but actually opening the URLs from it is cumbersome as
-they are placed at the very end of the message.
-</p>
-<p>Luckily, there's nothing a little bit of perl can't fix.
-</p>
-<p>`~/.mutt/link-columns.pl`:
-</p>
-<pre>
-    #!/usr/bin/env perl
+they are placed at the very end of the message.</p>
 
-    use strict;
-    use warnings;
-    use open qw(:std :utf8);
+<p>Luckily, there&rsquo;s nothing a little bit of perl can&rsquo;t fix.</p>
 
-    my @lines;
-    my @links;
+<p><code>~/.mutt/link-columns.pl</code>:</p>
 
-    while (&lt;STDIN&gt;) {
-        chomp($_);
-        push @lines, $_;
-        if ($_ =~ /^ *([0-9]+)\. (.*)/) {
-            $links[$1] = $2;
-        }
+<pre><code>#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use open qw(:std :utf8);
+
+my @lines;
+my @links;
+
+while (&lt;STDIN&gt;) {
+    chomp($_);
+    push @lines, $_;
+    if ($_ =~ /^ *([0-9]+)\. (.*)/) {
+        $links[$1] = $2;
     }
+}
 
-    for my $line (@lines) {
-        last if ($line eq "References");
-        print $line;
-        my $first = 1;
-        while ($line =~ /\[([0-9]+)\]/g) {
-            if ($first == 0) {
-                print "\n" . " " x 80;
-            } else {
-                print " " x (80 - length($line));
-                $first = 0;
-            }
-            printf "[%s] %s", $1, $links[$1]
+for my $line (@lines) {
+    last if ($line eq "References");
+    print $line;
+    my $first = 1;
+    while ($line =~ /\[([0-9]+)\]/g) {
+        if ($first == 0) {
+            print "\n" . " " x 80;
+        } else {
+            print " " x (80 - length($line));
+            $first = 0;
         }
-        printf "\n"
+        printf "[%s] %s", $1, $links[$1]
     }
-</pre>
-<p>Then put the following entry in your `~/.mailcap`:
-</p><pre>
-    text/html; sh -c "lynx -dump -force_html -assume_charset=utf-8 -display_charset=utf-8 '%s' | uniq | ~/.mutt/link-columns.pl"; copiousoutput; description=HTML Text; nametemplate=%s.html
-</pre>
+    printf "\n"
+}
+</code></pre>
+
+<p>Then put the following entry in your <code>~/.mailcap</code>:
+    text/html; sh -c &ldquo;lynx -dump -force_html -assume_charset=utf-8 -display_charset=utf-8 &lsquo;%s&rsquo; | uniq | ~/.mutt/link-columns.pl&rdquo;; copiousoutput; description=HTML Text; nametemplate=%s.html</p>
+
 <p>Now your spammy e-mail can look like <a href="/opt/mutt-lynx-urls-on-side.png">this</a> too!</p>
 </article>
 </main>

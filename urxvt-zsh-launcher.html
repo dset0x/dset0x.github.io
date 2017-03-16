@@ -14,6 +14,7 @@
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
         hr          {opacity: 0.2;}
+        #content    {padding-bottom: 1em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -68,71 +69,75 @@
 
 <main id="content">
 <article>
-<h1><a name="section_1">Using urxvt with zsh as a program launcher</a></h1>
+<h1>Using urxvt with zsh as a program launcher</h1>
 
-<p>There's a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It's easy to create a `dmenu` replacement by adding this to your `~/.zshrc`:
-</p>
-<pre>
-    case "$ACT_AS" in
-        floating-terminal)
-            PS1=""
+<p>There&rsquo;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&rsquo;s easy to create a <code>dmenu</code> replacement by adding this to your <code>~/.zshrc</code>:</p>
 
-            HISTFILE=~/.histfile_float
-            accept-line-custom () {
-                BUFFER_ORIG="$BUFFER"
-                BUFFER="(setsid $SHELL -c \"$BUFFER\" &amp;); exit"
-                zle .accept-line
-            };
-            zle -N accept-line-custom
-            bindkey '^M' accept-line-custom
+<pre><code>case "$ACT_AS" in
+    floating-terminal)
+        PS1=""
 
-            zshaddhistory() {
-                print -sr -- ${BUFFER_ORIG%%$'\n'}
-                fc -p
-            }
+        HISTFILE=~/.histfile_float
+        accept-line-custom () {
+            BUFFER_ORIG="$BUFFER"
+            BUFFER="(setsid $SHELL -c \"$BUFFER\" &amp;); exit"
+            zle .accept-line
+        };
+        zle -N accept-line-custom
+        bindkey '^M' accept-line-custom
 
-            return
-        ;;
-    esac
-</pre>
-<p>Entering this condition has a number of effects:
-</p>
+        zshaddhistory() {
+            print -sr -- ${BUFFER_ORIG%%$'\n'}
+            fc -p
+        }
+
+        return
+    ;;
+esac
+</code></pre>
+
+<p>Entering this condition has a number of effects:</p>
+
 <ul>
-  <li>The shell (and controlling terminal) to exit after the first command
-  </li><li>The command is wrapped in `(setsid $SHELL -c "` ... `" &amp;)` so that it
-  doesn't die with the shell and that any shell builtins are allowed.
-  </li><li>The un-modified command is storred in a secondary `HISTFILE` so that we
-  don't interfere with the regular one, while always presenting it cleanly (and
-  calling it correctly) when looking it up.
-</li></ul>
-<p>It can do much more than what is available with other launchers:
-</p>
-<ul>
-  <li>`cat foo &gt; /tmp/bar`
-  </li><li>`arandr; libreoffice /tmp/presentation`
-</li></ul>
-<p>To run this you may call urxvt like so:
-</p>
-<pre>
-    env ACT_AS=floating-terminal urxvtc -geometry x1
-</pre>
-<hr/>
+<li>The shell (and controlling terminal) to exit after the first command</li>
+<li>The command is wrapped in <code>(setsid $SHELL -c "</code> &hellip; <code>" &amp;)</code> so that it
+doesn&rsquo;t die with the shell and that any shell builtins are allowed.</li>
+<li>The un-modified command is storred in a secondary <code>HISTFILE</code> so that we
+don&rsquo;t interfere with the regular one, while always presenting it cleanly (and
+calling it correctly) when looking it up.</li>
+</ul>
 
-<p>If you need to tell your window manager to do something special about the placement of the window as well, you may set a `name` to make it identifiable:
-</p>
-<pre>
-    env ACT_AS=floating-terminal urxvtc -name floating_terminal -geometry x1
-</pre>
-<p>For `awesome` v3.5.9 you would use this rule to center the window and bring it
-to the top:
-</p>
-<pre>
-    {
-      rule = { instance = "floating_terminal" },
-      properties = { floating = true, above = true, ontop = true },
-      callback = function (c) awful.placement.centered(c, nil) end
-    }
-</pre></article>
+
+<p>It can do much more than what is available with other launchers:</p>
+
+<ul>
+<li><code>cat foo &gt; /tmp/bar</code></li>
+<li><code>arandr; libreoffice /tmp/presentation</code></li>
+</ul>
+
+
+<p>To run this you may call urxvt like so:</p>
+
+<pre><code>env ACT_AS=floating-terminal urxvtc -geometry x1
+</code></pre>
+
+<hr />
+
+<p>If you need to tell your window manager to do something special about the placement of the window as well, you may set a <code>name</code> to make it identifiable:</p>
+
+<pre><code>env ACT_AS=floating-terminal urxvtc -name floating_terminal -geometry x1
+</code></pre>
+
+<p>For <code>awesome</code> v3.5.9 you would use this rule to center the window and bring it
+to the top:</p>
+
+<pre><code>{
+  rule = { instance = "floating_terminal" },
+  properties = { floating = true, above = true, ontop = true },
+  callback = function (c) awful.placement.centered(c, nil) end
+}
+</code></pre>
+</article>
 </main>
 <footer>
 </footer>

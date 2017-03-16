@@ -1,4 +1,4 @@
-mutt,notmuch,neomutt,addresses,address_book
+2017-02-25T16:02 mutt,notmuch,neomutt,addresses,address_book
 Extracting all known addresses from notmuch for use with mutt
 ===========================================
 

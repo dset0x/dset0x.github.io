@@ -1,4 +1,4 @@
-lynx,mutt,neomutt,terminal,linux
+2017-02-21T23:11 lynx,mutt,neomutt,terminal,linux
 Getting lynx to print URLs of HTML messages on the side
 ========================================
 
@@ -46,4 +46,4 @@ Luckily, there's nothing a little bit of perl can't fix.
 Then put the following entry in your `~/.mailcap`:
     text/html; sh -c "lynx -dump -force_html -assume_charset=utf-8 -display_charset=utf-8 '%s' | uniq | ~/.mutt/link-columns.pl"; copiousoutput; description=HTML Text; nametemplate=%s.html
 
-Now your spammy e-mail can look like <URL:/opt/mutt-lynx-urls-on-side.png:this> too!
+Now your spammy e-mail can look like [this](/opt/mutt-lynx-urls-on-side.png) too!
