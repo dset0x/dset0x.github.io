@@ -60,7 +60,9 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 EOF
 
 max_date=0
-for txt in $(find . -name '*.'"$txtext" -printf "%A@\t%p\0" | sort -znr | cut -z -f2- | tr '\0' '\n'); do
+for txt in $(find . -name '*.'"$txtext" -print0 | xargs --null head -n1 | \
+  awk -F' ' '/^=/ {f=$2;} /^2/ {print $1, f;}' | sort -n | cut -d' ' -f2); do
+
     [[ "$txt" == ./index."$txtext" ]] && continue
 
     # SOURCE
