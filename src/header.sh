@@ -40,6 +40,7 @@ cat <<EOF
 
         /* Paragraphs */
         p, article .preview {text-align: justify;}
+        pre {margin-left: 4ch;}
 
         /* Previews */
         article {position: relative;}
