@@ -70,6 +70,7 @@ cat <<EOF
 <nav>
     <ul id="menu">
         <li>$notes</li>
+        <hr>
         <li>$advice</li>
         <hr>
         <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
