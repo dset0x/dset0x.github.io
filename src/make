@@ -12,7 +12,7 @@ preview_words=70
 base="../"
 sitemap="$base/sitemap.xml"
 feed="$base/feed.xml"
-extras="extras"
+extras="overlay"
 ##############################################################################
 
 esc() { perl -e 'use HTML::Entities; print encode_entities($ARGV[0]);' "$1"; }
@@ -81,7 +81,7 @@ for txt in $(find . -name '*.txt' -printf "%A@\t%p\0" | sort -znr | cut -z -f2- 
     [[ $date -gt $max_date ]] && max_date=$date
 
     typ="article"
-    [[ "$dir" == "./extras" ]] && typ="$fname"
+    [[ "$dir" == "./pages" ]] && typ="$fname"
 
     if [[ "$typ" == "article" ]]; then
       {

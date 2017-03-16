@@ -6,7 +6,7 @@ dsc="$3"
 key="$4"
 
 notes='<a href="/">Notes</a>'
-advice='<a href="/extras/advice.html">Advice</a>'
+advice='<a href="/pages/advice.html">Advice</a>'
 declare "$typ"="${typ^}"
 
 cat <<EOF
