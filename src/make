@@ -82,7 +82,7 @@ for txt in $(find . -name '*.'"$txtext" -print0 | xargs --null head -n1 | \
     keywords=$(esc     "$(head -1 "$txt" | cut -d' ' -f2)")
     title=$(esc        "$(head -2 "$txt" | tail -1)")
     preview=$(esc      "$(tail -n +4 "$txt" | grep '^\S' | paste -sd " " - | \
-      sed -r 's/\[(.*?)\]\(.*?\)/1/g' | cut -d' ' -f 1-$preview_words)")..
+      perl -pe 's/\[(.*?)\]\(.*?\)/\1/g' | cut -d' ' -f 1-$preview_words)")..
     [[ $date -gt $max_date ]] && max_date=$date
 
     typ="article"

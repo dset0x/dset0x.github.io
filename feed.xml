@@ -41,7 +41,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Logging into a ZTE H168N with the help of expect</title>
     <link>https://dset0x.github.io/zte-expect.html</link>
-    <description>Jalal Sela already took the time to break into a sibling of this router on his 1...</description>
+    <description>Jalal Sela already took the time to break into a sibling of this router on his blog. Having shell access to my router turned out to be more handy than I had anticipated. Of course you can have dropbear on it, but I&#39;ve yet to dare edit `rcS` on it (although I suppose it gets overwritten on reboot anyway)...</description>
     <pubDate>Sun, 26 Feb 2017 00:20:00 +0200</pubDate>
   </item>
   <item>
@@ -65,7 +65,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Getting lynx to print URLs of HTML messages on the side</title>
     <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
-    <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like 1 too!..</description>
+    <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. `~/.mutt/link-columns.pl`: Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!..</description>
     <pubDate>Tue, 21 Feb 2017 23:11:00 +0200</pubDate>
   </item>
   <item>
