@@ -18,7 +18,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <title>Advice</title>
     <link>https://dset0x.github.io/extras/advice.html</link>
     <description>Better desk posture ------ * If you can&#39;t afford a split or ergonomic keyboard, use one keyboard per hand * Imagine a string is pulling you upwards from your head. This should keep your * Your shoulders should be hanging down: not shrugging. To do that raise your * Have your computer halt (eg. screen lock in `cron`) every 1 hour. Get up and do Time and distractions ------ *..</description>
-    <pubDate>Thu, 16 Mar 2017 12:51:15 +0200</pubDate>
+    <pubDate>Thu, 16 Mar 2017 12:52:09 +0200</pubDate>
   </item>
   <item>
     <title>Why vimperator hint mode doesn&#39;t weed out duplicate links</title>
@@ -86,6 +86,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every..</description>
     <pubDate>Tue, 21 Feb 2017 11:23:11 +0200</pubDate>
   </item>
-    <lastBuildDate>Thu, 16 Mar 2017 12:51:15 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 16 Mar 2017 12:52:09 +0200</lastBuildDate>
   </channel>
 </rss>
