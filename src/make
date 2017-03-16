@@ -83,15 +83,15 @@ for txt in $(find . -name '*.txt' -printf "%A@\t%p\0" | sort -znr | cut -z -f2- 
     typ="article"
     [[ "$dir" == "./pages" ]] && typ="$fname"
 
-    if [[ "$typ" == "article" ]]; then
-      {
-        ./header.sh "$typ" "$title - $site_title" "$title" "$keywords"
-        echo '<article>'
-        txt2html ${txt2html_args} < <(tail -n +2 "$txt")
-        echo '</article>'
-        cat footer.html
-      } > "$html"
+    {
+      ./header.sh "$typ" "$title - $site_title" "$title" "$keywords"
+      echo '<article>'
+      txt2html ${txt2html_args} < <(tail -n +2 "$txt")
+      echo '</article>'
+      cat footer.html
+    } > "$html"
 
+    if [[ "$typ" == "article" ]]; then
       # INDEX
       cat <<EOF >> index.tmp
       <article>
