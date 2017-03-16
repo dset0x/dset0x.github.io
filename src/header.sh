@@ -34,7 +34,7 @@ cat <<EOF
         a:hover     {text-decoration: underline;}
 
         /* Headings */
-        h2          {font-size: medium; margin: 0.67em 0 0.67em 0; font-weight: initial;}
+        h2          {font-size: medium; margin: 0.67em 0 0.67em 0;}
         h1          {font-size: large;}
 
         /* Paragraphs */
