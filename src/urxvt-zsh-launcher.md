@@ -30,8 +30,8 @@ Entering this condition has a number of effects:
 
 * The shell (and controlling terminal) to exit after the first command
 * The command is wrapped in `(setsid $SHELL -c "` ... `" &)` so that it
-  doesn't die with the shell and that any shell builtins are allowed.
-* The un-modified command is storred in a secondary `HISTFILE` so that we
+  doesn't die with the shell and that any shell built-ins are allowed.
+* The unmodified command is stored in a secondary `HISTFILE` so that we
   don't interfere with the regular one, while always presenting it cleanly (and
   calling it correctly) when looking it up.
 

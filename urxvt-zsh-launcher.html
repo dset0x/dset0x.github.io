@@ -102,8 +102,8 @@ esac
 <ul>
 <li>The shell (and controlling terminal) to exit after the first command</li>
 <li>The command is wrapped in <code>(setsid $SHELL -c "</code> &hellip; <code>" &amp;)</code> so that it
-doesn&rsquo;t die with the shell and that any shell builtins are allowed.</li>
-<li>The un-modified command is storred in a secondary <code>HISTFILE</code> so that we
+doesn&rsquo;t die with the shell and that any shell built-ins are allowed.</li>
+<li>The unmodified command is stored in a secondary <code>HISTFILE</code> so that we
 don&rsquo;t interfere with the regular one, while always presenting it cleanly (and
 calling it correctly) when looking it up.</li>
 </ul>
