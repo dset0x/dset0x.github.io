@@ -15,6 +15,12 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
   <item>
+    <title>Advice</title>
+    <link>https://dset0x.github.io/pages/advice.html</link>
+    <description>Better desk posture ------ * If you can&#39;t afford a split or ergonomic keyboard, use one keyboard per hand * Imagine a string is pulling you upwards from your head. This should keep your * Your shoulders should be hanging down: not shrugging. To do that raise your * Have your computer halt (eg. screen lock in `cron`) every 1 hour. Get up and do Time and distractions ------ *..</description>
+    <pubDate>Thu, 16 Mar 2017 12:00:00 +0200</pubDate>
+  </item>
+  <item>
     <title>Using urxvt with zsh as a program launcher</title>
     <link>https://dset0x.github.io/urxvt-zsh-launcher.html</link>
     <description>There&#39;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&#39;s easy to create a `dmenu` replacement by adding this to your `~/.zshrc`: Entering this condition has a number of effects: * The shell (and controlling terminal) to exit after the first command * The..</description>
@@ -80,6 +86,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we&#39;re at it to bring the filesize down from 1GiB...</description>
     <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
-    <lastBuildDate>Mon, 13 Mar 2017 14:58:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 16 Mar 2017 12:00:00 +0200</lastBuildDate>
   </channel>
 </rss>
