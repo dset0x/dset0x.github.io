@@ -80,30 +80,34 @@ for txt in $(find . -name '*.txt' -printf "%A@\t%p\0" | sort -znr | cut -z -f2- 
     date=$(stat -c %Z "$txt")
     [[ $date -gt $max_date ]] && max_date=$date
 
-    # ARTICLE
-    {
-        ./header.sh "article" "$title - $site_title" "$title" "$keywords"
+    typ="article"
+    [[ "$dir" == "./extras" ]] && typ="$fname"
+
+    if [[ "$typ" == "article" ]]; then
+      {
+        ./header.sh "$typ" "$title - $site_title" "$title" "$keywords"
         echo '<article>'
         txt2html ${txt2html_args} < <(tail -n +2 "$txt")
         echo '</article>'
         cat footer.html
-    } > "$html"
+      } > "$html"
 
-    # INDEX
-    cat <<EOF >> index.tmp
-    <article>
-        <h2><a href="$wpath">$title</a></h2>
-        <div class="preview">
-            $preview
-        </div>
-        <div class="cont_box">
-            <div class="cont">
-                <a title="Continue reading" href="$wpath">Continue reading</a>
-            </div>
-            <hr>
-        </div>
-    </article>
+      # INDEX
+      cat <<EOF >> index.tmp
+      <article>
+          <h2><a href="$wpath">$title</a></h2>
+          <div class="preview">
+              $preview
+          </div>
+          <div class="cont_box">
+              <div class="cont">
+                  <a title="Continue reading" href="$wpath">Continue reading</a>
+              </div>
+              <hr>
+          </div>
+      </article>
 EOF
+    fi
 
     # SITEMAP
     cat <<EOF >> "$sitemap"
@@ -129,7 +133,7 @@ done
 
 
 # INDEX
-./header.sh "home" "$site_title" \
+./header.sh "notes" "$site_title" \
     "A collection of workarounds and patches to solve all life's problems." \
     "hacks,patches,perl,python,linux,terminal,blog" > "$base/index.html"
 txt2html ${txt2html_args} --short_line_length 80  \

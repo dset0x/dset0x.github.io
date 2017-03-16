@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 
-typ="$1"
+typ="$1"  # notes|article|advice
 ttl="$2"
 dsc="$3"
 key="$4"
 
-case "$typ" in
-    'home')
-        home='Notes'
-        ;;
-    *)
-        home='<a href="/">Notes</a>'
-        ;;
-esac
+notes='<a href="/">Notes</a>'
+advice='<a href="/extras/advice.html">Advice</a>'
+declare "$typ"="${typ^}"
 
 cat <<EOF
 <!DOCTYPE html>
@@ -74,7 +69,8 @@ cat <<EOF
 <a href="#content" class="skip" tabindex="1">Skip to content</a>
 <nav>
     <ul id="menu">
-        <li>$home</li>
+        <li>$notes</li>
+        <li>$advice</li>
         <hr>
         <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
         <hr>
