@@ -35,8 +35,8 @@ cat <<EOF
         a:hover     {text-decoration: underline;}
 
         /* Headings */
-        h2          {font-size: medium; font-weight: initial;}
-        h1          {font-size: large;}
+        h2          {font-size: 100%; font-weight: initial;}
+        h1          {font-size: larger;}
 
         /* Paragraphs */
         p, article .preview {text-align: justify;}

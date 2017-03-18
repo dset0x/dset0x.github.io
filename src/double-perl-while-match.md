@@ -27,6 +27,6 @@ Produces the following:
     0 3
     [...]
 
- I have not looked into why this happens, but I assume that these while loops
- share a pointer onto said string. You can work around this by using a copy of
- the string.
+I have not looked into why this happens, but I assume that these while loops
+share a pointer onto said string. You can work around this by using a copy of
+the string.

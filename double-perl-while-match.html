@@ -23,8 +23,8 @@
         a:hover     {text-decoration: underline;}
 
         /* Headings */
-        h2          {font-size: medium; font-weight: initial;}
-        h1          {font-size: large;}
+        h2          {font-size: 100%; font-weight: initial;}
+        h1          {font-size: larger;}
 
         /* Paragraphs */
         p, article .preview {text-align: justify;}
@@ -93,9 +93,9 @@ while ( $s =~ /a/g ) {
 [...]
 </code></pre>
 
-<p> I have not looked into why this happens, but I assume that these while loops
- share a pointer onto said string. You can work around this by using a copy of
- the string.</p>
+<p>I have not looked into why this happens, but I assume that these while loops
+share a pointer onto said string. You can work around this by using a copy of
+the string.</p>
 </article>
 </main>
 <footer>

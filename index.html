@@ -23,8 +23,8 @@
         a:hover     {text-decoration: underline;}
 
         /* Headings */
-        h2          {font-size: medium; font-weight: initial;}
-        h1          {font-size: large;}
+        h2          {font-size: 100%; font-weight: initial;}
+        h1          {font-size: larger;}
 
         /* Paragraphs */
         p, article .preview {text-align: justify;}
@@ -127,7 +127,7 @@
       <article>
           <h2><a href="/double-perl-while-match.html">Confusing perl with nested while matches</a></h2>
           <div class="preview">
-              Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following:..
+              Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following: I have not looked into why this happens, but I assume that these while loops share a pointer onto said string. You can work around this by using a copy of the string...
           </div>
           <div class="cont_box">
               <!--<div class="cont">
