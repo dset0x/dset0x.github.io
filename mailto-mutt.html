@@ -13,8 +13,8 @@
         /* General */
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
-        hr          {border: 0; border-top: 1px solid #c6c5c6; margin: 0.4em 0;}
-        #content    {padding-bottom: 1em;}
+        hr          {border: 0; border-top: 1px solid #c6c5c6; z-index: 1;}
+        #content    {padding-bottom: 0.5em;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -32,16 +32,15 @@
 
         /* Previews */
         article {position: relative;}
-        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch}
+        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch; z-index: 3;}
         article .cont_box {margin-left: 4ch;}
-        article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small; padding-left: 1ch; z-index: 1;}
+        article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small; padding-left: 1ch; z-index: 2;}
 
         /* Menu */
         nav                         {display:inline-block; width:100%;}
-        #menu                         {text-align: right; margin: 0; float:right;}
-        #menu li                      {display: block; float:right; clear:both;}
-        #menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
-        #menu div                     {padding-bottom: 2px; border-bottom: #c6c5c6 1px solid; width: 11em;}
+        #menu                       {text-align: right; margin: 0; float:right;}
+        #menu li                    {display: block; float:right; clear:both; padding: 0.2em 0 0.2em 0;}
+        #menu div                   {padding-bottom: 2px; border-bottom: #c6c5c6 1px solid; width: 11em;}
 
         /* Mobile */
         @media (max-width: 65ch) {
