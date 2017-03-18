@@ -25,7 +25,7 @@ cat <<EOF
         /* General */
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
-        hr          {opacity: 0.2;}
+        hr          {border: 0; border-top: 1px solid #c6c5c6; margin: 0.4em 0;}
         #content    {padding-bottom: 1em;}
 
         /* Links */
@@ -49,10 +49,11 @@ cat <<EOF
         article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small; padding-left: 1ch; z-index: 1;}
 
         /* Menu */
-        ul#menu                         {text-align: right; margin-right: 0;}
-        ul#menu li                      {display: block;}
-        ul#menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
-        ul#menu hr                      {width: 20ch; margin-right: 0; margin-top: 0; margin-bottom: 0;}
+        nav                         {display:inline-block; width:100%;}
+        #menu                         {text-align: right; margin: 0; float:right;}
+        #menu li                      {display: block; float:right; clear:both;}
+        #menu li:not(last-child)      {padding: 0.2em 0 0.2em 0;}
+        #menu div                     {padding-bottom: 2px; border-bottom: #c6c5c6 1px solid; width: 11em;}
 
         /* Mobile */
         @media (max-width: 65ch) {
@@ -71,12 +72,9 @@ cat <<EOF
 <a href="#content" class="skip" tabindex="1">Skip to content</a>
 <nav>
     <ul id="menu">
-        <li>$notes</li>
-        <hr>
-        <li>$advice</li>
-        <hr>
-        <li><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></li>
-        <hr>
+        <li><div>$notes</div></li>
+        <li><div>$advice</div></li>
+        <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></div></li>
     </ul>
 </nav>
 
