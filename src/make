@@ -106,9 +106,9 @@ for txt in $(find . -name '*.'"$txtext" -print0 | xargs --null head -n1 | \
               $preview
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="$wpath">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>

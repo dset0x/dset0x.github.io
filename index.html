@@ -28,24 +28,21 @@
 
         /* Paragraphs */
         p, article .preview {text-align: justify;}
-        pre {margin-left: 4ch;}
+        pre, article .preview {margin-left: 4ch;}
 
         /* Previews */
-        article {position: relative;}
-        article .preview {max-height: 20vw; overflow:hidden; opacity: 0.9; margin-left: 4ch; z-index: 3;}
-        article .cont_box {margin-left: 4ch;}
-        article .cont {position: absolute; bottom: -0.4em; right: 0; background: #fffdff; font-size: small; padding-left: 1ch; z-index: 2;}
+        article             {position: relative;}
+        article .preview    {max-height: 20vw; overflow:hidden; z-index: 3;}
 
         /* Menu */
-        nav                         {display:inline-block; width:100%;}
-        #menu                       {text-align: right; margin: 0; float:right;}
-        #menu li                    {display: block; float:right; clear:both; padding: 0.2em 0 0.2em 0;}
-        #menu div                   {padding-bottom: 2px; border-bottom: #c6c5c6 1px solid; width: 11em;}
+        nav         {display: inline-block; width:100%;}
+        #menu       {text-align: right; margin: 0;}
+        #menu li    {display: block; float:right; clear:both; padding: 0.2em 0 0.2em 0;}
+        #menu div   {padding-bottom: 2px; border-bottom: #c6c5c6 1px solid; width: 11em;}
 
         /* Mobile */
         @media (max-width: 65ch) {
             pre {overflow: scroll;}
-            .cont {display: none;}
         }
 
         /* Skip to content */
@@ -73,9 +70,9 @@
               There&#39;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&#39;s easy to create a `dmenu` replacement by adding this to your `~/.zshrc`: Entering this condition has a number of effects: It can do much more than what is available with other launchers: To run..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/urxvt-zsh-launcher.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -85,9 +82,9 @@
               Vimperator has a commonly used &quot;hint&quot; mode where you may enter either a generated combination of characters or link&#39;s text to interact with that element. As you type characters in, vimperator filters out matching links for you. For example, if there&#39;s two links with the text &quot;About&quot; in them, typing in But what if you&#39;ve typed &quot;Abo&quot; and there&#39;s two &quot;About&quot; links (and nothing else containing &quot;abo&quot; in the page)..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/vimperator-no-auto-dup-hint-select.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -97,9 +94,9 @@
               I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simply function you can decrease the amount of jumping around the command line. Let&#39;s say you&#39;re working on the following command: Naturally, you keep getting the regexes wrong. Just..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/zsh-buffer-function.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -109,9 +106,9 @@
               Jalal Sela already took the time to break into a sibling of this router on his Of course you can have dropbear on it, but I&#39;ve yet to dare edit `rcS` on it..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/zte-expect.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -121,9 +118,9 @@
               Retrieving all known addresses from notmuch&#39;s index turned out to be more difficult than I had initially assumed. I needed to search not only recipients, but senders as well, due to mailing lists and such. Don&#39;t forget that mutt skips the first line of the addresses. This method is unfortunately quite slow, whether you use `parallel` or not. You are hitting the same database after all...
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/notmuch-addresses-in-mutt.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -133,9 +130,9 @@
               Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following:..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/double-perl-while-match.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -145,9 +142,9 @@
               mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/mailto-mutt.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -157,9 +154,9 @@
               Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/mutt-lynx-urls-on-side.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -169,9 +166,9 @@
               Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system&#39;s volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it&#39;s easy to locate possibly used functions: In..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/viber-apulse.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -181,9 +178,9 @@
               I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every..
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/monitor-mem-usage.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
@@ -193,9 +190,9 @@
               I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we&#39;re at it to bring the filesize down from 1GiB...
           </div>
           <div class="cont_box">
-              <div class="cont">
+              <!--<div class="cont">
                   <a title="Continue reading" href="/clean-mpd-logs.html">Continue reading</a>
-              </div>
+              </div>-->
               <hr>
           </div>
       </article>
