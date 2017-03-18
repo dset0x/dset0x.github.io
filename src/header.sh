@@ -25,7 +25,7 @@ cat <<EOF
         /* General */
         html        {background-color: #fffdff;}
         body        {font-family: sans-serif; max-width: 79ch; opacity: 0.85}
-        hr          {border: 0; border-top: 1px solid #c6c5c6; z-index: 1;}
+        hr          {border: 0; border-top: 1px solid #c6c5c6;}
         #content    {padding-bottom: 0.5em;}
 
         /* Links */
@@ -44,7 +44,7 @@ cat <<EOF
 
         /* Previews */
         article             {position: relative;}
-        article .preview    {max-height: 20vw; overflow:hidden; z-index: 3;}
+        article .preview    {max-height: 20vw; overflow: hidden;}
 
         /* Menu */
         nav         {display: inline-block; width: 100%;}
