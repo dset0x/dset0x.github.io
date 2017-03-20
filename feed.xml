@@ -45,12 +45,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <pubDate>Sun, 26 Feb 2017 00:20:00 +0200</pubDate>
   </item>
   <item>
-    <title>Extracting all known addresses from notmuch for use with mutt</title>
-    <link>https://dset0x.github.io/notmuch-addresses-in-mutt.html</link>
-    <description>Retrieving all known addresses from notmuch&#39;s index turned out to be more difficult than I had initially assumed. I needed to search not only recipients, but senders as well, due to mailing lists and such. Don&#39;t forget that mutt skips the first line of the addresses. This method is unfortunately quite slow, whether you use `parallel` or not. You are hitting the same database after all...</description>
-    <pubDate>Sat, 25 Feb 2017 16:02:00 +0200</pubDate>
-  </item>
-  <item>
     <title>Confusing perl with nested while matches</title>
     <link>https://dset0x.github.io/double-perl-while-match.html</link>
     <description>Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following: I have not looked into why this happens, but I assume that these while loops share a pointer onto said string. You can work around this by using a copy of the string...</description>
