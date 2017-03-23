@@ -598,7 +598,11 @@ in_user() {
     echo "You may now reboot the system."
 }
 
-if [[ $# -eq 0 ]]; then
+if [[ "$1" = "chroot" ]]; then
+    shift
+    func="in_$1"
+    $func "$@"
+else
     # [[ -z "$rstage3_url" ]] && (echo 'No stage3 url set'; exit 1)
     # [[ -z "$rnet_cfg" ]] && (echo 'No network configuration'; exit 1)
 
@@ -635,10 +639,7 @@ if [[ $# -eq 0 ]]; then
     ${ch} syslinux "$rtrim" "$rroot" "$rrealswap" "$rswap" "$refi" "$rdev" "$rcrypt" "$rmode" "$rboot" "$rappend"
     ${ch} user "$rusername" "$rusergroups"
 
-elif [[ "$1" = "chroot" ]]; then
-    shift
-    func="in_$1"
-    $func "$@"
+else
 fi
 
 # useradd -m -g users -G wheel,games,optical,storage,power,floppy,video,audio -s /bin/bash username
