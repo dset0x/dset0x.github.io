@@ -93,7 +93,8 @@ rverify_stage3="yes"
 
 rlocale="en_US.UTF-8"
 
-rmake_CFLAGS=$(gcc -v -mtune=native -E /usr/include/stdlib.h 2>&1 | grep "/usr/libexec/gcc/.*cc1" | grep -o -- '--param .*')
+# rmake_CFLAGS=$(gcc -v -mtune=native -E /usr/include/stdlib.h 2>&1 | grep "/usr/libexec/gcc/.*cc1" | grep -o -- '--param .*')
+rmake_CFLAGS="-mtune=native"
 rmake_PORTAGE_IONICE_COMMAND="ionice -c 3 -p \${PID}"
 rmake_PORTAGE_NICENESS="19"
 rmake_FEATURES="buildpkg webrsync-gpg cgroup downgrade-backup unmerge-backup"
@@ -598,7 +599,7 @@ in_user() {
     echo "You may now reboot the system."
 }
 
-if [[ "$1" = "chroot" ]]; then
+if [[ "$1" == "chroot" ]]; then
     shift
     func="in_$1"
     $func "$@"
