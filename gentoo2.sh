@@ -37,7 +37,7 @@ rdev="/dev/sda"
 rgprofile="default/linux/amd64/13.0"
 
 # Partition method. ext4/zfs/lvm
-rmode="lvm"
+rmode="ext4"
 # for lvm:
 lvprefix="vgg"
 mapper="/dev/$lvprefix"
@@ -47,7 +47,7 @@ refi="no"
 
 # Must be ftp if you want to verify the stage3.
 # Supports the $arch variable. Use single quotes!
-rstage3_url='ftp://distfiles.gentoo.org/releases/$arch/autobuilds/current-stage3-$arch/stage3-$arch-*.tar.bz2*'
+rstage3_url='ftp://distfiles.gentoo.org/pub/gentoo/releases/$arch/autobuilds/current-stage3-$arch/stage3-$arch-*.tar.bz2*'
 
 # /boot and swap sizes in MiB.
 rboot_size=128
@@ -245,7 +245,7 @@ outside_chroot(){
     rstage3_url=${rstage3_url//\$arch/$rarch}
     if [[ -z "$rverify_stage3" || "$rverify_stage3" == y* || "$rverify_stage3" == Y* ]]; then
         rm -f /mnt/gentoo/stage3-*
-        e "Downloading stage3"; wget -P /mnt/gentoo/ "$rstage3_url"'*' 2> >(awk '/%/ { printf "\r%s", $0 }' 1>&2)
+        e "Downloading stage3"; wget -P /mnt/gentoo/ "$rstage3_url" 2> >(awk '/%/ { printf "\r%s", $0 }' 1>&2)
         e " Verifying stage3";
         (
             cd /mnt/gentoo
