@@ -638,8 +638,6 @@ else
     ${ch} emerge "$rcrypt" "$rmode" "$refi"
     ${ch} syslinux "$rtrim" "$rroot" "$rrealswap" "$rswap" "$refi" "$rdev" "$rcrypt" "$rmode" "$rboot" "$rappend"
     ${ch} user "$rusername" "$rusergroups"
-
-else
 fi
 
 # useradd -m -g users -G wheel,games,optical,storage,power,floppy,video,audio -s /bin/bash username
