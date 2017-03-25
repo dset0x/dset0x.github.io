@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xml:lang="en">
 <head>
-    <title>Getting lynx to print URLs of HTML messages on the side - When software gets in the way</title>
+    <title>Extracting all known addresses from notmuch for use with mutt - When software gets in the way</title>
     <meta charset="utf-8">
-    <meta name="description" content="Getting lynx to print URLs of HTML messages on the side">
-    <meta name="keywords" content="lynx,mutt,neomutt,terminal,linux">
+    <meta name="description" content="Extracting all known addresses from notmuch for use with mutt">
+    <meta name="keywords" content="mutt,notmuch,neomutt,addresses,address_book">
     <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
@@ -64,56 +64,36 @@
 
 <main id="content">
 <article>
-<h1>Getting lynx to print URLs of HTML messages on the side</h1>
+<h1>Extracting all known addresses from notmuch for use with mutt</h1>
 
-<p>Reading HTML e-mail in the terminal can be a bit of a pain. <code>lynx</code> does a fine
-job at dumping them, but actually opening the URLs from it is cumbersome as
-they are placed at the very end of the message.</p>
+<p>Edit: You should use <a href="https://github.com/aperezdc/notmuch-addrlookup-c"><code>notmuch-addrlookup-c</code></a>
+instead as it has good support for <code>mutt</code> and executes much faster.</p>
 
-<p>Luckily, there&rsquo;s nothing a little bit of perl can&rsquo;t fix.</p>
+<p>Retrieving all known addresses from notmuch&rsquo;s index turned out to be more
+difficult than I had initially assumed. I needed to search not only
+recipients, but senders as well, due to mailing lists and such. Don&rsquo;t forget
+that mutt skips the first line of the addresses.</p>
 
-<p><code>~/.mutt/link-columns.pl</code>:</p>
-
-<pre><code>#!/usr/bin/env perl
-
-use strict;
-use warnings;
-use open qw(:std :utf8);
-
-my @lines;
-my @links;
-
-while (&lt;STDIN&gt;) {
-    chomp($_);
-    push @lines, $_;
-    if ($_ =~ /^ *([0-9]+)\. (.*)/) {
-        $links[$1] = $2;
-    }
+<pre><code>#!/bin/bash
+(parallel notmuch address {} '\*' ::: \
+    '--output=sender' '--output=recipients') | \
+    grep -Pi "$1" | \
+    awk '\
+BEGIN {print}
+/&gt;$/ {
+    s=$NF;
+    sub(/^&lt;/, "", s);
+    sub(/&gt;$/, "", s);
+    printf("%s\t", s);
+    for (i = 1; i &lt; NF; i++)
+        printf("%s ", $i);
+    printf("\n")
 }
-
-for my $line (@lines) {
-    last if ($line eq "References");
-    print $line;
-    my $first = 1;
-    while ($line =~ /\[([0-9]+)\]/g) {
-        if ($first == 0) {
-            print "\n" . " " x 80;
-        } else {
-            print " " x (80 - length($line));
-            $first = 0;
-        }
-        printf "[%s] %s", $1, $links[$1]
-    }
-    printf "\n"
-}
+' | sort | uniq
 </code></pre>
 
-<p>Then put the following entry in your <code>~/.mailcap</code>:</p>
-
-<pre><code>text/html; sh -c "lynx -dump -force_html -assume_charset=utf-8 -display_charset=utf-8 '%s' | uniq | ~/.mutt/link-columns.pl"; copiousoutput; description=HTML Text; nametemplate=%s.html
-</code></pre>
-
-<p>Now your spammy e-mail can look like <a href="/opt/mutt-lynx-urls-on-side.png">this</a> too!</p>
+<p>This method is unfortunately quite slow, whether you use <code>parallel</code> or not.
+You are hitting the same database after all.</p>
 </article>
 </main>
 <footer>

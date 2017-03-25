@@ -113,6 +113,18 @@
           </div>
       </article>
       <article>
+          <h2><a href="/notmuch-addresses-in-mutt.html">Extracting all known addresses from notmuch for use with mutt</a></h2>
+          <div class="preview">
+              Edit: You should use `notmuch-addrlookup-c` instead as it has good support for `mutt` and executes much faster. Retrieving all known addresses from notmuch&#39;s index turned out to be more difficult than I had initially assumed. I needed to search not only recipients, but senders as well, due to mailing lists and such. Don&#39;t forget that mutt skips the first line of the addresses. This method is unfortunately quite slow, whether..
+          </div>
+          <div class="cont_box">
+              <!--<div class="cont">
+                  <a title="Continue reading" href="/notmuch-addresses-in-mutt.html">Continue reading</a>
+              </div>-->
+              <hr>
+          </div>
+      </article>
+      <article>
           <h2><a href="/double-perl-while-match.html">Confusing perl with nested while matches</a></h2>
           <div class="preview">
               Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following: I have not looked into why this happens, but I assume that these while loops share a pointer onto said string. You can work around this by using a copy of the string...
