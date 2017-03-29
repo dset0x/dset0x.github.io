@@ -127,7 +127,7 @@
       <article>
           <h2><a href="/double-perl-while-match.html">Confusing perl with nested while matches</a></h2>
           <div class="preview">
-              Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following: I have not looked into why this happens, but I assume that these while loops share a pointer onto said string. You can work around this by using a copy of the string...
+              Nesting while loops that match against the same string will throw perl into an infinite loop. Produces the following: That&#39;s right. Same pointer. You can work around this by using a copy of the string instead (or more likely, since you ran into this: `substr`)...
           </div>
           <div class="cont_box">
               <!--<div class="cont">

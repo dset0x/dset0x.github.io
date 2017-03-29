@@ -27,6 +27,5 @@ Produces the following:
     0 3
     [...]
 
-I have not looked into why this happens, but I assume that these while loops
-share a pointer onto said string. You can work around this by using a copy of
-the string.
+That's right. Same pointer. You can work around this by using a copy of the
+string instead (or more likely, since you ran into this: `substr`).

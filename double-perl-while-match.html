@@ -93,9 +93,8 @@ while ( $s =~ /a/g ) {
 [...]
 </code></pre>
 
-<p>I have not looked into why this happens, but I assume that these while loops
-share a pointer onto said string. You can work around this by using a copy of
-the string.</p>
+<p>That&rsquo;s right. Same pointer. You can work around this by using a copy of the
+string instead (or more likely, since you ran into this: <code>substr</code>).</p>
 </article>
 </main>
 <footer>
