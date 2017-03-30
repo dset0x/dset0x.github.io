@@ -74,8 +74,7 @@ Buying things
 Cinema
 ------
 
-* Don't go unless you've really been looking forward to the movie, or someone
-  you are going with has.
+* Don't go unless you feel obliged to.
 
 Earphones
 ------
