@@ -6,7 +6,7 @@ Better desk posture
 ------
 
 * If you can't afford a split or ergonomic keyboard, use one keyboard per hand
-  so that you may keep your back and chest straight. Keep your keyboard(s)
+  so that you may keep your back and chest straight and shoulders naturally apart. Keep your keyboard(s)
   close to the edge of the desk. Use the mouse sparingly.
 
 * Imagine a string is pulling you upwards from your head. This should keep your
