@@ -15,7 +15,7 @@ Better desk posture
 * Your shoulders should be hanging down: not shrugging. To do that raise your
   seat (pad it with whatever you have - blankets, pillows) and raise your
   monitors as well, by about a spread-palm-width using books or boxes. Its
-  center should be right in front of you. All yourself to rest too.
+  center should be right in front of you. Allow yourself to rest too.
 
 * Have your computer notify you every 1 hour. Get up and do some dynamic
 stretches, hop around, look out the window.
