@@ -84,7 +84,7 @@ Earphones
 
 * Don't wear them in public.
 
-Exercise and hygiene
+Exercise, diet and hygiene
 ------
 
 * It's never too late to start exercising. Look up Antranik on YouTube. Mathematically speaking, any amount of exercise is infinitely better than none.
@@ -92,9 +92,6 @@ Exercise and hygiene
 * Finish your shower with cold water.
 
 * Use a soft toothbrush. Pretend your teeth are ancient bones that you must carefully clean.
-
-Food
-------
 
 * Just eat a bit of everything and less of the bad stuff.
 
