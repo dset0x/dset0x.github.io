@@ -103,4 +103,4 @@ scripts we want, as long as we maintain `/tmp/events`.
 Of course you can run the `gnuplot` script on a remote box as long as you have
 access to the two logfiles.
 
-    $ rifle [/tmp/mem-graph.png](/opt/mCeOgNe.png)
+    $ rifle /tmp/mem-graph.png
