@@ -2,6 +2,7 @@
 
 ##############################################################################
 site_title='When software gets in the way'
+author_name='Dimitrios Semitsoglou-Tsiapos'
 site_desc='A collection of workarounds and patches to solve all life''s problems.'
 site_keywords="hacks,patches,perl,python,linux,terminal,blog"
 domain='https://dset0x.github.io'
@@ -50,7 +51,7 @@ xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 >
 <channel>
-  <title>$site_title</title>
+  <title>$site_title - $author_name</title>
   <link>$domain</link>
   <description>$site_desc</description>
 	<atom:link href="$domain$wfeed" rel="self" type="application/rss+xml" />
@@ -142,7 +143,7 @@ done
 
 # INDEX
 {
-  ./header.sh "notes" "$site_title" "$site_desc" "$site_keywords"
+  ./header.sh "notes" "$site_title - $author_name" "$site_desc" "$site_keywords"
   cat index.tmp footer.html
 } > "$base/index.html"
 rm index.tmp
