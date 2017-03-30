@@ -24,8 +24,8 @@ Time and distractions
 ------
 
 * Know when your "work", "study", "hobbies" and "relaxation" sections of your
-  day start and end. If you don't define them well enough, you will reach
-  catastrophic fatigue in a matter of a few days.
+  day start and end. If you don't define them well enough, you will either reach
+  catastrophic fatigue in a matter of a few days (overworking) or fall into limbo (understimulation).
 
 * Write a distraction-free mode for your entire computer. In my case I can
   hide all notifications and irreversibly minimize all chat / mail windows
