@@ -13,8 +13,7 @@ another. Fear not, easy to fix.
     $ rc-service mpd start
 
 
-We can also remove all the client calls while we're at it to bring the
-filesize down from 1GiB.
+This was also a good time to remove all the client calls to bring the filesize
+down from 1GiB.
 
     $ grep -v ': client: \[' /var/lib/mpd/log > /var/lib/mpd/log2
-    $ mv /var/lib/mpd/log{2,}

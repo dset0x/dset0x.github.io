@@ -83,7 +83,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Removing binary data from (mpd) logfiles</title>
     <link>https://dset0x.github.io/clean-mpd-logs.html</link>
-    <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. We can also remove all the client calls while we&#39;re at it to bring the filesize down from 1GiB...</description>
+    <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. This was also a good time to remove all the client calls to bring the filesize down from 1GiB...</description>
     <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
     <lastBuildDate>Thu, 16 Mar 2017 12:00:00 +0200</lastBuildDate>
