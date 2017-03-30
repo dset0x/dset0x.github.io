@@ -23,3 +23,11 @@ Of course you can have dropbear on it, but I've yet to dare edit `rcS` on it
     expect Password: { send "root\r" }
 
     interact
+
+-------
+
+Speaking of this device, in it you will find `/var/tmp/db_backup_cfg.xml` and `/data/cfg/db_user_cfg.xml` which have the same contents, except the latter is compressed in some funny way. Here's how do decompress it with `zsh`:
+
+    for offset in $(binwalk -c db_user_cfg.xml | tail -n +4 | cut -d' ' -f1); do
+        printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" | cat - =(dd skip=$offset ibs=1 if=db_user_cfg.xml) | gzip -dc >> out.xml;
+    done
