@@ -17,8 +17,8 @@ Better desk posture
   monitors as well, by about a spread-palm-width using books or boxes. Its
   center should be right in front of you. All yourself to rest too.
 
-* Have your computer halt (eg. screen lock in `cron`) every 1 hour. Get up and do
-  some dynamic stretches, walk around, look out the window.
+* Have your computer notify you every 1 hour. Get up and do some dynamic
+stretches, hop around, look out the window.
 
 Time and distractions
 ------
@@ -32,7 +32,7 @@ Time and distractions
   with the press of two keys. Exiting this mode hints at all missed
   notifications, if any, and restores the windows.
 
-* Use /etc/hosts to block things you don't need. Don't make it any easier to
+* Use `/etc/hosts` to block things you don't need. Don't make it any easier to
   edit that file than it already is.
 
 * If you catch yourself not having done anything useful while on the computer
@@ -42,7 +42,7 @@ Time and distractions
 * People who sell used books have good suggestions for you. Balance work and
   literature books.
 
-Bad nights
+Mood
 ------
 
 * Hit suspend and go walk / skate / cycle. Prefer smaller streets. Do not return
@@ -84,16 +84,18 @@ Earphones
 
 * Don't wear them in public.
 
-Exercise
+Exercise and hygiene
 ------
 
-* It's never too late. Look up Antranik on YouTube.
+* It's never too late to start exercising. Look up Antranik on YouTube. Mathematically speaking, any amount of exercise is infinitely better than none.
 
-* Any amount helps.
+* Finish your shower with cold water.
+
+* Use a soft toothbrush. Pretend your teeth are ancient bones that you must carefully clean.
 
 Food
 ------
 
 * Just eat a bit of everything and less of the bad stuff.
 
-* Breakfast is not important.
+* Breakfast is not important, but if you're hungry, eat. There's probably a reason why you're hungry.
