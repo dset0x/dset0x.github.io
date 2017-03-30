@@ -41,7 +41,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Logging into a ZTE H168N with the help of expect</title>
     <link>https://dset0x.github.io/zte-expect.html</link>
-    <description>Jalal Sela already took the time to break into a sibling of this router on his Speaking of this device, in it you will find `/var/tmp/db_backup_cfg.xml` and `/data/cfg/db_user_cfg.xml` which have the same contents, except the latter is compressed in some funny way. Here&#39;s how do decompress it with `zsh`:..</description>
+    <description>Jalal Sela already took the time to break into a sibling of this router on his Speaking of this device, in it you will find `/var/tmp/db_backup_cfg.xml` and `/data/cfg/db_user_cfg.xml` which have the same contents, except the latter is compressed in some funny way. Here&#39;s how do decompress it:..</description>
     <pubDate>Sun, 26 Feb 2017 00:20:00 +0200</pubDate>
   </item>
   <item>
