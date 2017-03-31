@@ -2,8 +2,6 @@
 Advice
 =====
 
-Here's a sometimes-updated collection of tips.
-
 Better desk posture
 ------
 
