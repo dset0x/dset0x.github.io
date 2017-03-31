@@ -2,12 +2,15 @@
 Advice
 =====
 
+Here's a sometimes-updated collection of tips.
+
 Better desk posture
 ------
 
 * If you can't afford a split or ergonomic keyboard, use one keyboard per hand
-  so that you may keep your back and chest straight and shoulders naturally apart. Keep your keyboard(s)
-  close to the edge of the desk. Use the mouse sparingly.
+  so that you may keep your back and chest straight and shoulders naturally
+  apart. Keep your keyboard(s) close to the edge of the desk. Use the mouse
+  sparingly.
 
 * Imagine a string is pulling you upwards from your head. This should keep your
   chin relatively tucked in.
@@ -15,17 +18,18 @@ Better desk posture
 * Your shoulders should be hanging down: not shrugging. To do that raise your
   seat (pad it with whatever you have - blankets, pillows) and raise your
   monitors as well, by about a spread-palm-width using books or boxes. Its
-  center should be right in front of you. Allow yourself to rest too.
+  center should be right in front of you.
 
 * Have your computer notify you every 1 hour. Get up and do some dynamic
-stretches, hop around, look out the window.
+  stretches, hop around, look out the window. Rest is paramount.
 
 Time and distractions
 ------
 
 * Know when your "work", "study", "hobbies" and "relaxation" sections of your
   day start and end. If you don't define them well enough, you will either reach
-  catastrophic fatigue in a matter of a few days (overworking) or fall into limbo (understimulation).
+  catastrophic fatigue in a matter of a few days (overworking) or fall into
+  limbo (understimulation).
 
 * Write a distraction-free mode for your entire computer. In my case I can
   hide all notifications and irreversibly minimize all chat / mail windows
@@ -46,11 +50,10 @@ Mood
 ------
 
 * Hit suspend and go walk / skate / cycle. Prefer smaller streets. Do not return
-  until the static in your head has gone away.
+  until the static in your head has gone away. If you go for a ride - no matter
+  what you ride - ride to ride another day.
 
-* If you go for a ride, always ride to ride another day.
-
-* Find the nearest homeless person who sells that magazine and buy it.
+* Find the nearest homeless person who sells that street magazine and read it.
 
 * Listen to your favorite singer or artist. If you don't have one, find one.
 
@@ -61,20 +64,15 @@ Buying things
 
 * Don't forget to check the Amazon website of other countries and ebay as well.
 
-* Buy yourself cheap things that will take a long time to arrive. It's a gift
-  from your past self - in the future.
+* Buy yourself small things that will take a long time to arrive and may turn
+  out to be engaging. It's a gift to your future self.
 
-* Buy a cheap instrument.
+* Buy a cheap instrument. Ukulele, kalimba, flute, whatever.
 
 * Before buying a piece of clothing, go online and click on everything
-  relevant that you see. Pretend you're browsing those websites with someone
-  else and critique how sharp they look. If there's any amount of "but" or
-  "eh", it's not good.
-
-Cinema
-------
-
-* Don't go unless you feel obliged to.
+  relevant that you see. Pretend you're browsing those websites with the most
+  stylish person you know and imagine what they would have to say. If there's
+  any amount of "but" or "eh", it's not good.
 
 Earphones
 ------
@@ -86,7 +84,9 @@ Earphones
 Exercise, diet and hygiene
 ------
 
-* It's never too late to start exercising. Look up Antranik on YouTube. Mathematically speaking, any amount of exercise is infinitely better than none.
+* Look up Antranik on YouTube.
+
+* Mathematically speaking, any amount of exercise is infinitely better than none. It's never too late to start.
 
 * Finish your shower with cold water.
 
