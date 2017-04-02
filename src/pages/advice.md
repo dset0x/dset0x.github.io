@@ -38,22 +38,10 @@ Time and distractions
   edit that file than it already is.
 
 * If you catch yourself not having done anything useful while on the computer
-  for a certain period of time, stop using it, because you're not using it
-  anyway.
+  for a certain period of time, stop using it.
 
 * People who sell used books have good suggestions for you. Balance work and
   literature books.
-
-Mood
-------
-
-* Hit suspend and go walk / skate / cycle. Prefer smaller streets. Do not return
-  until the static in your head has gone away. If you go for a ride - no matter
-  what you ride - ride to ride another day.
-
-* Find the nearest homeless person who sells that street magazine and read it.
-
-* Listen to your favorite singer or artist. If you don't have one, find one.
 
 Buying things
 ------
@@ -71,13 +59,6 @@ Buying things
   relevant that you see. Pretend you're browsing those websites with the most
   stylish person you know and imagine what they would have to say. If there's
   any amount of "but" or "eh", it's not good.
-
-Earphones
-------
-
-* Don't buy the around-the-ear type if you wear glasses.
-
-* Don't wear them in public.
 
 Exercise, diet and hygiene
 ------
