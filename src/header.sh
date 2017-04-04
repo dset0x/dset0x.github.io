@@ -39,7 +39,7 @@ cat <<EOF
 
         /* Previews */
         article .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
-        code                {font-size: 10pt; background-color: #eee; padding: 0.5em; overflow: auto;}
+        pre                 {font-size: 10pt; background-color: #eee; padding: 0.5em; overflow: auto;}
 
         /* Menu */
         nav         {display: inline-block; width: 100%;}
