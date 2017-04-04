@@ -41,7 +41,7 @@ cat <<EOF
         #content    {padding-bottom: 0.5em;}
 
         /* Previews */
-        article .preview    {max-height: 20vw; margin-left: 4ch;}
+        article .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
         pre                 {font-size: 10pt; background-color: #eee; padding: 0.5em;}
 
         /* Menu */
