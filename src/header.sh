@@ -37,9 +37,6 @@ cat <<EOF
         h2                      {font-size: 100%; font-weight: initial;}
         h1                      {font-size: larger;}
 
-        /* Content */
-        #content    {padding-bottom: 0.5em;}
-
         /* Previews */
         article .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
         pre                 {font-size: 10pt; background-color: #eee; padding: 0.5em;}
