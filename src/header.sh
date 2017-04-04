@@ -51,9 +51,6 @@ cat <<EOF
 
         /* Pre */
         pre {overflow: auto; background-color: #eee; padding: 0.5em;}
-        @media (max-width: 65ch) {
-            pre {overflow: scroll;}
-        }
 
         /* Skip to content */
         .skip {position: absolute; opacity:0; pointer-events: none;}
