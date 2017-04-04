@@ -44,7 +44,7 @@ cat <<EOF
         /* Menu */
         nav         {display: inline-block; width: 100%;}
         #menu       {float: right;}
-        #menu li    {text-align: right; display: block; padding-top: 0.4em;}
+        #menu li    {text-align: right; display: block;}
         #menu div   {border-bottom: #c6c5c6 1px solid; width: 11em;}
 
         /* Skip to content */
