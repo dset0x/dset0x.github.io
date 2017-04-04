@@ -45,7 +45,7 @@ cat <<EOF
         nav         {display: inline-block; width: 100%;}
         #menu       {float: right;}
         #menu li    {text-align: right; display: block; padding-top: 0.4em;}
-        #menu div   {border-bottom: #c6c5c6 1px solid; width: 11em;}
+        #menu div   {border-bottom: #c6c5c6 1px solid; width: 9em;}
 
         /* Skip to content */
         .skip {position: absolute; opacity:0; pointer-events: none;}
@@ -59,7 +59,7 @@ cat <<EOF
     <ul id="menu">
         <li><div>$notes</div></li>
         <li><div>$advice</div></li>
-        <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub Issues</a></div></li>
+        <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub</a></div></li>
     </ul>
 </nav>
 
