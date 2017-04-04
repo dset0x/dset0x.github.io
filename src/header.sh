@@ -24,7 +24,7 @@ cat <<EOF
     <style>
         /* General */
         html        {background-color: #e8e8e7;}
-        body        {margin: auto; max-width: 6.67in; font-size: 11pt; padding: 1em;}
+        body        {margin: auto; max-width: 6.67in; font-size: 11pt; padding: 0 1em 1em 1em;}
         hr          {border: 0; border-top: 1px solid #c6c5c6;}
 
         /* Links */
