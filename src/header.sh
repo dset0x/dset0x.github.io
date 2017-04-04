@@ -24,9 +24,11 @@ cat <<EOF
     <style>
         /* General */
         html        {background-color: #e8e8e7;}
-        body        {max-width: 69ch; opacity: 0.85}
+        body        {margin: auto; max-width: 6.67in; font-size: 11pt; opacity: 0.85}
         hr          {border: 0; border-top: 1px solid #c6c5c6;}
+        pre         {font-size: 10pt;}
         #content    {padding-bottom: 0.5em;}
+        h1, h2, h3, h4, h5, h6 {opacity: 0.85;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -38,13 +40,8 @@ cat <<EOF
         h2          {font-size: 100%; font-weight: initial;}
         h1          {font-size: larger;}
 
-        /* Paragraphs */
-        p, article .preview {text-align: justify;}
-        pre, article .preview {margin-left: 4ch;}
-
         /* Previews */
-        article             {position: relative;}
-        article .preview    {max-height: 20vw; overflow: hidden;}
+        article .preview    {max-height: 20vw; margin-left: 4ch;}
 
         /* Menu */
         nav         {display: inline-block; width: 100%;}
@@ -52,7 +49,8 @@ cat <<EOF
         #menu li    {text-align: right; display: block; padding-top: 0.4em;}
         #menu div   {border-bottom: #c6c5c6 1px solid; width: 11em;}
 
-        /* Mobile */
+        /* Pre */
+        pre {overflow: auto; background-color: #eee; padding: 0.5em;}
         @media (max-width: 65ch) {
             pre {overflow: scroll;}
         }

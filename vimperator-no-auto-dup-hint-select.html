@@ -12,9 +12,11 @@
     <style>
         /* General */
         html        {background-color: #e8e8e7;}
-        body        {max-width: 69ch; opacity: 0.85}
+        body        {margin: auto; max-width: 6.67in; font-size: 11pt; opacity: 0.85}
         hr          {border: 0; border-top: 1px solid #c6c5c6;}
+        pre         {font-size: 10pt;}
         #content    {padding-bottom: 0.5em;}
+        h1, h2, h3, h4, h5, h6 {opacity: 0.85;}
 
         /* Links */
         a           {text-decoration: none;}
@@ -26,13 +28,8 @@
         h2          {font-size: 100%; font-weight: initial;}
         h1          {font-size: larger;}
 
-        /* Paragraphs */
-        p, article .preview {text-align: justify;}
-        pre, article .preview {margin-left: 4ch;}
-
         /* Previews */
-        article             {position: relative;}
-        article .preview    {max-height: 20vw; overflow: hidden;}
+        article .preview    {max-height: 20vw; margin-left: 4ch;}
 
         /* Menu */
         nav         {display: inline-block; width: 100%;}
@@ -40,7 +37,8 @@
         #menu li    {text-align: right; display: block; padding-top: 0.4em;}
         #menu div   {border-bottom: #c6c5c6 1px solid; width: 11em;}
 
-        /* Mobile */
+        /* Pre */
+        pre {overflow: auto; background-color: #eee; padding: 0.5em;}
         @media (max-width: 65ch) {
             pre {overflow: scroll;}
         }
@@ -85,12 +83,12 @@ that in.</p>
 <p>Looking at it you will likely be drawn to a <code>_checkUnique</code> function, but that
 only deals with entering &ldquo;hintchars&rdquo;, not matching against the element&rsquo;s text.</p>
 
-<pre><code>    if (this._hintNumber * options.hintchars.length &lt;= this._validHints.length) {
-        let timeout = options.hinttimeout;
-        if (timeout &gt; 0)
-            this._activeTimeout = this.setTimeout(function () { this._processHints(true); }, timeout);
-        return false;
-    }
+<pre><code>if (this._hintNumber * options.hintchars.length &lt;= this._validHints.length) {
+    let timeout = options.hinttimeout;
+    if (timeout &gt; 0)
+        this._activeTimeout = this.setTimeout(function () { this._processHints(true); }, timeout);
+    return false;
+}
 </code></pre>
 
 <p>You will also find  <code>_showHints</code> which calls the <code>hintMatcher</code>. This
@@ -98,11 +96,11 @@ matcher is not aware of anything but the string the user has given and the
 link text, so there the filtering on the level that we want to happen is
 not going to be placed there.</p>
 
-<pre><code>    let validHint = this._hintMatcher(this._hintString.toLowerCase());
+<pre><code>let validHint = this._hintMatcher(this._hintString.toLowerCase());
 
-    ...
+...
 
-    let valid = validHint(hint.text);
+let valid = validHint(hint.text);
 </code></pre>
 
 <p>But what calls <code>_showHints</code> that could be handling our use-case?
@@ -111,9 +109,9 @@ link until the selection has been narrowed down to one link. A-ha, this is
 what we want to change. We want to interate over the still-matching
 <code>elem</code>s and see if they all link to the same URL, right?</p>
 
-<pre><code>    this._showHints();
-    if (this._validHints.length == 1)
-        this._processHints(false);
+<pre><code>this._showHints();
+if (this._validHints.length == 1)
+    this._processHints(false);
 </code></pre>
 
 <p>For that we need to extract the URL from <code>elem</code>. I see <code>elem</code> is a child of
@@ -125,12 +123,12 @@ that a lookup is made on the <code>_hintModes</code> table to figure out how to 
 You&rsquo;ll then see the entire <code>elem</code> is passed to <code>buffer.followLink</code>. Weird, why
 does it need that entire object?</p>
 
-<pre><code>    this._hintMode = this._hintModes[minor];
-    commandline.input(this._hintMode.prompt, null, { onChange: this.closure._onInput });
+<pre><code>this._hintMode = this._hintModes[minor];
+commandline.input(this._hintMode.prompt, null, { onChange: this.closure._onInput });
 
-    ...
+...
 
-    o: Mode("Follow hint",                          function (elem) buffer.followLink(elem, liberator.CURRENT_TAB)),
+o: Mode("Follow hint",                          function (elem) buffer.followLink(elem, liberator.CURRENT_TAB)),
 </code></pre>
 
 <p>A-ha. <code>followLink</code> does a fake click&hellip;</p>

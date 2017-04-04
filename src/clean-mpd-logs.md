@@ -12,7 +12,6 @@ another. Fear not, easy to fix.
     $ mv /var/lib/mpd/log{2,}
     $ rc-service mpd start
 
-
 This was also a good time to remove all the client calls to bring the filesize
 down from 1GiB.
 
