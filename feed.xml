@@ -35,7 +35,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Converting zsh buffer contents to a function</title>
     <link>https://dset0x.github.io/zsh-buffer-function.html</link>
-    <description>I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simply function you can decrease the amount of jumping around the command line. Let&#39;s say you&#39;re working on the following command: Naturally, you keep getting the regexes wrong. Just...</description>
+    <description>I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simple function you can decrease the amount of jumping around the command line. Let&#39;s say you&#39;re working on the following command: Naturally, you keep getting the regexes wrong. Just...</description>
     <pubDate>Mon, 27 Feb 2017 21:52:00 +0200</pubDate>
   </item>
   <item>
