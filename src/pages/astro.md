@@ -10,7 +10,7 @@ I have a 25mm and a 10mm eyepiece (53x and 132.5x respectively). While I would n
 
 With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasing](http://cometchasing.skyhound.com/) I have resumed my attempts to learn more about the night (and day) sky. Here's a short log of the most recent ones.
 
-    2017-04-09 - 23:30-02:00
+    2017-04-09 - 23:30-02:00 EEST - 40N
     Jupiter, Moon, Arcturus, Capella, Spica, Mizar & Alcor
 
     Unfortunately, this was one or two days away from a full moon. We could had
@@ -23,7 +23,7 @@ With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasin
     of ~3Ly a star system, then that's a sextouple system.
 
 
-    2017-04-11 - 21:00-22:00
+    2017-04-11 - 21:00-22:00 EEST - 40N
     Capella, Amaaz, Haedus, Haedus II, ISS
 
     Capella caught my eye from my window on this night and it was an
