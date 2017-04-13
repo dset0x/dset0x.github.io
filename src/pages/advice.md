@@ -46,7 +46,7 @@ Time and distractions
 Buying things
 ------
 
-* Amazon sells used products. Girly-colored products go for less.
+* Amazon sells used products. Odd-colored products go for less.
 
 * Don't forget to check the Amazon website of other countries and ebay as well.
 
@@ -63,14 +63,12 @@ Buying things
 Exercise, diet and hygiene
 ------
 
-* Look up Antranik on YouTube.
+* Look up Antranik on YouTube for exercises you can do at home.
 
-* Mathematically speaking, any amount of exercise is infinitely better than none. It's never too late to start.
+* Mathematically speaking, any amount of exercise is infinitely better than none and it's never too late to start.
 
 * Finish your shower with cold water.
 
 * Use a soft toothbrush. Pretend your teeth are ancient bones that you must carefully clean.
 
 * Just eat a bit of everything and less of the bad stuff.
-
-* Breakfast is not important, but if you're hungry, eat. There's probably a reason why you're hungry.
