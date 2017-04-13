@@ -41,4 +41,6 @@ With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasin
     the case. However, the visual distance looks right and so does direction.
     In fact, the visually nearest star has a magnitude of 9.65, which means
     that if conditions allowed, I would also be seeing other nearby stars which
-    I am not. I should confirm what's happening another time.
+    I am not. I was observing from an open window which probably brings all
+    kinds of thermal difference problems. I should confirm what's happening
+    another time.
