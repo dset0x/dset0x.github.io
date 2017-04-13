@@ -31,3 +31,14 @@ With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasin
     alignment didn't allow me to tell for certain whether IC 31 ever came into
     view, but I toured visually nearby stars anyway. At around 21:07 I saw ISS,
     which I was not expecting.
+
+
+    2017-04-14 - 23:30-00:20 EEST - 40N
+
+    Double star Castor is visible from my location. Using the 10mm eyepiece I'm
+    nearly convinced that I can see both stars (it's quite blurry no matter
+    what I do), but at this FoV I think it's extremely unlikely that this is
+    the case. However, the visual distance looks right and so does direction.
+    In fact, the visually nearest star has a magnitude of 9.65, which means
+    that if conditions allowed, I would also be seeing other nearby stars which
+    I am not. I should confirm what's happening another time.
