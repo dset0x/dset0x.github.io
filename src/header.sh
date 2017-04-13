@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-typ="$1"  # notes|article|advice
+typ="$1"  # notes|article|advice|astro
 ttl="$2"
 dsc="$3"
 key="$4"
 
 notes='<a href="/">Notes</a>'
 advice='<a href="/pages/advice.html">Advice</a>'
+astro='<a href="/pages/astro.html">Astro</a>'
 declare "$typ"="${typ^}"
 
 cat <<EOF
@@ -59,6 +60,7 @@ cat <<EOF
     <ul id="menu">
         <li><div>$notes</div></li>
         <li><div>$advice</div></li>
+        <li><div>$astro</div></li>
         <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub</a></div></li>
     </ul>
 </nav>

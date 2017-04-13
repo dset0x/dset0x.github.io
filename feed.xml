@@ -15,6 +15,12 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
   <item>
+    <title>Astronomy</title>
+    <link>https://dset0x.github.io/pages/astro.html</link>
+    <description>I recently set my telescope up after more than a decade of it being in storage. Purchased circa 2004, it is a compact motorized Maksutov-Cassegranian (D=102mm, F=1325mm) that goes by the name of NexStar &quot;the coffee grinder&quot; 4GT. Why coffee grinder? Because the crude motors that drive it sure sound like one. I have a 25mm and a 10mm eyepiece, (53x and 132.5x respectively). While I would need a 2x...</description>
+    <pubDate>Thu, 13 Apr 2017 10:00:00 +0300</pubDate>
+  </item>
+  <item>
     <title>Advice</title>
     <link>https://dset0x.github.io/pages/advice.html</link>
     <description>Better desk posture Time and distractions Buying things Exercise, diet and hygiene...</description>
@@ -86,6 +92,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. This was also a good time to remove all the client calls to bring the filesize down from 1GiB...</description>
     <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
-    <lastBuildDate>Thu, 16 Mar 2017 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 13 Apr 2017 10:00:00 +0300</lastBuildDate>
   </channel>
 </rss>
