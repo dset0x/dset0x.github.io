@@ -34,6 +34,7 @@ With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasin
 
 
     2017-04-14 - 23:30-00:20 EEST - 40N
+    Castor
 
     Double star Castor is visible from my location. Using the 10mm eyepiece I'm
     nearly convinced that I can see both stars (it's quite blurry no matter
