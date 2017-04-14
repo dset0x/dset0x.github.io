@@ -94,7 +94,7 @@ for txt in $(find . -name '*.'"$txtext" -print0 | xargs --null head -n1 | \
 
     # PAGE
     {
-      ./header.sh "$typ" "$title - $site_title" "$title" "$keywords"
+      ./header.sh "$typ" "$title - $site_title - $author_name" "$title" "$keywords"
       echo '<article>'
       ${txt2blog} < <(tail -n +2 "$txt")
       echo '</article>'
