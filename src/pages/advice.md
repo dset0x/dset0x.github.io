@@ -16,23 +16,22 @@
   monitors as well, by about a spread-palm-width using books or boxes. Its
   center should be right in front of you.
 
-* Have your computer notify you every 1 hour. Get up and do some dynamic
-  stretches, hop around, look out the window. Rest is paramount.
+* Have your computer notify you about once an hour to get up and do some dynamic
+  stretches, hop around, look out the window, do eye exercises.
 
 ## Time and distractions
 
 * Know when your "work", "study", "hobbies" and "relaxation" sections of your
   day start and end. If you don't define them well enough, you will either reach
   catastrophic fatigue in a matter of a few days (overworking) or fall into
-  limbo (understimulation).
+  limbo (understimulation). Rest is paramount.
 
 * Write a distraction-free mode for your entire computer. In my case I can
   hide all notifications and irreversibly minimize all chat / mail windows
   with the press of two keys. Exiting this mode hints at all missed
   notifications, if any, and restores the windows.
 
-* Use `/etc/hosts` to block things you don't need. Don't make it any easier to
-  edit that file than it already is.
+* Use `/etc/hosts` or some other mechanism to block things you don't need.
 
 * If you catch yourself not having done anything useful while on the computer
   for a certain period of time, stop using it.
@@ -42,14 +41,12 @@
 
 ## Buying things
 
-* Amazon sells used products. Odd-colored products go for less.
-
-* Don't forget to check the Amazon website of other countries and ebay as well.
+* Amazon sells used products. Odd-colored products go for less. Ebay probably
+  has equivalents for even less.
 
 * Buy yourself small things that will take a long time to arrive and may turn
-  out to be engaging. It's a gift to your future self.
-
-* Buy a cheap instrument. Ukulele, kalimba, flute, whatever.
+  out to be engaging. It's a gift to your future self. For example, a cheap
+  instrument: An Ukulele, a kalimba or flute.
 
 * Before buying a piece of clothing, go online and click on everything
   relevant that you see. Pretend you're browsing those websites with the most
@@ -60,10 +57,12 @@
 
 * Look up Antranik on YouTube for exercises you can do at home.
 
-* Mathematically speaking, any amount of exercise is infinitely better than none and it's never too late to start.
+* Mathematically speaking, any amount of exercise is infinitely better than
+  none and it's never too late to start.
 
 * Finish your shower with cold water.
 
-* Use a soft toothbrush. Pretend your teeth are ancient bones that you must carefully clean.
+* Use a soft toothbrush. Pretend your teeth are ancient bones that you must
+  carefully clean.
 
 * Just eat a bit of everything and less of the bad stuff.
