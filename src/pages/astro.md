@@ -15,7 +15,7 @@ With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasin
 
 -------------------------------------------------------------------------------
 
-    2017-04-14 - 23:30-00:20 EEST - 40N
+    2017-04-13 - 23:30-00:20 EEST - 40N
 
     Castor
 
