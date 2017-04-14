@@ -15,17 +15,18 @@ With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasin
 
 -------------------------------------------------------------------------------
 
-    2017-04-09 - 23:30-02:00 EEST - 40N
-    Jupiter, Moon, Arcturus, Capella, Spica, Mizar & Alcor
+    2017-04-14 - 23:30-00:20 EEST - 40N
+    Castor
 
-Unfortunately, this was one or two days away from a full moon. We could had
-used a little less light in the sky. I had forgotten how great a view you
-can have of Jupiter and the Moon with this scope. Arcturus and Capella were
-viewed mostly for alignment, but remembering about these stars was good.
-The most interesting to me were Mizar and Alcor, which are a visual double.
-Alcor is also a double, which became clear with the 10mm. What's even more
-interesting is that Mizar is a quadrouple star. If you consider a distance
-of ~3Ly a star system, then that's a sextouple system.
+Double star Castor is visible from my location. Using the 10mm eyepiece I'm
+nearly convinced that I can see both stars (it's quite blurry no matter
+what I do), but at this FoV I think it's extremely unlikely that this is
+the case. However, the visual distance looks right and so does direction.
+In fact, the visually nearest star has a magnitude of 9.65, which means
+that if conditions allowed, I would also be seeing other nearby stars which
+I am not. I was observing from an open window which probably brings all
+kinds of thermal difference problems. I should confirm what's happening
+another time.
 
 -------------------------------------------------------------------------------
 
@@ -40,15 +41,14 @@ which I was not expecting.
 
 -------------------------------------------------------------------------------
 
-    2017-04-14 - 23:30-00:20 EEST - 40N
-    Castor
+    2017-04-09 - 23:30-02:00 EEST - 40N
+    Jupiter, Moon, Arcturus, Capella, Spica, Mizar & Alcor
 
-Double star Castor is visible from my location. Using the 10mm eyepiece I'm
-nearly convinced that I can see both stars (it's quite blurry no matter
-what I do), but at this FoV I think it's extremely unlikely that this is
-the case. However, the visual distance looks right and so does direction.
-In fact, the visually nearest star has a magnitude of 9.65, which means
-that if conditions allowed, I would also be seeing other nearby stars which
-I am not. I was observing from an open window which probably brings all
-kinds of thermal difference problems. I should confirm what's happening
-another time.
+Unfortunately, this was one or two days away from a full moon. We could had
+used a little less light in the sky. I had forgotten how great a view you
+can have of Jupiter and the Moon with this scope. Arcturus and Capella were
+viewed mostly for alignment, but remembering about these stars was good.
+The most interesting to me were Mizar and Alcor, which are a visual double.
+Alcor is also a double, which became clear with the 10mm. What's even more
+interesting is that Mizar is a quadrouple star. If you consider a distance
+of ~3Ly a star system, then that's a sextouple system.
