@@ -35,12 +35,15 @@ cat <<EOF
         a:hover     {text-decoration: underline;}
 
         /* Headings */
+        h1, h2      {opacity: 0.75;}
         h1          {font-size: x-large;}
         h2          {font-size: large;}
 
         /* Previews */
-        article .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
-        pre                 {font-size: 10pt; background-color: #eee; padding: 0.5em; overflow: auto;}
+        .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
+
+        /* Pre */
+        pre         {font-size: 10pt; background-color: #eee; padding: 0.5em; overflow: auto;}
 
         /* Menu */
         nav         {display: inline-block; width: 100%;}
