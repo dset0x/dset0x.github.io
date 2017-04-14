@@ -35,7 +35,7 @@ cat <<EOF
         a:hover     {text-decoration: underline;}
 
         /* Headings */
-        h1, h2      {opacity: 0.75;}
+        h1, h2      {opacity: 0.8;}
         h1          {font-size: x-large;}
         h2          {font-size: large;}
 
