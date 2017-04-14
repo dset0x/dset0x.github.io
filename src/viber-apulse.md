@@ -1,6 +1,5 @@
 2017-02-21T11:23 linux,viber,apulse,pulseaudio,ld_preload,volume
-Getting Viber for Linux to play nice with apulse
-========================================
+# Getting Viber for Linux to play nice with apulse
 
 Viber for Linux seems to work fine with apulse,
 

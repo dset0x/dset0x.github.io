@@ -1,6 +1,5 @@
 2017-02-25T16:02 mutt,notmuch,neomutt,addresses,address_book
-Extracting all known addresses from notmuch for use with mutt
-===========================================
+# Extracting all known addresses from notmuch for use with mutt
 
 Edit: You should use [`notmuch-addrlookup-c`](https://github.com/aperezdc/notmuch-addrlookup-c)
 instead as it has good support for `mutt` and executes much faster.

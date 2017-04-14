@@ -1,6 +1,5 @@
 2017-03-13T12:27 firefox,vimperator,hint
-Why vimperator hint mode doesn't weed out duplicate links
-====================================================
+# Why vimperator hint mode doesn't weed out duplicate links
 
 Vimperator has a commonly used "hint" mode where you may enter either a
 generated combination of characters or link's text to interact with that element.

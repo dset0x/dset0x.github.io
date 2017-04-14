@@ -1,6 +1,5 @@
 2017-02-26T00:20 zte,script,expect,password
-Logging into a ZTE H168N with the help of expect
-========================================
+# Logging into a ZTE H168N with the help of expect
 
 Jalal Sela already took the time to break into a sibling of this router on his
 [blog](https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/). Having shell access to my router turned out to be more handy than I had anticipated.

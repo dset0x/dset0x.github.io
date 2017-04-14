@@ -1,6 +1,5 @@
 2017-02-21T23:11 lynx,mutt,neomutt,terminal,linux
-Getting lynx to print URLs of HTML messages on the side
-========================================
+# Getting lynx to print URLs of HTML messages on the side
 
 Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine
 job at dumping them, but actually opening the URLs from it is cumbersome as

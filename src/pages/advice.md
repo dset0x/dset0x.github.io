@@ -1,9 +1,7 @@
 2017-03-16T12:00
-Advice
-=====
+# Advice
 
-Better desk posture
-------
+## Better desk posture
 
 * If you can't afford a split or ergonomic keyboard, use one keyboard per hand
   so that you may keep your back and chest straight and shoulders naturally
@@ -21,8 +19,7 @@ Better desk posture
 * Have your computer notify you every 1 hour. Get up and do some dynamic
   stretches, hop around, look out the window. Rest is paramount.
 
-Time and distractions
-------
+## Time and distractions
 
 * Know when your "work", "study", "hobbies" and "relaxation" sections of your
   day start and end. If you don't define them well enough, you will either reach
@@ -43,8 +40,7 @@ Time and distractions
 * People who sell used books have good suggestions for you. Balance work and
   literature books.
 
-Buying things
-------
+## Buying things
 
 * Amazon sells used products. Odd-colored products go for less.
 
@@ -60,8 +56,7 @@ Buying things
   stylish person you know and imagine what they would have to say. If there's
   any amount of "but" or "eh", it's not good.
 
-Exercise, diet and hygiene
-------
+## Exercise, diet and hygiene
 
 * Look up Antranik on YouTube for exercises you can do at home.
 

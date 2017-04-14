@@ -1,6 +1,5 @@
 2017-02-27T21:52 zsh,buffer
-Converting zsh buffer contents to a function
-=========================
+# Converting zsh buffer contents to a function
 
 I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simple function you can decrease the amount of jumping around the command line.
 

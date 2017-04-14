@@ -1,6 +1,5 @@
 2017-02-21T11:23 mpd,linux,logfiles,binary
-Removing binary data from (mpd) logfiles
-========================================
+# Removing binary data from (mpd) logfiles
 
 I like to keep `mpd` logs around for statistics purposes.
 

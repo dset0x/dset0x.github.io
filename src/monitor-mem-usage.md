@@ -1,6 +1,5 @@
 2017-02-21T11:23 weechat,linux,memory_leak,script
-Monitoring memory usage for weechat script leaks
-========================================
+# Monitoring memory usage for weechat script leaks
 
 I was recently dealing with a memory leak within a script in `weechat`. I
 needed a quick and dirty way of figuring out which script was causing the

@@ -1,6 +1,5 @@
 2017-02-22T11:23 mutt,neomutt,mailto,handler
-Using mailto URIs with mutt postponed email
-========================================
+# Using mailto URIs with mutt postponed email
 
 mailto:// URLs are sometimes convenient to use, but they don't fit in too well
 with using a single mutt instance and having an aversion to windows popping

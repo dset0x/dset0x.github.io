@@ -1,6 +1,5 @@
 2017-03-13T14:58 urxvt,zsh,launcher
-Using urxvt with zsh as a program launcher
-=========================================
+# Using urxvt with zsh as a program launcher
 
 There's a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It's easy to create a `dmenu` replacement by adding this to your `~/.zshrc`:
 
