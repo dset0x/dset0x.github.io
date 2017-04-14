@@ -16,6 +16,7 @@ With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasin
 -------------------------------------------------------------------------------
 
     2017-04-14 - 23:30-00:20 EEST - 40N
+
     Castor
 
 Double star Castor is visible from my location. Using the 10mm eyepiece I'm
@@ -31,6 +32,7 @@ another time.
 -------------------------------------------------------------------------------
 
     2017-04-11 - 21:00-22:00 EEST - 40N
+
     Capella, Amaaz, Haedus, Haedus II, ISS
 
 Capella caught my eye from my window on this night and it was an
@@ -42,6 +44,7 @@ which I was not expecting.
 -------------------------------------------------------------------------------
 
     2017-04-09 - 23:30-02:00 EEST - 40N
+
     Jupiter, Moon, Arcturus, Capella, Spica, Mizar & Alcor
 
 Unfortunately, this was one or two days away from a full moon. We could had
