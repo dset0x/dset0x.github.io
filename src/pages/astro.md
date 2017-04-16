@@ -15,6 +15,22 @@ With the assistance of [Stellarium](http://www.stellarium.org/) and [cometchasin
 
 -------------------------------------------------------------------------------
 
+    2017-04-15 - 21:40-22:30 EEST - 40N
+
+    Jupiter, Sirius, Polaris, Castor, Mizar & Alcor
+
+With new company to introduce to the sky I returned to Jupiter for new
+close-ups. Over the course of the hour that we spent outside the sharpening
+in visibility of the giant planet became rather visible. Turning to Castor
+again, I'm even more convinced that I can indeed see it as a twin for the
+reasons described in the last entry, plus the fact that the location
+provided somewhat less light pollution. Unfortunately, our session was cut
+short due to clouds slowly covering the entire sky. Missed ISS by a few
+minutes this time! It looks like it'll be a long while until it's visible
+from my location anytime soon.
+
+-------------------------------------------------------------------------------
+
     2017-04-13 - 23:30-00:20 EEST - 40N
 
     Castor
