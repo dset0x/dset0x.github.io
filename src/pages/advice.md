@@ -63,6 +63,6 @@
 * Finish your shower with cold water.
 
 * Use a soft toothbrush. Pretend your teeth are ancient bones that you must
-  carefully clean.
+  carefully clean. Floss!
 
 * Just eat a bit of everything and less of the bad stuff.
