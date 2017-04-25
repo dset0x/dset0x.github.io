@@ -23,35 +23,27 @@ cat <<EOF
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
     <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
     <style>
-        /* General */
-        html        {background-color: #ffffff;}
-        body        {margin: auto; max-width: 6.67in; font-size: 11pt; padding: 0 1em 1em 1em; opacity: 0.80;}
+        html        {background-color: #fff;}
+        body        {margin: auto; max-width: 6.67in; font-size: 11pt; padding: 0 1em 1em 1em; opacity: .8;}
         hr          {border: 0; border-top: 1px solid #c6c5c6;}
 
-        /* Links */
         a           {text-decoration: none;}
         a:link      {color: #3189c5;}
         a:visited   {color: #a131c5;}
         a:hover     {text-decoration: underline;}
 
-        /* Headings */
-        h1, h2      {opacity: 0.8;}
+        h1, h2      {opacity: .8;}
         h1          {font-size: x-large;}
         h2          {font-size: large;}
 
-        /* Previews */
         .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
+        pre         {font-size: 10pt; background-color: #eee; padding: .5em; overflow: auto;}
 
-        /* Pre */
-        pre         {font-size: 10pt; background-color: #eee; padding: 0.5em; overflow: auto;}
-
-        /* Menu */
         nav         {display: inline-block; width: 100%;}
         #menu       {float: right;}
         #menu li    {text-align: right; display: block; padding-top: 0.4em;}
         #menu div   {border-bottom: #c6c5c6 1px solid; width: 9em;}
 
-        /* Skip to content */
         .skip {position: absolute; opacity:0; pointer-events: none;}
         .skip:active, .skip:focus {opacity:1;}
     </style>
