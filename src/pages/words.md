@@ -36,4 +36,4 @@
   * [Why more millennials are avoiding sex](https://www.washingtonpost.com/local/social-issues/there-isnt-really-anything-magical-about-it-why-more-millennials-are-putting-off-sex/2016/08/02/e7b73d6e-37f4-11e6-8f7c-d4c723a2becb_story.html)
 * ### Anxiety and depression
   * [Dalai Lama: Behind our anxiety, the fear Of being unneeded](https://mobile.nytimes.com/2016/11/04/opinion/dalai-lama-behind-our-anxiety-the-fear-of-being-unneeded.html)
-    * [People with anxiety perceive the world in a fundamentally different way](http://www.huffingtonpost.com/entry/anxiety-perception-study_us_56d48e13e4b03260bf77a48e)
+  * [People with anxiety perceive the world in a fundamentally different way](http://www.huffingtonpost.com/entry/anxiety-perception-study_us_56d48e13e4b03260bf77a48e)
