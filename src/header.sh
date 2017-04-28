@@ -11,7 +11,6 @@ for p in $all_pages; do
     declare "$p"="<a href=\"/pages/$p.html\">${p}</a>"
 done
 declare "$typ"="${typ}"
-echo $notes
 
 cat <<EOF
 <!DOCTYPE html>
