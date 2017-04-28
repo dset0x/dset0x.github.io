@@ -5,4 +5,3 @@
 * [Steve Patterson on Politics and Language Warriors](https://www.youtube.com/watch?v=Hmlnakt-HVg)
 * [Steve Patterson on Words, Concepts, and Referents](https://www.youtube.com/watch?v=_8j9gkc-zjk)
 
-
