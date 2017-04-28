@@ -71,4 +71,4 @@
 * Use a soft toothbrush. Pretend your teeth are ancient bones that you must
   carefully clean. Floss!
 
-* Just eat a bit of everything and less of the bad stuff.
+* Eat a bit of everything and less of the bad stuff.
