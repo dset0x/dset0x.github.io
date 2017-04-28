@@ -101,7 +101,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Monitoring memory usage for weechat script leaks</title>
     <link>https://dset0x.github.io/monitor-mem-usage.html</link>
-    <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts,...</description>
+    <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts...</description>
     <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
   <item>
