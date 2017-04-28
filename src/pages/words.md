@@ -2,23 +2,27 @@
 # Words
 
 ## Freedom of speech, political correctness and public speaking
-* [1992 Sketch on political correctness](https://www.youtube.com/watch?v=77M2e3APoXk)
-* [Neil deGrasse Tyson explains clarity towards broad audiencies](https://www.youtube.com/watch?v=XkjxVTeQp-I)
-* [Steve Patterson on "Politics and Language Warriors"](https://youtu.be/Hmlnakt-HVg)
-* [Jordan Peterson on why people must be allowed to speak freely](https://youtu.be/G59QpvdQa5w)
+* [1992 Sketch on political correctness](https://www.youtube.com/watch?v=77M2e3APoXk) _(Video (3min))_
+* [Neil deGrasse Tyson explains clarity towards broad audiencies](https://www.youtube.com/watch?v=XkjxVTeQp-I) _(Video (9min))_
+* [Steve Patterson on "Politics and Language Warriors"](https://youtu.be/Hmlnakt-HVg) _(Video (9min))_
+* [Jordan Peterson on why people must be allowed to speak freely](https://youtu.be/G59QpvdQa5w) _(Video (9min))_
 * ### Redefining words and phrases
-  * [George Carlin on Soft Language](https://www.youtube.com/watch?v=h67k9eEw9AY)
-  * [Steve Patterson on Politics and Language Warriors](https://www.youtube.com/watch?v=Hmlnakt-HVg)
-  * [Steve Patterson on Words, Concepts, and Referents](https://www.youtube.com/watch?v=_8j9gkc-zjk)
+  * [George Carlin on Soft Language](https://www.youtube.com/watch?v=h67k9eEw9AY) _(Video (7min))_
+  * [Steve Patterson on Politics and Language Warriors](https://www.youtube.com/watch?v=Hmlnakt-HVg) _(Video (9min))_
+  * [Steve Patterson on Words, Concepts, and Referents](https://www.youtube.com/watch?v=_8j9gkc-zjk) _(Video (4min))_
   * [William Lutz on his book "DoubleSpeak"](https://youtu.be/8ZpIv7T8oEY)
 
 ## Scientific publishing
 * [We should not accept scientific results that have not been repeated](http://nautil.us/blog/we-should-not-accept-scientific-results-that-have-not-been-repeated)
-* [Is most published research wrong?](https://www.youtube.com/watch?v=42QuXLucH3Q)
+* [Is most published research wrong?](https://www.youtube.com/watch?v=42QuXLucH3Q) _(Video (12min))_
 
 ## Ethics
 * [Trying to cure depression, but inspiring torture](http://www.newyorker.com/science/maria-konnikova/theory-psychology-justified-torture)
 * [The Drowning Child and the Expanding Circle](https://www.utilitarian.net/singer/by/199704--.htm)
+
+## Fraud
+* [James Randi on Homeopathy, quackery and fraud](https://youtu.be/c0Z7KeNCi7g) _(Video (18min))_
+* [James Randi on skepticism and critical thinking](https://www.youtube.com/watch?v=tDeh5t0LQrY) _(Video (75min))_
 
 ## War
 * [Hiroshima: The medical aftermath of the day that changed the world](http://hiroshima.australiandoctor.com.au/#c1)
