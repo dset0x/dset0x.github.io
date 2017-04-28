@@ -22,7 +22,6 @@
 
 ## Fraud
 * [James Randi on Homeopathy, quackery and fraud](https://youtu.be/c0Z7KeNCi7g) _(Video (18min))_
-* [James Randi on skepticism and critical thinking](https://www.youtube.com/watch?v=tDeh5t0LQrY) _(Video (75min))_
 
 ## War
 * [Hiroshima: The medical aftermath of the day that changed the world](http://hiroshima.australiandoctor.com.au/#c1)

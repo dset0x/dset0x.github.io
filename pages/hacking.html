@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xml:lang="en">
 <head>
-    <title>Logging into a ZTE H168N with the help of expect - When software gets in the way - Dimitrios Semitsoglou-Tsiapos</title>
+    <title>Hacking - When software gets in the way - Dimitrios Semitsoglou-Tsiapos</title>
     <meta charset="utf-8">
-    <meta name="description" content="Logging into a ZTE H168N with the help of expect">
-    <meta name="keywords" content="zte,script,expect,password">
+    <meta name="description" content="Hacking">
+    <meta name="keywords" content="2017-04-28T12:00">
     <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
@@ -44,7 +44,7 @@
 <li><div><a href="/">notes</a></div></li>
 <li><div><a href="/pages/advice.html">advice</a></div></li>
 <li><div><a href="/pages/astro.html">astro</a></div></li>
-<li><div><a href="/pages/hacking.html">hacking</a></div></li>
+<li><div>hacking</div></li>
 <li><div><a href="/pages/words.html">words</a></div></li>
         <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">github</a></div></li>
     </ul>
@@ -52,36 +52,22 @@
 
 <main id="content">
 <article>
-<h1>Logging into a ZTE H168N with the help of expect</h1>
+<h1>Hacking</h1>
 
-<p>Jalal Sela already took the time to break into a sibling of this router on his
-<a href="https://jalalsela.wordpress.com/2014/10/31/hacking-zte-router-zxhn-h108n/">blog</a>. Having shell access to my router turned out to be more handy than I had anticipated.</p>
+<h2>Videos on hacking things</h2>
 
-<pre><code>#!/usr/bin/expect -f
+<ul>
+<li><a href="https://www.youtube.com/watch?v=M1XqqvlfZsk">Adventures in laptop battery hacking</a> <em>(Video (43min))</em></li>
+<li><a href="https://www.youtube.com/watch?v=Fzmm87oVQ6c">My personal fight against the modern laptop</a> <em>(Video (45min))</em></li>
+<li><a href="https://www.youtube.com/watch?v=ZUvGfuLlZus">Elevator Hacking: From the Pit to the Penthouse</a> <em>(Video (72min))</em></li>
+<li><a href="https://www.youtube.com/watch?v=qRz77mkY46g">Satellite Hacking For Fun And Profit</a> <em>(Video (71min))</em></li>
+<li><a href="https://www.youtube.com/watch?v=Pk1hjIMR3ro">Hacking Airplanes - Brad Haines</a> <em>(Video (51min))</em></li>
+<li><a href="https://www.youtube.com/watch?v=h5PRvBpLuJs">Hack All The Things: 20 Devices in 45 Minutes</a> <em>(Video (49min))</em></li>
+<li><a href="https://www.youtube.com/watch?v=N4kfsxF8Tio">No-Tech Hacking - Hacking without a Computer - Johnny Long</a> <em>(Video (59min))</em></li>
+<li><a href="Team%20Fail0verflow%20on%20PS4](https://www.youtube.com/watch?v=-AoHGJ1g9aM">PS4 Hack</a> <em>(Video (48min))</em></li>
+<li><a href="https://www.youtube.com/watch?v=jOyfZex7B3E">Sega Saturn CD - Cracked after 20 years</a> <em>(Video (27min))</em></li>
+</ul>
 
-spawn telnet 192.168.2.254 23
-
-expect Username: { send "root\r" }
-expect Password: { send "public\r" }
-
-expect &gt;         { send "enable\r" }
-expect Password: { send "zte\r" }
-
-expect "#"       { send "shell\r" }
-expect Login:    { send "root\r" }
-expect Password: { send "root\r" }
-
-interact
-</code></pre>
-
-<hr />
-
-<p>Speaking of this device, in it you will find <code>/var/tmp/db_backup_cfg.xml</code> and <code>/data/cfg/db_user_cfg.xml</code> which have the same contents, except the latter is compressed in some funny way. Here&rsquo;s how do decompress it:</p>
-
-<pre><code>for offset in $(binwalk -c db_user_cfg.xml | tail -n +4 | cut -d' ' -f1); do
-    printf '\x1f\x8b\x08\x00\x00\x00\x00\x00%s' "$(dd skip=$offset ibs=1 if=db_user_cfg.xml)" | gzip -dc &gt;&gt; out.xml;
-done
-</code></pre>
 </article>
 </main>
 <footer>
