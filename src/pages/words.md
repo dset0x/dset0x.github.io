@@ -10,7 +10,7 @@
   * [George Carlin on Soft Language](https://www.youtube.com/watch?v=h67k9eEw9AY) _(Video (7min))_
   * [Steve Patterson on Politics and Language Warriors](https://www.youtube.com/watch?v=Hmlnakt-HVg) _(Video (9min))_
   * [Steve Patterson on Words, Concepts, and Referents](https://www.youtube.com/watch?v=_8j9gkc-zjk) _(Video (4min))_
-  * [William Lutz on his book "DoubleSpeak"](https://youtu.be/8ZpIv7T8oEY)
+  * [William Lutz on his book "DoubleSpeak"](https://youtu.be/8ZpIv7T8oEY) _(Video (59min))_
 
 ## Scientific publishing
 * [We should not accept scientific results that have not been repeated](http://nautil.us/blog/we-should-not-accept-scientific-results-that-have-not-been-repeated)
