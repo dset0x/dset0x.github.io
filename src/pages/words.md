@@ -21,7 +21,7 @@
 * [The Drowning Child and the Expanding Circle](https://www.utilitarian.net/singer/by/199704--.htm)
 
 ## Fraud
-* [James Randi on Homeopathy, quackery and fraud](https://youtu.be/c0Z7KeNCi7g) _(Video (18min))_
+* [James Randi on homeopathy, quackery and fraud](https://youtu.be/c0Z7KeNCi7g) _(Video (18min))_
 
 ## War
 * [Hiroshima: The medical aftermath of the day that changed the world](http://hiroshima.australiandoctor.com.au/#c1)
