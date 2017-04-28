@@ -2,7 +2,7 @@
 # Words
 
 ## Freedom of speech, political correctness and public speaking
-* [1992 Sketch](https://www.youtube.com/watch?v=77M2e3APoXk)
+* [1992 Sketch on political correctness](https://www.youtube.com/watch?v=77M2e3APoXk)
 * [Neil deGrasse Tyson explains clarity towards broad audiencies](https://www.youtube.com/watch?v=XkjxVTeQp-I)
 * [Steve Patterson on "Politics and Language Warriors"](https://youtu.be/Hmlnakt-HVg)
 * [Jordan Peterson on why people must be allowed to speak freely](https://youtu.be/G59QpvdQa5w)
