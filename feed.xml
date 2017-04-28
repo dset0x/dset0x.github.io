@@ -17,7 +17,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>(Mis)using s6 to run complementary desktop applications</title>
     <link>https://dset0x.github.io/s6-desktop.html</link>
-    <description>programs for UNIX, designed to allow process supervision Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are: I recently realized that it would make sense to group and supervise these programs for a number of reasons: All I needed to get things running was a directory per service: Each of which contains a `run` file that is responsible for bringing...</description>
+    <description>Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are: I recently realized that it would make sense to group and supervise these programs for a number of reasons: All I needed to get things running was a directory per service: Each of which contains a `run` file that is responsible for bringing up the service. For example: Executing `s6-svscan ~/.services/enabled`...</description>
     <pubDate>Fri, 28 Apr 2017 23:48:00 +0300</pubDate>
   </item>
   <item>

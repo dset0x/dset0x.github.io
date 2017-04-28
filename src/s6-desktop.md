@@ -1,8 +1,7 @@
 2017-04-28T23:48 gentoo,s6,desktop,openrc
 # (Mis)using s6 to run complementary desktop applications
 
-> [s6](http://www.skarnet.org/software/s6/index.html) is a small suite of
-programs for UNIX, designed to allow process supervision
+> [s6](http://www.skarnet.org/software/s6/index.html) is a small suite of programs for UNIX, designed to allow process supervision
 
 Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are:
 
