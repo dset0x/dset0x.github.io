@@ -5,7 +5,7 @@ ttl="$2"
 dsc="$3"
 key="$4"
 
-declare "notes"="<a href=\"/\">${p}</a>"
+notes="<a href=\"/\">${p}</a>"
 all_pages=$(basename -s.md -a pages/*.md)
 for p in $all_pages; do
     declare "$p"="<a href=\"/pages/$p.html\">${p}</a>"
