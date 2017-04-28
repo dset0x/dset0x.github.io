@@ -1,7 +1,7 @@
 2017-04-28T12:00
 # Hacking
 
-## Videos on hacking things
+## Videos (mainly from conferences)
 * [Adventures in laptop battery hacking](https://www.youtube.com/watch?v=M1XqqvlfZsk) _(Video (43min))_
 * [My personal fight against the modern laptop](https://www.youtube.com/watch?v=Fzmm87oVQ6c) _(Video (45min))_
 * [Elevator Hacking: From the Pit to the Penthouse](https://www.youtube.com/watch?v=ZUvGfuLlZus) _(Video (72min))_
