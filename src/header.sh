@@ -34,9 +34,10 @@ cat <<EOF
         a:visited   {color: #a131c5;}
         a:hover     {text-decoration: underline;}
 
-        h1, h2      {opacity: .8;}
+        h1, h2, h3  {opacity: .8;}
         h1          {font-size: x-large;}
         h2          {font-size: large;}
+        h3          {font-size: medium;}
 
         .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
         pre         {font-size: 10pt; background-color: #eee; padding: .5em; overflow: auto;}
