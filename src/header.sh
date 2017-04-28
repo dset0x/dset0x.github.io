@@ -5,9 +5,10 @@ ttl="$2"
 dsc="$3"
 key="$4"
 
-all_pages=$(basename -s.md -a pages/*.md; echo notes)
+declare "notes"="<a href=\"/\">${p}</a>"
+all_pages=$(basename -s.md -a pages/*.md)
 for p in $all_pages; do
-    declare "$p"="<a href=\"/$p.html\">${p}</a>"
+    declare "$p"="<a href=\"/pages/$p.html\">${p}</a>"
 done
 declare "$typ"="${typ}"
 
@@ -55,7 +56,7 @@ cat <<EOF
 <nav>
     <ul id="menu">
 EOF
-for p in $all_pages; do
+for p in notes $all_pages; do
     echo "<li><div>${!p}</div></li>"
 done
 cat <<EOF
