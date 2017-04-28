@@ -4,12 +4,12 @@
 ## Freedom of speech, political correctness and public speaking
 * [1992 Sketch on political correctness](https://www.youtube.com/watch?v=77M2e3APoXk) _(Video (3min))_
 * [Neil deGrasse Tyson explains clarity towards broad audiencies](https://www.youtube.com/watch?v=XkjxVTeQp-I) _(Video (9min))_
-* [Steve Patterson on "Politics and Language Warriors"](https://youtu.be/Hmlnakt-HVg) _(Video (9min))_
+* [Steve Patterson on "politics and language warriors"](https://youtu.be/Hmlnakt-HVg) _(Video (9min))_
 * [Jordan Peterson on why people must be allowed to speak freely](https://youtu.be/G59QpvdQa5w) _(Video (9min))_
 * ### Redefining words and phrases
-  * [George Carlin on Soft Language](https://www.youtube.com/watch?v=h67k9eEw9AY) _(Video (7min))_
-  * [Steve Patterson on Politics and Language Warriors](https://www.youtube.com/watch?v=Hmlnakt-HVg) _(Video (9min))_
-  * [Steve Patterson on Words, Concepts, and Referents](https://www.youtube.com/watch?v=_8j9gkc-zjk) _(Video (4min))_
+  * [George Carlin on "Soft Language"](https://www.youtube.com/watch?v=h67k9eEw9AY) _(Video (7min))_
+  * [Steve Patterson on politics and language warriors](https://www.youtube.com/watch?v=Hmlnakt-HVg) _(Video (9min))_
+  * [Steve Patterson on words, concepts, and referents](https://www.youtube.com/watch?v=_8j9gkc-zjk) _(Video (4min))_
   * [William Lutz on his book "DoubleSpeak"](https://youtu.be/8ZpIv7T8oEY) _(Video (59min))_
 
 ## Scientific publishing
@@ -34,7 +34,7 @@
 
 ## Socity
 * [The war on stupid people](https://www.theatlantic.com/magazine/archive/2016/07/the-war-on-stupid-people/485618/?single_page=true)
-* ["I saw things children shouldn’t see" - surviving a troubled childhood](https://mosaicscience.com/story/surviving-troubled-childhood-resilience-neglect-adversity)
+* ["I saw things children shouldn't see" - surviving a troubled childhood](https://mosaicscience.com/story/surviving-troubled-childhood-resilience-neglect-adversity)
 * ### Sexuality
   * [Why more millennials are avoiding sex](https://www.washingtonpost.com/local/social-issues/there-isnt-really-anything-magical-about-it-why-more-millennials-are-putting-off-sex/2016/08/02/e7b73d6e-37f4-11e6-8f7c-d4c723a2becb_story.html)
 * ### Anxiety and depression
