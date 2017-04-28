@@ -15,6 +15,12 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
   <item>
+    <title>(Mis)using s6 to run complementary desktop applications</title>
+    <link>https://dset0x.github.io/s6-desktop.html</link>
+    <description>programs for UNIX, designed to allow process supervision Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are: I recently realized that it would make sense to group and supervise these programs for a number of reasons: All I needed to get things running was a directory per service: Each of which contains a `run` file that is responsible for bringing...</description>
+    <pubDate>Fri, 28 Apr 2017 23:48:00 +0300</pubDate>
+  </item>
+  <item>
     <title>Words</title>
     <link>https://dset0x.github.io/pages/words.html</link>
     <description></description>
@@ -104,6 +110,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. This was also a good time to remove all the client calls to bring the filesize down from 1GiB...</description>
     <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
-    <lastBuildDate>Fri, 28 Apr 2017 12:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 28 Apr 2017 23:48:00 +0300</lastBuildDate>
   </channel>
 </rss>

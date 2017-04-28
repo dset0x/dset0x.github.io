@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+    <title>(Mis)using s6 to run complementary desktop applications - When software gets in the way - Dimitrios Semitsoglou-Tsiapos</title>
+    <meta charset="utf-8">
+    <meta name="description" content="(Mis)using s6 to run complementary desktop applications">
+    <meta name="keywords" content="2017-04-28T23:48">
+    <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
+    <style>
+        html        {background-color: #fff;}
+        body        {margin: auto; max-width: 6.67in; font-size: 11pt; padding: 0 1em 1em 1em; opacity: .8;}
+        hr          {border: 0; border-top: 1px solid #c6c5c6;}
+
+        a           {text-decoration: none;}
+        a:link      {color: #3189c5;}
+        a:visited   {color: #a131c5;}
+        a:hover     {text-decoration: underline;}
+
+        h1, h2, h3  {opacity: .8;}
+        h1          {font-size: x-large;}
+        h2          {font-size: large;}
+        h3          {font-size: medium;}
+
+        .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
+        pre         {font-size: 10pt; background-color: #eee; padding: .5em; overflow: auto;}
+
+        nav         {display: inline-block; width: 100%;}
+        #menu       {float: right; -webkit-columns: 2; -moz-columns: 2; columns: 2;}
+        #menu li    {text-align: right; display: block; padding-top: 0.4em;}
+        #menu div   {border-bottom: #c6c5c6 1px solid; width: 6em;}
+
+        .skip {position: absolute; opacity:0; pointer-events: none;}
+        .skip:active, .skip:focus {opacity:1;}
+    </style>
+</head>
+<body>
+
+<a href="#content" class="skip" tabindex="1">Skip to content</a>
+<nav>
+    <ul id="menu">
+
+<li><div><a href="/">notes</a></div></li>
+
+<li><div><a href="/pages/advice.html">advice</a></div></li>
+
+<li><div><a href="/pages/astro.html">astro</a></div></li>
+
+<li><div><a href="/pages/hacking.html">hacking</a></div></li>
+
+<li><div><a href="/pages/words.html">words</a></div></li>
+        <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">github</a></div></li>
+    </ul>
+</nav>
+
+<main id="content">
+<article>
+<h1>(Mis)using s6 to run complementary desktop applications</h1>
+
+<blockquote><p><a href="http://www.skarnet.org/software/s6/index.html">s6</a> is a small suite of
+programs for UNIX, designed to allow process supervision</p></blockquote>
+
+<p>Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are:</p>
+
+<ul>
+<li><code>artha</code></li>
+<li><code>keepassxc</code></li>
+<li><code>urxvtd</code></li>
+<li><code>compton</code> (along with <code>ambient-dim.sh</code>)</li>
+<li><code>mpd</code></li>
+</ul>
+
+
+<p>I recently realized that it would make sense to group and supervise these programs for a number of reasons:</p>
+
+<ul>
+<li><code>ambient-dim.sh</code> depends on <code>compton</code>. Execution order doesn&rsquo;t matter, but one is useless without the other.</li>
+<li>These are &ldquo;services&rdquo; as far as I&rsquo;m concerned. For example, my desktop isn&rsquo;t functional without <code>urxvrd</code> so I can&rsquo;t afford to lose it.</li>
+<li>Some of these applications log to stdout/stderr, but currently, they all end up in the same file.</li>
+</ul>
+
+
+<p><code>supervisord</code> turned out to be a pain as one has to edit some funky config file to manage services is not the way I&rsquo;m used to doing things at all with <code>OpenRC</code>. And so, I found <code>s6</code> which is beautifully simple and uses structured directories instead. I won&rsquo;t go through many details as <code>s6</code> website contains all you need to know. Read it carefully though: the design is simple, but unforgiving to those who don&rsquo;t understand it.</p>
+
+<p>All I needed to get things running was a directory per service:</p>
+
+<pre><code>~/.services/enabled
+├── ambient -&gt; ../available/ambient
+├── artha -&gt; ../available/artha
+├── keepassxc -&gt; ../available/keepassxc
+├── mpd -&gt; ../available/mpd
+└── urxvtd -&gt; ../available/urxvtd
+</code></pre>
+
+<p>Each of which contains a <code>run</code> file that is responsible for bringing up the service. For example:</p>
+
+<pre><code>#!/bin/sh
+trap 'kill $(jobs -p)' EXIT
+exec 2&gt;&amp;1
+
+~/src/compton/compton --dbus &amp;
+~/src/compton/dbus-examples/ambient-dim.sh /dev/video0 &amp;
+
+wait
+</code></pre>
+
+<p>Executing <code>s6-svscan ~/.services/enabled</code> results in the following process tree:</p>
+
+<pre><code>s6-svscan ~/.services/enabled
+├─ s6-supervise mpd
+│  └─ mpd --no-daemon
+├─ s6-supervise artha
+│  └─ run
+├─ s6-supervise ambient
+│  └─ /bin/sh ./run
+│     ├─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
+│     │  └─ ffmpeg -hide_banner -f video4linux2 -s 640x480 -i /dev/video0 -filter:v fps=fps=30, showinfo -f null -
+│     │     └─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
+│     │        ├─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
+│     │        └─ grep -Po (?&lt;=mean:\[)[0-9]*
+│     └─ ~/src/compton/compton --dbus
+├─ s6-supervise keepassxc
+│  └─ keepassxc
+└─ s6-supervise urxvtd
+   └─ urxvtd -q -o
+</code></pre>
+
+<p>Bringing <code>dbus</code> and <code>ambient-dim.sh</code> down is a matter of calling:</p>
+
+<pre><code>s6-svc -d ~/.services/enabled/ambient
+</code></pre>
+
+<p>No fiddling with <code>pkill</code> or dealing with accidentally running multiple instances of one thing.</p>
+
+<hr />
+
+<h2>Replacing <code>OpenRC</code> with <code>s6</code></h2>
+
+<p>S. Gilles has some notes on replacing <code>OpenRC</code> with <code>s6</code> <a href="gopher://sdf.org/0/users/sgilles/phlog/2017-01-22_setting_up_s6.txt">on his phlog</a>. I feel that this would be more effort to setup and maintain for a desktop-type system than <code>OpenRC</code>, but useful on low-end, limited-purpose systems.</p>
+</article>
+</main>
+<footer>
+</footer>
+</body>
+</html>
