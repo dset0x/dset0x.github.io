@@ -7,7 +7,7 @@ key="$4"
 
 all_pages=$(basename -s.md -a pages/*.md; echo notes)
 for p in $all_pages; do
-    declare "$p"="<a href=\"/$p\">${p}</a>"
+    declare "$p"="<a href=\"/$p.html\">${p}</a>"
 done
 declare "$typ"="${typ}"
 
