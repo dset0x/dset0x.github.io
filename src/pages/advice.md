@@ -19,6 +19,12 @@
 * Have your computer notify you about once an hour to get up and do some dynamic
   stretches, hop around, look out the window, do eye exercises.
 
+* Learn how to stretch your back and shoulders:
+  [Exercise to improve hunchback posture forward head carriage correction](https://www.youtube.com/watch?v=LT_dFRnmdGs)
+  [Upper Neck Pain or Back Pain? Simple stretches for instant relief](https://youtu.be/OXpuLTuD5ec)
+  [How to relax tight and sore upper back & neck muscles](https://youtu.be/EiuHxQLEkCA)
+
+
 ## Time and distractions
 
 * Know when your "work", "study", "hobbies" and "relaxation" sections of your
