@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-typ="$1"  # notes|article|advice|astro|words
+typ="$1"  # notes|article|...
 ttl="$2"
 dsc="$3"
 key="$4"
 
-notes='<a href="/">Notes</a>'
-advice='<a href="/pages/advice.html">Advice</a>'
-astro='<a href="/pages/astro.html">Astro</a>'
-words='<a href="/pages/words.html">Words</a>'
-declare "$typ"="${typ^}"
+all_pages=$(basename -s.md -a pages/*.md; echo notes)
+for p in $all_pages; do
+    declare "$p"="<a href=\"/$p\">${p}</a>"
+done
+declare "$typ"="${typ}"
 
 cat <<EOF
 <!DOCTYPE html>
@@ -54,16 +54,21 @@ cat <<EOF
 <a href="#content" class="skip" tabindex="1">Skip to content</a>
 <nav>
     <ul id="menu">
-        <li><div>$notes</div></li>
-        <li><div>$advice</div></li>
-        <li><div>$astro</div></li>
-        <li><div>$words</div></li>
-        <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">GitHub</a></div></li>
+EOF
+for p in $all_pages; do
+    echo "<li><div>${!p}</div></li>"
+done
+cat <<EOF
+        <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">github</a></div></li>
     </ul>
 </nav>
 
 <main id="content">
 EOF
+
+
+
+
 
 cat <<EOF > /dev/null
     CONTINUE READING
