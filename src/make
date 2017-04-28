@@ -84,7 +84,7 @@ for txt in $(find . -name '*.'"$txtext" -print0 | xargs --null head -n1 | \
     title=$(esc        "$(head -2 "$txt" | tail -1 | cut -d' ' -f2-)")
     preview=$(esc      "$(tail -n +3 "$txt" | grep '^[a-zA-Z]' | paste -sd " " - | \
       perl -pe 's/\[(.*?)\]\(.*?\)|^-*$()|^\* (.*)\s/\1/g' | \
-      cut -d' ' -f 1-$preview_words)" | sed -r 's/\[.:]?$/.../')
+      cut -d' ' -f 1-$preview_words)" | sed -r 's/[.:]?$/.../')
     # preview="$(markdown < <(tail -n +2 "$txt") | paste -sd " " - | \
     #   grep -Po '(?<=<p>).*?(?=<)' | paste -sd " " - | cut -d' ' -f 1-$preview_words)"...
     [[ $date -gt $max_date ]] && max_date=$date
