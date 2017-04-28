@@ -30,7 +30,7 @@
 ## City life
 * [The mystery of urban psychosis ](https://www.theatlantic.com/health/archive/2016/07/the-enigma-of-urban-psychosis/491141/?single_page=true)
 * [Living in a poor neighborhood changes everything about your life](http://www.vox.com/2016/6/6/11852640/cartoon-poor-neighborhoods)
-* [What It’s Like to Live in the World’s Most Polluted City ](http://news.nationalgeographic.com/2016/04/160425-new-delhi-most-polluted-city-matthieu-paley/)
+* [What It’s like to live in the World’s Most Polluted City ](http://news.nationalgeographic.com/2016/04/160425-new-delhi-most-polluted-city-matthieu-paley/)
 
 ## Socity
 * [The war on stupid people](https://www.theatlantic.com/magazine/archive/2016/07/the-war-on-stupid-people/485618/?single_page=true)
