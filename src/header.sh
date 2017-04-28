@@ -43,7 +43,7 @@ cat <<EOF
         pre         {font-size: 10pt; background-color: #eee; padding: .5em; overflow: auto;}
 
         nav         {display: inline-block; width: 100%;}
-        #menu       {float: right;}
+        #menu       {float: right; -webkit-columns: 2; -moz-columns: 2; columns: 2;}
         #menu li    {text-align: right; display: block; padding-top: 0.4em;}
         #menu div   {border-bottom: #c6c5c6 1px solid; width: 9em;}
 
