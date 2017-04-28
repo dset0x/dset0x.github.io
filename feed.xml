@@ -17,7 +17,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>(Mis)using s6 to run complementary desktop applications</title>
     <link>https://dset0x.github.io/s6-desktop.html</link>
-    <description>Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are: I recently realized that it would make sense to group and supervise these programs for a number of reasons: All I needed to get things running was a directory per service: Each of which contains a `run` file that is responsible for bringing up the service. For example: Executing `s6-svscan ~/.services/enabled`...</description>
+    <description>Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are: I recently realized that it would make sense to group and supervise these programs for a number of reasons: All I needed to get things running was a directory per service:...</description>
     <pubDate>Fri, 28 Apr 2017 23:48:00 +0300</pubDate>
   </item>
   <item>
@@ -35,7 +35,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Astronomy</title>
     <link>https://dset0x.github.io/pages/astro.html</link>
-    <description>I recently set my telescope up after more than a decade of it being in storage. Purchased circa 2004, it is a compact motorized Maksutov-Cassegranian (D=102mm, F=1325mm) that goes by the name of NexStar &quot;the coffee grinder&quot; 4GT. Why coffee grinder? Because the crude motors that drive it sure sound like one. I have a 25mm and a 10mm eyepiece (53x and 132.5x respectively). While I would need a 2x...</description>
+    <description>I recently set my telescope up after more than a decade of it being in storage. Purchased circa 2004, it is a compact motorized Maksutov-Cassegranian (D=102mm, F=1325mm) that goes by the name of NexStar &quot;the coffee grinder&quot; 4GT. Why coffee grinder? Because the crude motors that drive it sure sound...</description>
     <pubDate>Thu, 13 Apr 2017 10:00:00 +0300</pubDate>
   </item>
   <item>
@@ -47,19 +47,19 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Using urxvt with zsh as a program launcher</title>
     <link>https://dset0x.github.io/urxvt-zsh-launcher.html</link>
-    <description>There&#39;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&#39;s easy to create a `dmenu` replacement by adding this to your `~/.zshrc`: Entering this condition has a number of effects: It can do much more than what is available with other launchers: To run...</description>
+    <description>There&#39;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&#39;s easy to create a `dmenu` replacement by adding this to your `~/.zshrc`: Entering this...</description>
     <pubDate>Mon, 13 Mar 2017 14:58:00 +0200</pubDate>
   </item>
   <item>
     <title>Why vimperator hint mode doesn&#39;t weed out duplicate links</title>
     <link>https://dset0x.github.io/vimperator-no-auto-dup-hint-select.html</link>
-    <description>Vimperator has a commonly used &quot;hint&quot; mode where you may enter either a generated combination of characters or link&#39;s text to interact with that element. As you type characters in, vimperator filters out matching links for you. For example, if there&#39;s two links with the text &quot;About&quot; in them, typing in But what if you&#39;ve typed &quot;Abo&quot; and there&#39;s two &quot;About&quot; links (and nothing else containing &quot;abo&quot; in the page)...</description>
+    <description>Vimperator has a commonly used &quot;hint&quot; mode where you may enter either a generated combination of characters or link&#39;s text to interact with that element. As you type characters in, vimperator filters out matching links for you. For example, if there&#39;s two links with the text &quot;About&quot; in them, typing...</description>
     <pubDate>Mon, 13 Mar 2017 12:27:00 +0200</pubDate>
   </item>
   <item>
     <title>Converting zsh buffer contents to a function</title>
     <link>https://dset0x.github.io/zsh-buffer-function.html</link>
-    <description>I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simple function you can decrease the amount of jumping around the command line. Let&#39;s say you&#39;re working on the following command: Naturally, you keep getting the regexes wrong. Just...</description>
+    <description>I sometimes find myself trying out different varations of a command until I manage get it to work the way I intended to. This involves a lot of jumping back and forth between words in my previous buffer. With a really simple function you can decrease the amount of jumping...</description>
     <pubDate>Mon, 27 Feb 2017 21:52:00 +0200</pubDate>
   </item>
   <item>
@@ -71,7 +71,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Extracting all known addresses from notmuch for use with mutt</title>
     <link>https://dset0x.github.io/notmuch-addresses-in-mutt.html</link>
-    <description>Edit: You should use `notmuch-addrlookup-c` instead as it has good support for `mutt` and executes much faster. Retrieving all known addresses from notmuch&#39;s index turned out to be more difficult than I had initially assumed. I needed to search not only recipients, but senders as well, due to mailing lists and such. Don&#39;t forget that mutt skips the first line of the addresses. This method is unfortunately quite slow, whether...</description>
+    <description>Edit: You should use `notmuch-addrlookup-c` instead as it has good support for `mutt` and executes much faster. Retrieving all known addresses from notmuch&#39;s index turned out to be more difficult than I had initially assumed. I needed to search not only recipients, but senders as well, due to mailing lists...</description>
     <pubDate>Sat, 25 Feb 2017 16:02:00 +0200</pubDate>
   </item>
   <item>
@@ -83,25 +83,25 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Using mailto URIs with mutt postponed email</title>
     <link>https://dset0x.github.io/mailto-mutt.html</link>
-    <description>mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a directory you may have multiple postponed messages. We can therefore generate a postponed message every time a mailto URI is...</description>
+    <description>mailto:// URLs are sometimes convenient to use, but they don&#39;t fit in too well with using a single mutt instance and having an aversion to windows popping up. One way to use them with mutt is to take advantage of the postponed feature. If your `postponed` variable points to a...</description>
     <pubDate>Wed, 22 Feb 2017 11:23:00 +0200</pubDate>
   </item>
   <item>
     <title>Getting lynx to print URLs of HTML messages on the side</title>
     <link>https://dset0x.github.io/mutt-lynx-urls-on-side.html</link>
-    <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t fix. Then put the following entry in your `~/.mailcap`: Now your spammy e-mail can look like this too!...</description>
+    <description>Reading HTML e-mail in the terminal can be a bit of a pain. `lynx` does a fine job at dumping them, but actually opening the URLs from it is cumbersome as they are placed at the very end of the message. Luckily, there&#39;s nothing a little bit of perl can&#39;t...</description>
     <pubDate>Tue, 21 Feb 2017 23:11:00 +0200</pubDate>
   </item>
   <item>
     <title>Getting Viber for Linux to play nice with apulse</title>
     <link>https://dset0x.github.io/viber-apulse.html</link>
-    <description>Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system&#39;s volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being a pulseaudio application: Unfortunately, this produces too much noise. Looking at `/usr/include/alsa/mixer.h` it&#39;s easy to locate possibly used functions: In...</description>
+    <description>Viber for Linux seems to work fine with apulse, except for taking the liberty of changing my system&#39;s volume to 100% shortly after starting. After no luck with trying to figure out if it was leveraging apulse itself to do this, I started believing it was calling alsa despite being...</description>
     <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
   <item>
     <title>Monitoring memory usage for weechat script leaks</title>
     <link>https://dset0x.github.io/monitor-mem-usage.html</link>
-    <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts, then loads them one at a time whenever passed a line. We can go ahead and load one script every...</description>
+    <description>I was recently dealing with a memory leak within a script in `weechat`. I needed a quick and dirty way of figuring out which script was causing the trouble. Of course it makes no sense to use `awk` for this, but what the heck. This script unloads all weechat scripts,...</description>
     <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
   <item>

@@ -11,7 +11,7 @@ domain='https://dset0x.github.io'
 #   --links_dictionaries dict.dict"
 txtext="md"
 txt2blog="markdown"
-preview_words=70
+preview_words=50
 # In relation to current dir:
 base="../"
 sitemap="$base/sitemap.xml"
