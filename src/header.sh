@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-typ="$1"  # notes|article|advice|astro
+typ="$1"  # notes|article|advice|astro|words
 ttl="$2"
 dsc="$3"
 key="$4"
@@ -8,7 +8,7 @@ key="$4"
 notes='<a href="/">Notes</a>'
 advice='<a href="/pages/advice.html">Advice</a>'
 astro='<a href="/pages/astro.html">Astro</a>'
-words='<a href="/pages/astro.html">Words</a>'
+words='<a href="/pages/words.html">Words</a>'
 declare "$typ"="${typ^}"
 
 cat <<EOF
