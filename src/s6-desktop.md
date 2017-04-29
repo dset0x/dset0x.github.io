@@ -85,6 +85,6 @@ Therefore, one needs to explicitly ask all instances `s6-supervise` to end the s
 
 ---
 
-## Replacing `OpenRC` with `s6`
+## Bonus: Replacing `OpenRC` with `s6`
 
 S\. Gilles has some notes on replacing `OpenRC` with `s6` [on his phlog](gopher://sdf.org/0/users/sgilles/phlog/2017-01-22_setting_up_s6.txt). I feel that this would be more effort to setup and maintain for a desktop-type system than `OpenRC`, but useful on low-end, limited-purpose systems.
