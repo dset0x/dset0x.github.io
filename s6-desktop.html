@@ -130,7 +130,7 @@ wait
    └─ urxvtd -q -o
 </code></pre>
 
-<h1>Management</h1>
+<h2>Management</h2>
 
 <p>Bringing <code>dbus</code> and <code>ambient-dim.sh</code> down is a matter of calling:</p>
 
@@ -139,7 +139,7 @@ wait
 
 <p>No fiddling with <code>pkill</code> or dealing with accidentally running multiple instances of one thing.</p>
 
-<h1>Exiting</h1>
+<h2>Exiting</h2>
 
 <p>Given that I run s6-svscan through <code>~/.xinitrc</code> upon leaving X, the unthinkable is done: the supervisor is brought down. After all, the majority of these applications are reliant on X running. However, <code>s6</code> is designed with one purpose in life:</p>
 
@@ -151,6 +151,8 @@ wait
 
 for svc in ~/.services/enabled/*; do s6-svc -dx "$svc"; done
 </code></pre>
+
+<hr />
 
 <h2>Replacing <code>OpenRC</code> with <code>s6</code></h2>
 

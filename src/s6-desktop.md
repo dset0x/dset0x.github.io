@@ -63,7 +63,7 @@ Executing `s6-svscan ~/.services/enabled` results in the following process tree:
     └─ s6-supervise urxvtd
        └─ urxvtd -q -o
 
-# Management
+## Management
 
 Bringing `dbus` and `ambient-dim.sh` down is a matter of calling:
 
@@ -71,7 +71,7 @@ Bringing `dbus` and `ambient-dim.sh` down is a matter of calling:
 
 No fiddling with `pkill` or dealing with accidentally running multiple instances of one thing.
 
-# Exiting
+## Exiting
 
 Given that I run s6-svscan through `~/.xinitrc` upon leaving X, the unthinkable is done: the supervisor is brought down. After all, the majority of these applications are reliant on X running. However, `s6` is designed with one purpose in life:
 
@@ -82,6 +82,8 @@ Therefore, one needs to explicitly ask all instances `s6-supervise` to end the s
     #!/bin/bash
 
     for svc in ~/.services/enabled/*; do s6-svc -dx "$svc"; done
+
+---
 
 ## Replacing `OpenRC` with `s6`
 
