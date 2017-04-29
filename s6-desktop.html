@@ -61,6 +61,8 @@
 
 <blockquote><p><a href="http://www.skarnet.org/software/s6/index.html">s6</a> is a small suite of programs for UNIX, designed to allow process supervision</p></blockquote>
 
+<h2>Motivation</h2>
+
 <p>Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are:</p>
 
 <ul>
@@ -82,6 +84,8 @@
 
 
 <p><code>supervisord</code> turned out to be a pain as one has to edit some funky config file to manage services is not the way I&rsquo;m used to doing things at all with <code>OpenRC</code>. And so, I found <code>s6</code> which is beautifully simple and uses structured directories instead. I won&rsquo;t go through many details as <code>s6</code> website contains all you need to know. Read it carefully though: the design is simple, but unforgiving to those who don&rsquo;t understand it.</p>
+
+<h2>Setup</h2>
 
 <p>All I needed to get things running was a directory per service:</p>
 
@@ -126,6 +130,8 @@ wait
    └─ urxvtd -q -o
 </code></pre>
 
+<h1>Management</h1>
+
 <p>Bringing <code>dbus</code> and <code>ambient-dim.sh</code> down is a matter of calling:</p>
 
 <pre><code>s6-svc -d ~/.services/enabled/ambient
@@ -133,7 +139,18 @@ wait
 
 <p>No fiddling with <code>pkill</code> or dealing with accidentally running multiple instances of one thing.</p>
 
-<hr />
+<h1>Exiting</h1>
+
+<p>Given that I run s6-svscan through <code>~/.xinitrc</code> upon leaving X, the unthinkable is done: the supervisor is brought down. After all, the majority of these applications are reliant on X running. However, <code>s6</code> is designed with one purpose in life:</p>
+
+<blockquote><p>The services must remain up at all costs.</p></blockquote>
+
+<p>Therefore, one needs to explicitly ask all instances <code>s6-supervise</code> to end the services. I do this through <code>~/.services/enabled/.s6-svscan/finish</code>:</p>
+
+<pre><code>#!/bin/bash
+
+for svc in ~/.services/enabled/*; do s6-svc -dx "$svc"; done
+</code></pre>
 
 <h2>Replacing <code>OpenRC</code> with <code>s6</code></h2>
 

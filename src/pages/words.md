@@ -32,7 +32,7 @@
 * [Living in a poor neighborhood changes everything about your life](http://www.vox.com/2016/6/6/11852640/cartoon-poor-neighborhoods)
 * [What it's like to live in the world's most polluted city](http://news.nationalgeographic.com/2016/04/160425-new-delhi-most-polluted-city-matthieu-paley/)
 
-## Socity
+## Society
 * [The war on stupid people](https://www.theatlantic.com/magazine/archive/2016/07/the-war-on-stupid-people/485618/?single_page=true)
 * ["I saw things children shouldn't see" - surviving a troubled childhood](https://mosaicscience.com/story/surviving-troubled-childhood-resilience-neglect-adversity)
 * ### Sexuality

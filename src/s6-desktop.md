@@ -3,6 +3,8 @@
 
 > [s6](http://www.skarnet.org/software/s6/index.html) is a small suite of programs for UNIX, designed to allow process supervision
 
+## Motivation
+
 Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are:
 
 * `artha`
@@ -18,6 +20,8 @@ I recently realized that it would make sense to group and supervise these progra
 * Some of these applications log to stdout/stderr, but currently, they all end up in the same file.
 
 `supervisord` turned out to be a pain as one has to edit some funky config file to manage services is not the way I'm used to doing things at all with `OpenRC`. And so, I found `s6` which is beautifully simple and uses structured directories instead. I won't go through many details as `s6` website contains all you need to know. Read it carefully though: the design is simple, but unforgiving to those who don't understand it.
+
+## Setup
 
 All I needed to get things running was a directory per service:
 
@@ -59,13 +63,25 @@ Executing `s6-svscan ~/.services/enabled` results in the following process tree:
     └─ s6-supervise urxvtd
        └─ urxvtd -q -o
 
+# Management
+
 Bringing `dbus` and `ambient-dim.sh` down is a matter of calling:
 
     s6-svc -d ~/.services/enabled/ambient
 
 No fiddling with `pkill` or dealing with accidentally running multiple instances of one thing.
 
----
+# Exiting
+
+Given that I run s6-svscan through `~/.xinitrc` upon leaving X, the unthinkable is done: the supervisor is brought down. After all, the majority of these applications are reliant on X running. However, `s6` is designed with one purpose in life:
+
+> The services must remain up at all costs.
+
+Therefore, one needs to explicitly ask all instances `s6-supervise` to end the services. I do this through `~/.services/enabled/.s6-svscan/finish`:
+
+    #!/bin/bash
+
+    for svc in ~/.services/enabled/*; do s6-svc -dx "$svc"; done
 
 ## Replacing `OpenRC` with `s6`
 
