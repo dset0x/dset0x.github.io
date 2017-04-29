@@ -61,7 +61,7 @@ for p in notes $all_pages; do
     echo "        <li><div>${!p}</div></li>"
 done
 cat <<EOF
-        <li><div><a href="https://github.com/search?o=desc&q=author:dset0x+&s=created&type=Issues&utf8=✓">github</a></div></li>
+        <li><div><a href="https://github.com/search?o=desc&amp;q=author:dset0x+&amp;s=created&amp;type=Issues&amp;utf8=✓">github</a></div></li>
     </ul>
 </nav>
 
