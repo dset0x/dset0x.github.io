@@ -58,7 +58,6 @@ cat <<EOF
     <ul id="menu">
 EOF
 for p in notes $all_pages; do
-        echo
     echo "<li><div>${!p}</div></li>"
 done
 cat <<EOF
