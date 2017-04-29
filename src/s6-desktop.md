@@ -73,7 +73,7 @@ No fiddling with `pkill` or dealing with accidentally running multiple instances
 
 ## Exiting
 
-Given that I run s6-svscan through `~/.xinitrc` upon leaving X, the unthinkable is done: the supervisor is brought down. After all, the majority of these applications are reliant on X running. However, `s6` is designed with one purpose in life:
+Given that I run s6-svscan through `~/.xinitrc`, upon leaving X, the unthinkable is done: the supervisor is brought down. After all, the majority of these applications are reliant on X running. However, `s6` is designed with one purpose in life:
 
 > The services must remain up at all costs.
 
