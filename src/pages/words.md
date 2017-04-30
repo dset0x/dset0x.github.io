@@ -13,30 +13,30 @@
   * [William Lutz on his book "DoubleSpeak"](https://youtu.be/8ZpIv7T8oEY) _(Video (59min))_
 
 ## Scientific publishing
-* [We should not accept scientific results that have not been repeated](http://nautil.us/blog/we-should-not-accept-scientific-results-that-have-not-been-repeated)
+* [We should not accept scientific results that have not been repeated](http://nautil.us/blog/we-should-not-accept-scientific-results-that-have-not-been-repeated) _(Article)_
 * [Is most published research wrong?](https://www.youtube.com/watch?v=42QuXLucH3Q) _(Video (12min))_
 
 ## Ethics
-* [Trying to cure depression, but inspiring torture](http://www.newyorker.com/science/maria-konnikova/theory-psychology-justified-torture)
-* [The Drowning Child and the Expanding Circle](https://www.utilitarian.net/singer/by/199704--.htm)
+* [Trying to cure depression, but inspiring torture](http://www.newyorker.com/science/maria-konnikova/theory-psychology-justified-torture) _(Article)_
+* [The Drowning Child and the Expanding Circle](https://www.utilitarian.net/singer/by/199704--.htm) _(Essay)_
 
 ## Fraud
 * [James Randi on homeopathy, quackery and fraud](https://youtu.be/c0Z7KeNCi7g) _(Video (18min))_
 
 ## War
-* [Hiroshima: The medical aftermath of the day that changed the world](http://hiroshima.australiandoctor.com.au/#c1)
-* [A stark nuclear warning](http://www.nybooks.com/articles/2016/07/14/a-stark-nuclear-warning/)
+* [Hiroshima: The medical aftermath of the day that changed the world](http://hiroshima.australiandoctor.com.au/#c1) _(Essay)_
+* [A stark nuclear warning](http://www.nybooks.com/articles/2016/07/14/a-stark-nuclear-warning/) _(Opinion)_
 
 ## City life
-* [The mystery of urban psychosis ](https://www.theatlantic.com/health/archive/2016/07/the-enigma-of-urban-psychosis/491141/?single_page=true)
-* [Living in a poor neighborhood changes everything about your life](http://www.vox.com/2016/6/6/11852640/cartoon-poor-neighborhoods)
-* [What it's like to live in the world's most polluted city](http://news.nationalgeographic.com/2016/04/160425-new-delhi-most-polluted-city-matthieu-paley/)
+* [The mystery of urban psychosis ](https://www.theatlantic.com/health/archive/2016/07/the-enigma-of-urban-psychosis/491141/?single_page=true) _(Article)_
+* [Living in a poor neighborhood changes everything about your life](http://www.vox.com/2016/6/6/11852640/cartoon-poor-neighborhoods) _(Statistics)_
+* [What it's like to live in the world's most polluted city](http://news.nationalgeographic.com/2016/04/160425-new-delhi-most-polluted-city-matthieu-paley/) _(Essay)_
 
 ## Society
-* [The war on stupid people](https://www.theatlantic.com/magazine/archive/2016/07/the-war-on-stupid-people/485618/?single_page=true)
-* ["I saw things children shouldn't see" - surviving a troubled childhood](https://mosaicscience.com/story/surviving-troubled-childhood-resilience-neglect-adversity)
+* [The war on stupid people](https://www.theatlantic.com/magazine/archive/2016/07/the-war-on-stupid-people/485618/?single_page=true) _(Article)_
+* ["I saw things children shouldn't see" - surviving a troubled childhood](https://mosaicscience.com/story/surviving-troubled-childhood-resilience-neglect-adversity) _(Article)_
 * ### Sexuality
-  * [Why more millennials are avoiding sex](https://www.washingtonpost.com/local/social-issues/there-isnt-really-anything-magical-about-it-why-more-millennials-are-putting-off-sex/2016/08/02/e7b73d6e-37f4-11e6-8f7c-d4c723a2becb_story.html)
+  * [Sexual Inactivity During Young Adulthood Is More Common Among U.S. Millennials and iGen: Age, Period, and Cohort Effects on Having No Sexual Partners After Age 18](http://link.springer.com/article/10.1007/s10508-016-0798-z) _(Paper)_
 * ### Anxiety and depression
-  * [Dalai Lama: Behind our anxiety, the fear of being unneeded](https://mobile.nytimes.com/2016/11/04/opinion/dalai-lama-behind-our-anxiety-the-fear-of-being-unneeded.html)
-  * [People with anxiety perceive the world in a fundamentally different way](http://www.huffingtonpost.com/entry/anxiety-perception-study_us_56d48e13e4b03260bf77a48e)
+  * [Dalai Lama: Behind our anxiety, the fear of being unneeded](https://nytimes.com/2016/11/04/opinion/dalai-lama-behind-our-anxiety-the-fear-of-being-unneeded.html) _(Opinion)_
+  * [People with anxiety show fundamental differences in perception](https://www.eurekalert.org/pub_releases/2016-03/cp-pwa022516.php) _(Study)_
