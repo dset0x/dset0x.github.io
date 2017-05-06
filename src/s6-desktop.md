@@ -27,6 +27,7 @@ All I needed to get things running was a directory per service:
 
     ~/.services/enabled
     ├── ambient -> ../available/ambient
+    ├── compton -> ../available/compton
     ├── artha -> ../available/artha
     ├── keepassxc -> ../available/keepassxc
     ├── mpd -> ../available/mpd
@@ -35,13 +36,8 @@ All I needed to get things running was a directory per service:
 Each of which contains a `run` file that is responsible for bringing up the service. For example:
 
     #!/bin/sh
-    trap 'kill $(jobs -p)' EXIT
     exec 2>&1
-
-    ~/src/compton/compton --dbus &
-    ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0 &
-
-    wait
+    exec urxvtd -q -o
 
 Executing `s6-svscan ~/.services/enabled` results in the following process tree:
 
@@ -50,14 +46,17 @@ Executing `s6-svscan ~/.services/enabled` results in the following process tree:
     │  └─ mpd --no-daemon
     ├─ s6-supervise artha
     │  └─ run
+    ├─ s6-supervise viber
+    │  └─ /opt/viber/Viber
+    │     └─ Viber
     ├─ s6-supervise ambient
-    │  └─ /bin/sh ./run
-    │     ├─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
-    │     │  └─ ffmpeg -hide_banner -f video4linux2 -s 640x480 -i /dev/video0 -filter:v fps=fps=30, showinfo -f null -
-    │     │     └─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
-    │     │        ├─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
-    │     │        └─ grep -Po (?<=mean:\[)[0-9]*
-    │     └─ ~/src/compton/compton --dbus
+    │  └─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
+    │     └─ ffmpeg -hide_banner -f video4linux2 -s 640x480 -i /dev/video0 -filter:v fps=fps=30, showinfo -f null -
+    │        └─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
+    │           ├─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
+    │           └─ grep -Po (?<=mean:\[)[0-9]*
+    ├─ s6-supervise compton
+    │  └─ ~/src/compton/compton --dbus
     ├─ s6-supervise keepassxc
     │  └─ keepassxc
     └─ s6-supervise urxvtd
@@ -68,6 +67,7 @@ Executing `s6-svscan ~/.services/enabled` results in the following process tree:
 Bringing `compton` and `ambient-dim.sh` down is a matter of calling:
 
     s6-svc -d ~/.services/enabled/ambient
+    s6-svc -d ~/.services/enabled/compton
 
 No fiddling with `pkill` or dealing with accidentally running multiple instances of one thing.
 
@@ -77,14 +77,6 @@ Given that I run s6-svscan through `~/.xinitrc`, upon leaving X, the unthinkable
 
 > The services must remain up at all costs.
 
-Therefore, one needs to explicitly ask all instances `s6-supervise` to end the services. I do this through `~/.services/enabled/.s6-svscan/finish`:
-
-    #!/bin/bash
+Therefore, one needs to explicitly ask all instances `s6-supervise` to end the services. To do that I append the following _after_ my WM in `~/.xinitrc`:
 
     for svc in ~/.services/enabled/*; do s6-svc -dx "$svc"; done
-
----
-
-## Bonus: Replacing `OpenRC` with `s6`
-
-S\. Gilles has some notes on replacing `OpenRC` with `s6` [on his phlog](gopher://sdf.org/0/users/sgilles/phlog/2017-01-22_setting_up_s6.txt). I feel that this would be more effort to setup and maintain for a desktop-type system than `OpenRC`, but useful on low-end, limited-purpose systems.
