@@ -65,7 +65,7 @@ Executing `s6-svscan ~/.services/enabled` results in the following process tree:
 
 ## Management
 
-Bringing `dbus` and `ambient-dim.sh` down is a matter of calling:
+Bringing `compton` and `ambient-dim.sh` down is a matter of calling:
 
     s6-svc -d ~/.services/enabled/ambient
 
