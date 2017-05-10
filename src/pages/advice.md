@@ -3,11 +3,6 @@
 
 ## Better desk posture
 
-* If you can't afford a split or ergonomic keyboard, use one keyboard per hand
-  so that you may keep your back and chest straight and shoulders naturally
-  apart. Keep your keyboard(s) close to the edge of the desk. Use the mouse
-  sparingly.
-
 * Imagine a string is pulling you upwards from your head. This should keep your
   chin relatively tucked in.
 
@@ -23,6 +18,7 @@
   * [Exercise to improve hunchback posture forward head carriage correction](https://www.youtube.com/watch?v=LT_dFRnmdGs)
   * [Upper Neck Pain or Back Pain? Simple stretches for instant relief](https://youtu.be/OXpuLTuD5ec)
   * [How to relax tight and sore upper back & neck muscles](https://youtu.be/EiuHxQLEkCA)
+  * [6 Ways to Get Rid of the Knots in Your Upper Back ](https://www.youtube.com/watch?v=aIw5bX7J0Rg)
 
 
 ## Time and distractions
