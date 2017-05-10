@@ -1,7 +1,9 @@
 2017-03-16T12:00
 # Advice
 
-## Better desk posture
+## Posture
+
+### Desk
 
 * Imagine a string is pulling you upwards from your head. This should keep your
   chin relatively tucked in.
@@ -14,11 +16,13 @@
 * Have your computer notify you about once an hour to get up and do some dynamic
   stretches, hop around, look out the window, do eye exercises.
 
-* Learn how to stretch your back and shoulders:
+### Exercises
+
   * [Exercise to improve hunchback posture forward head carriage correction](https://www.youtube.com/watch?v=LT_dFRnmdGs)
   * [Upper Neck Pain or Back Pain? Simple stretches for instant relief](https://youtu.be/OXpuLTuD5ec)
   * [How to relax tight and sore upper back & neck muscles](https://youtu.be/EiuHxQLEkCA)
   * [6 Ways to Get Rid of the Knots in Your Upper Back ](https://www.youtube.com/watch?v=aIw5bX7J0Rg)
+  * [Forward Head Posture](https://youtu.be/b9ISV7TfuBY)
 
 
 ## Time and distractions
