@@ -40,3 +40,4 @@
 * ### Anxiety and depression
   * [Dalai Lama: Behind our anxiety, the fear of being unneeded](https://nytimes.com/2016/11/04/opinion/dalai-lama-behind-our-anxiety-the-fear-of-being-unneeded.html) _(Opinion)_
   * [People with anxiety show fundamental differences in perception](https://www.eurekalert.org/pub_releases/2016-03/cp-pwa022516.php) _(Study)_
+* [Michael Moore - Norway compared to USA (Resources management, prison system)](https://www.youtube.com/watch?v=QbJaGIyM65k)
