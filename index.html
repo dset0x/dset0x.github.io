@@ -55,7 +55,7 @@
       <article>
           <h2><a href="/s6-desktop.html">(Mis)using s6 to run complementary desktop applications</a></h2>
           <div class="preview">
-              Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are: I recently realized that it would make sense to group and supervise these programs for a number of reasons: All I needed to get things running was a directory per service...
+              You will notice that some of these applications (eg `mpd`) should only ever be ran once, while others are tied to the `X` session. For that, I use two supervision trees, one of which is executed in `~/.xinitrc` so that `$DISPLAY` is set. All I needed to get things running...
           </div>
           <div class="cont_box">
               <!--<div class="cont">

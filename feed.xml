@@ -17,7 +17,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>(Mis)using s6 to run complementary desktop applications</title>
     <link>https://dset0x.github.io/s6-desktop.html</link>
-    <description>Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are: I recently realized that it would make sense to group and supervise these programs for a number of reasons: All I needed to get things running was a directory per service...</description>
+    <description>You will notice that some of these applications (eg `mpd`) should only ever be ran once, while others are tied to the `X` session. For that, I use two supervision trees, one of which is executed in `~/.xinitrc` so that `$DISPLAY` is set. All I needed to get things running...</description>
     <pubDate>Fri, 28 Apr 2017 23:48:00 +0300</pubDate>
   </item>
   <item>

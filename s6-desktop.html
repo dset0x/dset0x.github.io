@@ -56,9 +56,10 @@
 
 <blockquote><p><a href="http://www.skarnet.org/software/s6/index.html">s6</a> is a small suite of programs for UNIX, designed to allow process supervision</p></blockquote>
 
-<h2>Motivation</h2>
+<h2>Motivation and reasoning</h2>
 
-<p>Over the years, I have started accumulating desktop applications I want running in the background. In fact, those are:</p>
+<ol>
+<li><p>Over the years, I have started accumulating applications that I rely on running in the background. In fact, those are:</p>
 
 <ul>
 <li><code>artha</code></li>
@@ -66,32 +67,93 @@
 <li><code>urxvtd</code></li>
 <li><code>compton</code> (along with <code>ambient-dim.sh</code>)</li>
 <li><code>mpd</code></li>
+<li><code>blueman</code></li>
+<li><code>moltengamepad</code></li>
+<li>some ssh mount</li>
+<li><code>mpd</code></li>
+<li><code>transmission</code></li>
+<li><code>viber</code></li>
 </ul>
-
-
-<p>I recently realized that it would make sense to group and supervise these programs for a number of reasons:</p>
+</li>
+<li><p>Why supervise (at user-level)?</p>
 
 <ul>
-<li><code>ambient-dim.sh</code> depends on <code>compton</code>. Execution order doesn&rsquo;t matter, but one is useless without the other.</li>
-<li>These are &ldquo;services&rdquo; as far as I&rsquo;m concerned. For example, my desktop isn&rsquo;t functional without <code>urxvrd</code> so I can&rsquo;t afford to lose it.</li>
-<li>Some of these applications log to stdout/stderr, but currently, they all end up in the same file.</li>
+<li>They crash. Proprietary applications like Viber I&rsquo;d rather restart than fix.</li>
+<li>They don&rsquo;t belong in my system&rsquo;s boot process.</li>
+<li>These are &ldquo;services&rdquo; as far as I&rsquo;m concerned. For example, my desktop isn&rsquo;t functional without <code>urxvrd</code> so I can&rsquo;t afford it being down.</li>
+<li>Some of these applications log to stdout/stderr, but if you run them from <code>~/.xinitrc</code>, you can&rsquo;t tell what&rsquo;s outputting what (although, yes, you can manually use a logger like <code>s6-log</code>).</li>
 </ul>
+</li>
+<li><p>Why not <code>supervisord</code>?</p>
 
+<p> <code>supervisord</code> turned out to be a pain to use as one has to edit some lengthy config file to manage services. This is not the way I&rsquo;m used to doing things at all with <code>OpenRC</code>. <code>s6</code> on the uses structured directories and supports logging out of the box.</p></li>
+</ol>
 
-<p><code>supervisord</code> turned out to be a pain as one has to edit some funky config file to manage services is not the way I&rsquo;m used to doing things at all with <code>OpenRC</code>. And so, I found <code>s6</code> which is beautifully simple and uses structured directories instead. I won&rsquo;t go through many details as <code>s6</code> website contains all you need to know. Read it carefully though: the design is simple, but unforgiving to those who don&rsquo;t understand it.</p>
 
 <h2>Setup</h2>
 
+<h3>Service groups</h3>
+
+<p>You will notice that some of these applications (eg <code>mpd</code>) should only ever be ran once, while others are tied to the <code>X</code> session. For that, I use two supervision trees, one of which is executed in <code>~/.xinitrc</code> so that <code>$DISPLAY</code> is set.</p>
+
 <p>All I needed to get things running was a directory per service:</p>
 
-<pre><code>~/.services/enabled
-├── ambient -&gt; ../available/ambient
-├── compton -&gt; ../available/compton
-├── artha -&gt; ../available/artha
-├── keepassxc -&gt; ../available/keepassxc
-├── mpd -&gt; ../available/mpd
-└── urxvtd -&gt; ../available/urxvtd
+<pre><code>$ tree -L 4 ~/.services
+~/.services
+├── available
+│   ├── ambient
+│   │   ├── log
+│   │   │   └── run
+│   │   └── run
+│   ├── artha
+│   │   ├── log
+│   │   │   └── run
+│   │   └── run -&gt; /usr/bin/artha
+│   ├── blueman
+│   │   ├── finish
+│   │   ├── log
+│   │   │   └── run
+│   │   └── run
+│   ├── compton
+│   │   ├── log
+│   │   │   └── run
+│   │   └── run
+│   ├── keepassxc
+│   │   ├── log
+│   │   │   └── run
+│   │   └── run
+│   ├── moltengamepad
+│   │   ├── run
+│   ├── mount-semiphoto
+│   │   ├── run
+│   ├── mpd
+│   │   ├── run
+│   ├── transmission
+│   │   ├── run
+│   ├── urxvtd
+│   │   ├── log
+│   │   │   └── run
+│   │   └── run
+│   └── viber
+│       ├── log
+│       │   └── run
+│       └── run
+├── tty
+│   ├── moltengamepad -&gt; ../available/moltengamepad
+│   ├── mount-semiphoto -&gt; ../available/mount-semiphoto
+│   ├── mpd -&gt; ../available/mpd/
+│   └── transmission -&gt; ../available/transmission
+└── xorg
+    ├── ambient -&gt; ../available/ambient
+    ├── artha -&gt; ../available/artha
+    ├── blueman -&gt; ../available/blueman
+    ├── compton -&gt; ../available/compton
+    ├── keepassxc -&gt; ../available/keepassxc
+    ├── urxvtd -&gt; ../available/urxvtd
+    └── viber -&gt; ../available/viber
 </code></pre>
+
+<h3>run</h3>
 
 <p>Each of which contains a <code>run</code> file that is responsible for bringing up the service. For example:</p>
 
@@ -100,36 +162,79 @@ exec 2&gt;&amp;1
 exec urxvtd -q -o
 </code></pre>
 
-<p>Executing <code>s6-svscan ~/.services/enabled</code> results in the following process tree:</p>
+<p>Note that they must all run in the foreground, for example you need to use <code>-f</code> with <code>sshfs</code>.</p>
 
-<pre><code>s6-svscan ~/.services/enabled
-├─ s6-supervise mpd
-│  └─ mpd --no-daemon
+<h3>log</h3>
+
+<p>If you want a service to be logged, you let <code>s6-svscan</code> know that by creating a <code>log</code> directory. That will pipe <code>run</code>&rsquo;s <code>stdout</code> to <code>log/run</code>&rsquo;s <code>stdin</code>.</p>
+
+<p>A simple <code>log/run</code> that logs everything with a human-readable timestamp to the current directory would be:</p>
+
+<pre><code>#!/bin/sh
+s6-log T ./
+</code></pre>
+
+<h3>Running all <code>Xorg</code>-tied applications</h3>
+
+<p>I prepare and supervise a supervision directory tree for a given <code>$DISPLAY</code> like so:</p>
+
+<pre><code>mkdir -p "/tmp/services-$DISPLAY"
+cp -Lr ~/.services/xorg/* "/tmp/services-$DISPLAY/"
+s6-svscan /tmp/services-$DISPLAY &amp;!  # zshism
+</code></pre>
+
+<p>This results in the following process tree:</p>
+
+<pre><code>s6-svscan /tmp/services-:0
 ├─ s6-supervise artha
 │  └─ run
+├─ s6-supervise artha/log
+│  └─ /bin/sh ./run
+│     └─ s6-log T ./
 ├─ s6-supervise viber
 │  └─ /opt/viber/Viber
 │     └─ Viber
+├─ s6-supervise viber/log
+│  └─ /bin/sh ./run
+│     └─ s6-log T ./
 ├─ s6-supervise ambient
 │  └─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
 │     └─ ffmpeg -hide_banner -f video4linux2 -s 640x480 -i /dev/video0 -filter:v fps=fps=30, showinfo -f null -
 │        └─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
 │           ├─ /bin/bash ~/src/compton/dbus-examples/ambient-dim.sh /dev/video0
 │           └─ grep -Po (?&lt;=mean:\[)[0-9]*
+├─ s6-supervise ambient/log
+│  └─ /bin/sh ./run
+│     └─ s6-log T ./
 ├─ s6-supervise compton
 │  └─ ~/src/compton/compton --dbus
+├─ s6-supervise compton/log
+│  └─ /bin/sh ./run
+│     └─ s6-log T ./
 ├─ s6-supervise keepassxc
 │  └─ keepassxc
-└─ s6-supervise urxvtd
-   └─ urxvtd -q -o
+├─ s6-supervise keepassxc/log
+│  └─ /bin/sh ./run
+│     └─ s6-log T ./
+├─ s6-supervise blueman
+│  └─ python3.4 /usr/bin/blueman-applet
+├─ s6-supervise blueman/log
+│  └─ /bin/sh ./run
+│     └─ s6-log T ./
+├─ s6-supervise urxvtd
+│  └─ urxvtd -q -o
+└─ s6-supervise urxvtd/log
+└─ /bin/sh ./run
+   └─ s6-log T ./
 </code></pre>
+
+<p><code>~/.services/tty</code> does not need this preparation as there will only ever be one <code>s6-svscan</code> for all of its contents.</p>
 
 <h2>Management</h2>
 
-<p>Bringing <code>compton</code> and <code>ambient-dim.sh</code> down is a matter of calling:</p>
+<p>Bringing any service down is a matter of calling:</p>
 
-<pre><code>s6-svc -d ~/.services/enabled/ambient
-s6-svc -d ~/.services/enabled/compton
+<pre><code>s6-svc -d /tmp/services-:0/compton
 </code></pre>
 
 <p>No fiddling with <code>pkill</code> or dealing with accidentally running multiple instances of one thing.</p>
@@ -142,7 +247,7 @@ s6-svc -d ~/.services/enabled/compton
 
 <p>Therefore, one needs to explicitly ask all instances <code>s6-supervise</code> to end the services. To do that I append the following <em>after</em> my WM in <code>~/.xinitrc</code>:</p>
 
-<pre><code>for svc in ~/.services/enabled/*; do s6-svc -dx "$svc"; done
+<pre><code>for svc in "/tmp/services-$DISPLAY"/*; do s6-svc -d "$svc"; done
 </code></pre>
 </article>
 </main>

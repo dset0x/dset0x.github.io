@@ -62,7 +62,7 @@ EOF
 
 max_date=0
 for txt in $(find . -name '*.'"$txtext" -print0 | xargs --null head -n1 | \
-  awk -F' ' '/^=/ {f=$2;} /^2/ {print $1, f;}' | sort -r | cut -d' ' -f2); do
+  awk -F' ' 'NR%3==1 {f=$2; getline; print $1, f;}' | sort -r | cut -d' ' -f2); do
 
     [[ "$txt" == ./index."$txtext" ]] && continue
 
