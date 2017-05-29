@@ -39,6 +39,12 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <pubDate>Thu, 13 Apr 2017 10:00:00 +0300</pubDate>
   </item>
   <item>
+    <title>Advice</title>
+    <link>https://dset0x.github.io/pages/advice.html</link>
+    <description></description>
+    <pubDate>Thu, 16 Mar 2017 12:00:00 +0200</pubDate>
+  </item>
+  <item>
     <title>Using urxvt with zsh as a program launcher</title>
     <link>https://dset0x.github.io/urxvt-zsh-launcher.html</link>
     <description>There&#39;s a number of window manager independant program launchers out there, but if you need to run arbitrary commands or want shell completion you might find yourself falling back to spawning a terminal every time. It&#39;s easy to create a `dmenu` replacement by adding this to your `~/.zshrc`: Entering this...</description>
