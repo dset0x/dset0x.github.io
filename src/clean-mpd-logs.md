@@ -14,4 +14,5 @@ another. Fear not, easy to fix.
 This was also a good time to remove all the client calls to bring the filesize
 down from 1GiB.
 
-    $ grep -v ': client: \[' /var/lib/mpd/log > /var/lib/mpd/log2
+    $ grep -a ': player: played' /var/lib/mpd/log > /var/lib/mpd/log2
+    $ mv /var/lib/mpd/log{2,}

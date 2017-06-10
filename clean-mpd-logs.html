@@ -68,7 +68,8 @@ $ rc-service mpd start
 <p>This was also a good time to remove all the client calls to bring the filesize
 down from 1GiB.</p>
 
-<pre><code>$ grep -v ': client: \[' /var/lib/mpd/log &gt; /var/lib/mpd/log2
+<pre><code>$ grep -a ': player: played' /var/lib/mpd/log &gt; /var/lib/mpd/log2
+$ mv /var/lib/mpd/log{2,}
 </code></pre>
 </article>
 </main>
