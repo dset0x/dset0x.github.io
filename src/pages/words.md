@@ -35,9 +35,6 @@
 ## Society
 * [The war on stupid people](https://www.theatlantic.com/magazine/archive/2016/07/the-war-on-stupid-people/485618/?single_page=true) _(Article)_
 * ["I saw things children shouldn't see" - surviving a troubled childhood](https://mosaicscience.com/story/surviving-troubled-childhood-resilience-neglect-adversity) _(Article)_
-* ### Sexuality
-  * [Sexual Inactivity During Young Adulthood Is More Common Among U.S. Millennials and iGen: Age, Period, and Cohort Effects on Having No Sexual Partners After Age 18](http://link.springer.com/article/10.1007/s10508-016-0798-z) _(Paper)_
-* ### Anxiety and depression
-  * [Dalai Lama: Behind our anxiety, the fear of being unneeded](https://nytimes.com/2016/11/04/opinion/dalai-lama-behind-our-anxiety-the-fear-of-being-unneeded.html) _(Opinion)_
-  * [People with anxiety show fundamental differences in perception](https://www.eurekalert.org/pub_releases/2016-03/cp-pwa022516.php) _(Study)_
+* [Sexual Inactivity During Young Adulthood Is More Common Among U.S. Millennials and iGen: Age, Period, and Cohort Effects on Having No Sexual Partners After Age 18](http://link.springer.com/article/10.1007/s10508-016-0798-z) _(Paper)_
+* [People with anxiety show fundamental differences in perception](https://www.eurekalert.org/pub_releases/2016-03/cp-pwa022516.php) _(Study)_
 * [Michael Moore - Norway compared to USA (Resources management, prison system)](https://www.youtube.com/watch?v=QbJaGIyM65k)
