@@ -64,7 +64,7 @@ All I needed to get things running was a directory per service:
     │   │   └── run
     │   ├── moltengamepad
     │   │   ├── run
-    │   ├── mount-semiphoto
+    │   ├── mount-s
     │   │   ├── run
     │   ├── mpd
     │   │   ├── run
@@ -80,7 +80,7 @@ All I needed to get things running was a directory per service:
     │       └── run
     ├── tty
     │   ├── moltengamepad -> ../available/moltengamepad
-    │   ├── mount-semiphoto -> ../available/mount-semiphoto
+    │   ├── mount-s -> ../available/mount-s
     │   ├── mpd -> ../available/mpd/
     │   └── transmission -> ../available/transmission
     └── xorg
