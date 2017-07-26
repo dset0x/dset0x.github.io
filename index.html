@@ -53,6 +53,18 @@
 <main id="content">
 <h1>Notes</h1>
       <article>
+          <h2><a href="/mail-counting.html">Resolving unread mail count with different mail clients</a></h2>
+          <div class="preview">
+              While looking for a new MUA, I&#39;ve had to come up with different ways for displaying an unread mail count on my desktop. Naturally, `notmuch` is the easiest, as long as you&#39;ve finalized your policy as to _what_ consitutes new mail. notmuch search tag:inbox and &lt;OTHER CONDITIONS&gt; | wc -l...
+          </div>
+          <div class="cont_box">
+              <!--<div class="cont">
+                  <a title="Continue reading" href="/mail-counting.html">Continue reading</a>
+              </div>-->
+              <hr>
+          </div>
+      </article>
+      <article>
           <h2><a href="/s6-desktop.html">(Mis)using s6 to run complementary desktop applications</a></h2>
           <div class="preview">
               You will notice that some of these applications (eg `mpd`) should only ever be ran once, while others are tied to the `X` session. For that, I use two supervision trees, one of which is executed in `~/.xinitrc` so that `$DISPLAY` is set. All I needed to get things running...

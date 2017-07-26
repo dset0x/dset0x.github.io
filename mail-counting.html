@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+    <title>Resolving unread mail count with different mail clients - When software gets in the way - Dimitrios Semitsoglou-Tsiapos</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Resolving unread mail count with different mail clients">
+    <meta name="keywords" content="linux,mail,client,count">
+    <meta name="author" content="Dimitrios Semitsoglou-Tsiapos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="alternate" type="application/rss+xml" title="When software gets in the way" href="/feed.xml" />
+    <style>
+        html        {background-color: #fff;}
+        body        {margin: auto; max-width: 6.67in; font-size: 11pt; padding: 0 1em 1em 1em; opacity: .8;}
+        hr          {border: 0; border-top: 1px solid #c6c5c6;}
+
+        a           {text-decoration: none;}
+        a:link      {color: #3189c5;}
+        a:visited   {color: #a131c5;}
+        a:hover     {text-decoration: underline;}
+
+        h1, h2, h3  {opacity: .8;}
+        h1          {font-size: x-large;}
+        h2          {font-size: large;}
+        h3          {font-size: medium;}
+
+        .preview    {max-height: 20vw; margin-left: 4ch; overflow: hidden;}
+        pre         {font-size: 10pt; background-color: #eee; padding: .5em; overflow: auto;}
+
+        nav         {display: inline-block; width: 100%;}
+        #menu       {float: right; -webkit-columns: 2; -moz-columns: 2; columns: 2;}
+        #menu li    {text-align: right; display: block; padding-top: 0.4em;}
+        #menu div   {border-bottom: #c6c5c6 1px solid; width: 6em;}
+
+        .skip {position: absolute; opacity:0; pointer-events: none;}
+        .skip:active, .skip:focus {opacity:1;}
+    </style>
+</head>
+<body>
+
+<a href="#content" class="skip" tabindex="1">Skip to content</a>
+<nav>
+    <ul id="menu">
+        <li><div><a href="/">notes</a></div></li>
+        <li><div><a href="/pages/advice.html">advice</a></div></li>
+        <li><div><a href="/pages/astro.html">astro</a></div></li>
+        <li><div><a href="/pages/hacking.html">hacking</a></div></li>
+        <li><div><a href="/pages/words.html">words</a></div></li>
+        <li><div><a target="_blank" href="https://github.com/search?o=desc&amp;q=author:dset0x+&amp;s=created&amp;type=Issues&amp;utf8=✓">github</a></div></li>
+    </ul>
+</nav>
+
+<main id="content">
+<article>
+<h1>Resolving unread mail count with different mail clients</h1>
+
+<p>While looking for a new MUA, I&rsquo;ve had to come up with different ways for displaying an unread mail count on my desktop.</p>
+
+<h2>notmuch</h2>
+
+<p>Naturally, <code>notmuch</code> is the easiest, as long as you&rsquo;ve finalized your policy as to <em>what</em> consitutes new mail.</p>
+
+<p><code>
+notmuch search tag:inbox and &lt;OTHER CONDITIONS&gt; | wc -l
+</code></p>
+
+<h2>claws</h2>
+
+<p><code>claws</code> has excellent command line switches for just about everything.</p>
+
+<p><code>
+claws-mail --status-full | awk '/INBOX$/ { sum+=$2 } END { print sum; }'",
+</code></p>
+
+<h2>evolution</h2>
+
+<p><code>evolution</code> doesn&rsquo;t have a good command line interface. One has to go through its cache, which seems to be kept up-to-date.</p>
+
+<p><code>
+for i in ~/.cache/evolution/mail/*; do
+    sqlite3 "$i/folders.db" "select count(*) read from INBOX where read == 0";
+done | awk '{ sum += $1; } END { print sum; }'")
+</code></p>
+
+<h3>&ldquo;Work offline&rdquo; status</h3>
+
+<p>It&rsquo;s easy to flip the &ldquo;work offline&rdquo; switch in evolution without noticing. Luckily you can get its value easily.</p>
+
+<p><code>
+gsettings get org.gnome.evolution.shell start-offline
+</code></p>
+</article>
+</main>
+<footer>
+</footer>
+</body>
+</html>

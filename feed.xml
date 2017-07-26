@@ -15,6 +15,12 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
 	<sy:updatePeriod>daily</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
   <item>
+    <title>Resolving unread mail count with different mail clients</title>
+    <link>https://dset0x.github.io/mail-counting.html</link>
+    <description>While looking for a new MUA, I&#39;ve had to come up with different ways for displaying an unread mail count on my desktop. Naturally, `notmuch` is the easiest, as long as you&#39;ve finalized your policy as to _what_ consitutes new mail. notmuch search tag:inbox and &lt;OTHER CONDITIONS&gt; | wc -l...</description>
+    <pubDate>Wed, 26 Jul 2017 19:00:00 +0300</pubDate>
+  </item>
+  <item>
     <title>(Mis)using s6 to run complementary desktop applications</title>
     <link>https://dset0x.github.io/s6-desktop.html</link>
     <description>You will notice that some of these applications (eg `mpd`) should only ever be ran once, while others are tied to the `X` session. For that, I use two supervision trees, one of which is executed in `~/.xinitrc` so that `$DISPLAY` is set. All I needed to get things running...</description>
@@ -110,6 +116,6 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
     <description>I like to keep `mpd` logs around for statistics purposes. Unfortunately I have had mpd write binary to the logfile for one reason or another. Fear not, easy to fix. This was also a good time to remove all the client calls to bring the filesize down from 1GiB...</description>
     <pubDate>Tue, 21 Feb 2017 11:23:00 +0200</pubDate>
   </item>
-    <lastBuildDate>Fri, 28 Apr 2017 23:48:00 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jul 2017 19:00:00 +0300</lastBuildDate>
   </channel>
 </rss>

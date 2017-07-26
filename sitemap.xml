@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://dset0x.github.io</loc>
-        <lastmod>2017-06-19</lastmod>
+        <lastmod>2017-07-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://dset0x.github.io/mail-counting.html</loc>
+        <lastmod>2017-07-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://dset0x.github.io/s6-desktop.html</loc>
