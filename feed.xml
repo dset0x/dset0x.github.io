@@ -17,7 +17,7 @@ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
   <item>
     <title>Resolving unread mail count with different mail clients</title>
     <link>https://dset0x.github.io/mail-counting.html</link>
-    <description>While looking for a new MUA, I&#39;ve had to come up with different ways for displaying an unread mail count on my desktop. Naturally, `notmuch` is the easiest, as long as you&#39;ve finalized your policy as to _what_ consitutes new mail. notmuch search tag:inbox and &lt;OTHER CONDITIONS&gt; | wc -l...</description>
+    <description>While looking for a new MUA, I&#39;ve had to come up with different ways for displaying an unread mail count on my desktop. Naturally, `notmuch` is the easiest, as long as you&#39;ve finalized your policy as to _what_ consitutes new mail. It&#39;s easy to flip the &quot;work offline&quot; switch in...</description>
     <pubDate>Wed, 26 Jul 2017 19:00:00 +0300</pubDate>
   </item>
   <item>

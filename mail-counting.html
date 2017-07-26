@@ -60,35 +60,31 @@
 
 <p>Naturally, <code>notmuch</code> is the easiest, as long as you&rsquo;ve finalized your policy as to <em>what</em> consitutes new mail.</p>
 
-<p><code>
-notmuch search tag:inbox and &lt;OTHER CONDITIONS&gt; | wc -l
-</code></p>
+<pre><code>notmuch search tag:inbox and &lt;OTHER CONDITIONS&gt; | wc -l
+</code></pre>
 
 <h2>claws</h2>
 
 <p><code>claws</code> has excellent command line switches for just about everything.</p>
 
-<p><code>
-claws-mail --status-full | awk '/INBOX$/ { sum+=$2 } END { print sum; }'",
-</code></p>
+<pre><code>claws-mail --status-full | awk '/INBOX$/ { sum+=$2 } END { print sum; }'",
+</code></pre>
 
 <h2>evolution</h2>
 
 <p><code>evolution</code> doesn&rsquo;t have a good command line interface. One has to go through its cache, which seems to be kept up-to-date.</p>
 
-<p><code>
-for i in ~/.cache/evolution/mail/*; do
+<pre><code>for i in ~/.cache/evolution/mail/*; do
     sqlite3 "$i/folders.db" "select count(*) read from INBOX where read == 0";
 done | awk '{ sum += $1; } END { print sum; }'")
-</code></p>
+</code></pre>
 
 <h3>&ldquo;Work offline&rdquo; status</h3>
 
 <p>It&rsquo;s easy to flip the &ldquo;work offline&rdquo; switch in evolution without noticing. Luckily you can get its value easily.</p>
 
-<p><code>
-gsettings get org.gnome.evolution.shell start-offline
-</code></p>
+<pre><code>gsettings get org.gnome.evolution.shell start-offline
+</code></pre>
 </article>
 </main>
 <footer>
