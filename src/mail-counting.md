@@ -28,3 +28,14 @@ Naturally, `notmuch` is the easiest, as long as you've finalized your policy as 
 It's easy to flip the "work offline" switch in evolution without noticing. Luckily you can get its value easily.
 
     gsettings get org.gnome.evolution.shell start-offline
+
+
+## thunderbird
+
+`thunderbird` has no interface either. You should avoid reading `global-messages-db.sqlite`, because thunderbird doesn't really update it:
+
+    sqlite3 ~/.thunderbird/*/global-messages-db.sqlite 'SELECT count(*) FROM messageAttributes where attributeID=58 and value=1'
+
+Instead, grab [`Unread Count`](https://addons.mozilla.org/en-US/thunderbird/addon/unread-count/) (yes, it works with versions >= 31) and run this instead:
+
+    awk -F: '{ sum += $1; } END { print sum; }' ~/.thunderbird/*/unread-counts

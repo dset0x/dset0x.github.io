@@ -85,6 +85,18 @@ done | awk '{ sum += $1; } END { print sum; }'")
 
 <pre><code>gsettings get org.gnome.evolution.shell start-offline
 </code></pre>
+
+<h2>thunderbird</h2>
+
+<p><code>thunderbird</code> has no interface either. You should avoid reading <code>global-messages-db.sqlite</code>, because thunderbird doesn&rsquo;t really update it:</p>
+
+<pre><code>sqlite3 ~/.thunderbird/*/global-messages-db.sqlite 'SELECT count(*) FROM messageAttributes where attributeID=58 and value=1'
+</code></pre>
+
+<p>Instead, grab <a href="https://addons.mozilla.org/en-US/thunderbird/addon/unread-count/"><code>Unread Count</code></a> (yes, it works with versions >= 31) and run this instead:</p>
+
+<pre><code>awk -F: '{ sum += $1; } END { print sum; }' ~/.thunderbird/*/unread-counts
+</code></pre>
 </article>
 </main>
 <footer>
