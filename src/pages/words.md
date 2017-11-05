@@ -2,26 +2,26 @@
 # Words
 
 ## Freedom of speech, political correctness and public speaking
-* [1992 Sketch on political correctness](https://www.youtube.com/watch?v=77M2e3APoXk) _(Video (3min))_
-* [Neil deGrasse Tyson explains clarity towards broad audiencies](https://www.youtube.com/watch?v=XkjxVTeQp-I) _(Video (9min))_
-* [Steve Patterson on "politics and language warriors"](https://youtu.be/Hmlnakt-HVg) _(Video (9min))_
-* [Jordan Peterson on why people must be allowed to speak freely](https://youtu.be/G59QpvdQa5w) _(Video (9min))_
+* [1992 Sketch on political correctness](https://www.youtube.com/watch?v=77M2e3APoXk) _(Video, 3min)_
+* [Neil deGrasse Tyson explains clarity towards broad audiencies](https://www.youtube.com/watch?v=XkjxVTeQp-I) _(Video, 9min)_
+* [Steve Patterson on "politics and language warriors"](https://youtu.be/Hmlnakt-HVg) _(Video, 9min)_
+* [Jordan Peterson on why people must be allowed to speak freely](https://youtu.be/G59QpvdQa5w) _(Video, 9min)_
 * ### Redefining words and phrases
-  * [George Carlin on "Soft Language"](https://www.youtube.com/watch?v=h67k9eEw9AY) _(Video (7min))_
-  * [Steve Patterson on politics and language warriors](https://www.youtube.com/watch?v=Hmlnakt-HVg) _(Video (9min))_
-  * [Steve Patterson on words, concepts, and referents](https://www.youtube.com/watch?v=_8j9gkc-zjk) _(Video (4min))_
-  * [William Lutz on his book "DoubleSpeak"](https://youtu.be/8ZpIv7T8oEY) _(Video (59min))_
+  * [George Carlin on "Soft Language"](https://www.youtube.com/watch?v=h67k9eEw9AY) _(Video, 7min)_
+  * [Steve Patterson on politics and language warriors](https://www.youtube.com/watch?v=Hmlnakt-HVg) _(Video, 9min)_
+  * [Steve Patterson on words, concepts, and referents](https://www.youtube.com/watch?v=_8j9gkc-zjk) _(Video, 4min)_
+  * [William Lutz on his book "DoubleSpeak"](https://youtu.be/8ZpIv7T8oEY) _(Video, 59min)_
 
 ## Scientific publishing
 * [We should not accept scientific results that have not been repeated](http://nautil.us/blog/we-should-not-accept-scientific-results-that-have-not-been-repeated) _(Article)_
-* [Is most published research wrong?](https://www.youtube.com/watch?v=42QuXLucH3Q) _(Video (12min))_
+* [Is most published research wrong?](https://www.youtube.com/watch?v=42QuXLucH3Q) _(Video, 12min)_
 
 ## Ethics
 * [Trying to cure depression, but inspiring torture](http://www.newyorker.com/science/maria-konnikova/theory-psychology-justified-torture) _(Article)_
 * [The Drowning Child and the Expanding Circle](https://www.utilitarian.net/singer/by/199704--.htm) _(Essay)_
 
 ## Fraud
-* [James Randi on homeopathy, quackery and fraud](https://youtu.be/c0Z7KeNCi7g) _(Video (18min))_
+* [James Randi on homeopathy, quackery and fraud](https://youtu.be/c0Z7KeNCi7g) _(Video, 18min)_
 
 ## War
 * [Hiroshima: The medical aftermath of the day that changed the world](http://hiroshima.australiandoctor.com.au/#c1) _(Essay)_
@@ -37,5 +37,5 @@
 * ["I saw things children shouldn't see" - surviving a troubled childhood](https://mosaicscience.com/story/surviving-troubled-childhood-resilience-neglect-adversity) _(Article)_
 * [Sexual Inactivity During Young Adulthood Is More Common Among U.S. Millennials and iGen: Age, Period, and Cohort Effects on Having No Sexual Partners After Age 18](http://link.springer.com/article/10.1007/s10508-016-0798-z) _(Paper)_
 * [People with anxiety show fundamental differences in perception](https://www.eurekalert.org/pub_releases/2016-03/cp-pwa022516.php) _(Study)_
-* [Michael Moore - Norway compared to USA (Resources management, prison system)](https://www.youtube.com/watch?v=QbJaGIyM65k)
-* [The Matrix Reloaded (2003) - Causality](https://www.youtube.com/watch?v=U24-PF0_Zj4)
+* [Michael Moore - Norway compared to USA (Resources management, prison system)](https://www.youtube.com/watch?v=QbJaGIyM65k) _(Video, 5min)_
+* [The Matrix Reloaded (2003) - Causality](https://www.youtube.com/watch?v=U24-PF0_Zj4) _(Video, 4min)_
