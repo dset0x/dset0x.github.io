@@ -10,7 +10,6 @@
 
 ## Language
 * [George Carlin on "Soft Language"](https://www.youtube.com/watch?v=h67k9eEw9AY) _(Video, 7min)_
-* [1992 Sketch on political correctness](https://www.youtube.com/watch?v=77M2e3APoXk) _(Video, 3min)_
 * [William Lutz on his book "DoubleSpeak"](https://youtu.be/8ZpIv7T8oEY) _(Video, 59min)_
 * [Steve Patterson on "Politics and Language Warriors"](https://youtu.be/Hmlnakt-HVg) _(Video, 9min)_
 * [Steve Patterson on "Words, Concepts, and Referents"](https://www.youtube.com/watch?v=_8j9gkc-zjk) _(Video, 4min)_
