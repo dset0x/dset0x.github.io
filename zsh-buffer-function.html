@@ -42,7 +42,6 @@
 <nav>
     <ul id="menu">
         <li><div><a href="/">notes</a></div></li>
-        <li><div><a href="/pages/advice.html">advice</a></div></li>
         <li><div><a href="/pages/astro.html">astro</a></div></li>
         <li><div><a href="/pages/hacking.html">hacking</a></div></li>
         <li><div><a href="/pages/words.html">words</a></div></li>
@@ -69,7 +68,7 @@ bindkey '\ez' funcify
 <pre><code>$ sed "s/foo/bar/g" foo.txt | grep -P "baz" | sort -zr
 </code></pre>
 
-<p>Naturally, you keep getting the regexes wrong. Just ^P and change &ldquo;foo&rdquo; to &ldquo;$1&rdquo; and &ldquo;baz&rdquo; to &ldquo;$2&rdquo;. Then do &lt;esc-z> to call <code>funcify</code>. You will end up with this anonymous function:</p>
+<p>Naturally, you keep getting the regexes wrong. Just ^P and change &ldquo;foo&rdquo; to &ldquo;$1&rdquo; and &ldquo;baz&rdquo; to &ldquo;$2&rdquo;. Then do <esc-z> to call <code>funcify</code>. You will end up with this anonymous function:</p>
 
 <pre><code>$ (){sed "s/$1/bar/g" foo.txt | grep "$2" | sort -zr}
 </code></pre>
